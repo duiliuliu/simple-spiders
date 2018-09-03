@@ -1,3 +1,9 @@
+# simple Spider 
+
+![python -> 3.4+](./images/python-3.4+-green.svg)
+![coverage -> 0%](./images/coverage-0%-lightgrey.svg)
+![build -> passing](./images/build-passing-orange.svg)
+
 ```
       _                 _         _____       _     _           
      (_)               | |       / ____|     (_)   | |          
@@ -10,11 +16,6 @@
 
 ```      
  
-# simple Spider 
-
-![python -> 3.4+](./images/python-3.4+-green.svg)
-![build -> passing](./images/build-passing-orange.svg)
-![coverage -> 0%](./images/coverage-0%-lightgrey.svg)
 
 [中文](./Readme-zh.md)
 
