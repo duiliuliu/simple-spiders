@@ -1,7 +1,7 @@
 # simple Spider 
 
 ![python -> 3.4+](./images/python-3.4+-green.svg)
-![coverage -> 0%](./images/coverage-0%-lightgrey.svg)
+![coverage -> 0%](https://img.shields.io/badge/coverage-0%25-lightgrey.svg)
 ![build -> passing](./images/build-passing-orange.svg)
 
 ```
