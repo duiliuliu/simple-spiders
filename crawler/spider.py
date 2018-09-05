@@ -9,6 +9,7 @@ from crawler.writter import DataWrite
 from crawler.warn import Warn
 from multiprocessing.pool import Pool as ProcessPool
 from multiprocessing.dummy import Pool as ThreadPool
+from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor, wait
 import re
 
 
@@ -50,22 +51,27 @@ class Spider():
             request = self.requestManager.get_new_request()
             self._crawl(request)
         self.logger.info('\tEnd crawl...')
+        DataWrite._writter_buffer_flush()
 
     def start_multiProcess_crawl(self, capacity):
         self._start_icon()
-        pool = ProcessPool(processes=capacity)
+        self.logger.info('\tStart multiProcess_crawl...')
+        pool = ProcessPoolExecutor(capacity)
+        futures = []
         while self.requestManager.has_new_request():
-            request = self.requestManager.get_new_request()
-            pool.apply_async(self._crawl, args=request)
-
-        self.logger.info('\tWaiting for all subprocesses done...')
-        pool.close()
-        pool.join()
-        self.logger.info('\tAll processes done!')
+            while self.requestManager.has_new_request(self.requestManager.__level):
+                request = self.requestManager.get_new_request()
+                futures.append(pool.submit(self._crawl, request))
+            self.logger.info(
+                '\tWaiting level-{} subprocesses done...'.format(self.requestManager.__level))
+            wait(futures)
+            #wait(futures, timeout=None, return_when='FIRST_COMPLETED')
+        self.logger.info('\tAll subprocesses done!')
         DataWrite._writter_buffer_flush()
 
     def start_multiThread_crawl(self, capacity):
         self._start_icon()
+        self.logger.info('\tStart multiThread_crawl...')
         pool = ThreadPool(processes=capacity)
         while self.requestManager.has_new_request():
             request = self.requestManager.get_new_request()

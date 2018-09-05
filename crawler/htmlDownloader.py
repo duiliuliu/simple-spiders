@@ -14,17 +14,23 @@ class HtmlDownloader():
         self.proxy = {}
         self.timeout = 5
         self.logger = Logger(__name__)
+        self.__level = 0
 
-    def download(self, request, data={}):
+    def download(self, request):
         if not request:
             return
+
+        self.__level = request['level']
+
         try:
             if request['request_type'] == 'post':
+                request['data'] = request['data'] if 'data' in request else None
                 response = self._post(request['url'], request['data'])
             else:
                 response = self._get(request['url'])
         except:
             self.logger.exception('Requesting occurs error')
+            return
 
         if response.status_code == 200:
             response.encoding = 'utf-8'
@@ -51,13 +57,22 @@ class HtmlDownloader():
         else:
             self.logger.exception('downloader refresh_proxy error')
 
-    def refresh_headers(self, headers):
-        for h in headers:
-            if headers[h]:
-                self.headers[h] = headers[h]
-            else:
-                self.headers.pop(h)
+    def refresh_headers(self, headers, level=None):
+        if not headers:
+            return
+        if not level:
+            level == self.__level
+        if level == self.__level:
+            for h in headers:
+                if headers[h]:
+                    self.headers[h] = headers[h]
+                else:
+                    self.headers.pop(h)
 
-    def set_header(self, headers):
-        if headers:
+    def set_header(self, headers, level=None):
+        if not headers:
+            return
+        if not level:
+            level == self.__level
+        if level == self.__level:
             self.headers = headers

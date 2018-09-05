@@ -1,3 +1,9 @@
+# simple Spider 
+
+![python -> 3.4+](./images/python-3.4+-green.svg)
+![coverage -> 0%](./images/coverage-0%-lightgrey.svg)
+![build -> passing](./images/build-passing-orange.svg)
+
 ```
       _                 _         _____       _     _           
      (_)               | |       / ____|     (_)   | |          
@@ -10,13 +16,8 @@
 
 ```      
  
-# simple Spider 
 
-![python -> 3.4+](./images/python-3.4+-green.svg)
-![build -> passing](./images/build-passing-orange.svg)
-![coverage -> 0%](./images/coverage-0%-lightgrey.svg)
-
-[中文](./Readme-zh.md):blush:
+[中文](./Readme-zh.md)
 
 ## Overview
 
@@ -34,11 +35,13 @@ You should revise main.py to suit your needs
 
 ## Referenced Libraries
 
-* Using [requests](https://facebook.github.io/react/) as htmlDownloader
-* Using [lxml](http://redux.js.org/) as default htmlParser
-* Using [csv](http://redux.js.org/) provide feature that export file as csv type
-* Using [xlwt](http://redux.js.org/) provide feature that export file as excel type
-* Using [xlsxwriter](http://redux.js.org/) provide feature that export file as xexcel type
+* Using [requests](https://github.com/requests/requests) as htmlDownloader
+* Using [lxml](https://github.com/lxml/lxml) as default htmlParser
+* Using [csv](http://www.python-csv.org) provide feature that export file as csv type
+* Using [xlwt](http://www.python-excel.org/) provide feature that export file as excel type
+* Using [xlsxwriter](https://xlsxwriter.readthedocs.io) provide feature that export file as xexcel type
+
+## Usage
 
 ## Project structure
 
@@ -62,3 +65,9 @@ You should revise main.py to suit your needs
 
 - main.py
 ```
+
+## License
+
+本项目采用 [![license](./images/license-LGPL--3.0-orange.svg)](https://github.com/duiliuliu/simple-spiders) 协议开源发布，请您在修改后维持开源发布，并为原作者额外署名，谢谢您的尊重。
+
+若您需要将本项目应用于商业目的，请单独联系本人( [@littlemo](https://github.com/duiliuliu) )，获取商业授权。

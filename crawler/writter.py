@@ -60,16 +60,12 @@ class DataWrite():
 
     def write(self, items=None):
         if self.type == 'txt':
-            self.filename += '.txt'
             self._write_txt(items)
         elif self.type == 'csv':
-            self.filename += '.csv'
             self._write_csv(items)
         elif self.type == 'xexcel':
-            self.filename += '.xlsx'
             self._write_xexcel(items)
         elif self.type == 'excel':
-            self.filename += '.xls'
             self._write_excel(items)
         else:
             self.logger.exception("Illegal file-type defined")

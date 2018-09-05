@@ -35,11 +35,11 @@ You should revise main.py to suit your needs
 
 ## Referenced Libraries
 
-* Using [requests](https://facebook.github.io/react/) as htmlDownloader
-* Using [lxml](http://redux.js.org/) as default htmlParser
-* Using [csv](http://redux.js.org/) provide feature that export file as csv type
-* Using [xlwt](http://redux.js.org/) provide feature that export file as excel type
-* Using [xlsxwriter](http://redux.js.org/) provide feature that export file as xexcel type
+* Using [requests](https://github.com/requests/requests) as htmlDownloader
+* Using [lxml](https://github.com/lxml/lxml) as default htmlParser
+* Using [csv](http://www.python-csv.org) provide feature that export file as csv type
+* Using [xlwt](http://www.python-excel.org/) provide feature that export file as excel type
+* Using [xlsxwriter](https://xlsxwriter.readthedocs.io) provide feature that export file as xexcel type
 
 ## Usage
 
