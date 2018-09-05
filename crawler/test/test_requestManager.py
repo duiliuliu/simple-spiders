@@ -52,6 +52,3 @@ class requestManager_test(unittest.TestCase):
     def test_old_request_size(self):
         self.assertEqual(self.manager.old_request_size(), len(self.requests)*2)
 
-
-if __name__ == '__main__':
-    unittest.main()

@@ -54,6 +54,7 @@ class Spider():
         DataWrite._writter_buffer_flush()
 
     def start_multiProcess_crawl(self, capacity):
+        ########### 待更新
         self._start_icon()
         self.logger.info('\tStart multiProcess_crawl...')
         pool = ProcessPoolExecutor(capacity)
@@ -70,6 +71,7 @@ class Spider():
         DataWrite._writter_buffer_flush()
 
     def start_multiThread_crawl(self, capacity):
+        ########### 待更新
         self._start_icon()
         self.logger.info('\tStart multiThread_crawl...')
         pool = ThreadPool(processes=capacity)
