@@ -19,11 +19,11 @@
 
 [中文](./Readme-zh.md)
 
-## Overview
+## 概述
 
-A simple web crawling framework.
+一个简单的爬虫框架。
 
-## Getting Started
+## 开始入门
 
 `git clone` https://github.com/duiliuliu
 
@@ -33,7 +33,7 @@ You should revise main.py to suit your needs
 
 `Ctrl-C to stop`
 
-## Referenced Libraries
+## 相关引用库
 
 * Using [requests](https://github.com/requests/requests) as htmlDownloader
 * Using [lxml](https://github.com/lxml/lxml) as default htmlParser
@@ -41,9 +41,9 @@ You should revise main.py to suit your needs
 * Using [xlwt](http://www.python-excel.org/) provide feature that export file as excel type
 * Using [xlsxwriter](https://xlsxwriter.readthedocs.io) provide feature that export file as xexcel type
 
-## Usage
+## 用法
 
-## Project structure
+## 项目结构
 
 ```
 - crawler/
