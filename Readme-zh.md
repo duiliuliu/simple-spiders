@@ -1,7 +1,7 @@
 # simple Spider 
 
 ![python -> 3.4+](./images/python-3.4+-green.svg)
-![coverage -> 0%](https://img.shields.io/badge/coverage-0%25-lightgrey.svg)
+![coverage -> 0%](ttps://img.shields.io/badge/coverage-0%25-lightgrey.svg)
 ![build -> passing](./images/build-passing-orange.svg)
 
 ```
@@ -17,11 +17,11 @@
 ```      
  
 
-[英文](./Readme.md)
+[中文](./Readme-zh.md)
 
 ## 概述
 
-一个简单的爬虫框架。
+一个简单的爬虫框架。 [详细文档](https://duiliuliu.github.io/simple-spiders/)
 
 ## 开始入门
 
