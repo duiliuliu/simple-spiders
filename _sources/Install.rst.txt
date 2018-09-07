@@ -1,7 +1,10 @@
 Installer
 =================
 
-Introduction
-------------------
+`git clone` https://github.com/duiliuliu
 
-A simple web crawling framework!
+`python main baidu.com`
+
+You should revise main.py to suit your needs 
+
+`Ctrl-C to stop`

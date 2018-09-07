@@ -1,7 +1,4 @@
 About
 ===========
 
-Introduction
-------------------
-
-A simple web crawling framework!
+还在构建中....

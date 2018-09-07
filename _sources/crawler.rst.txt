@@ -66,11 +66,3 @@ crawler.writter
     :undoc-members:
     :show-inheritance:
 
-
-Module contents
----------------
-
-.. automodule:: crawler
-    :members:
-    :undoc-members:
-    :show-inheritance:

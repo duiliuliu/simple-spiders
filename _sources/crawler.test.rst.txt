@@ -10,10 +10,3 @@ crawler.test.test\_requestManager
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: crawler.test
-    :members:
-    :undoc-members:
-    :show-inheritance:
