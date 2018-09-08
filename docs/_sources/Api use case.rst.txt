@@ -1,7 +1,0 @@
-Api use case
-==================
-
-.. toctree::
-   :maxdepth: 4
-
-   crawler.test
