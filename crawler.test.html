@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>crawler usage &mdash; simple-spiders 1.0.0 文档</title>
+  <title>api test document &mdash; simple-spiders 1.0.0 文档</title>
   
 
   
@@ -29,7 +29,7 @@
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
     <link rel="next" title="Installer" href="Install.html" />
-    <link rel="prev" title="Api use case" href="Api use case.html" /> 
+    <link rel="prev" title="Api test document" href="Api use case.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -86,8 +86,10 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Api document.html">Api document</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="Api use case.html">Api use case</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">crawler usage</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="Api use case.html">Api test document</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">api test document</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-crawler.test.test_htmlDownloader">crawler.test.test_htmlDownloader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crawler.test.test_htmlParser">crawler.test.test_htmlParser</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-crawler.test.test_requestManager">crawler.test.test_requestManager</a></li>
 </ul>
 </li>
@@ -140,9 +142,9 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="Api use case.html">Api use case</a> &raquo;</li>
+          <li><a href="Api use case.html">Api test document</a> &raquo;</li>
         
-      <li>crawler usage</li>
+      <li>api test document</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -161,48 +163,113 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="crawler-usage">
-<h1>crawler usage<a class="headerlink" href="#crawler-usage" title="永久链接至标题">¶</a></h1>
-<div class="section" id="module-crawler.test.test_requestManager">
-<span id="crawler-test-test-requestmanager"></span><h2>crawler.test.test_requestManager<a class="headerlink" href="#module-crawler.test.test_requestManager" title="永久链接至标题">¶</a></h2>
+  <div class="section" id="api-test-document">
+<h1>api test document<a class="headerlink" href="#api-test-document" title="永久链接至标题">¶</a></h1>
+<div class="section" id="module-crawler.test.test_htmlDownloader">
+<span id="crawler-test-test-htmldownloader"></span><h2>crawler.test.test_htmlDownloader<a class="headerlink" href="#module-crawler.test.test_htmlDownloader" title="永久链接至标题">¶</a></h2>
 <dl class="class">
-<dt id="crawler.test.test_requestManager.requestManager_test">
-<em class="property">class </em><code class="descclassname">crawler.test.test_requestManager.</code><code class="descname">requestManager_test</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#requestManager_test"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.requestManager_test" title="永久链接至目标">¶</a></dt>
+<dt id="crawler.test.test_htmlDownloader.test_HtmlDownloader">
+<em class="property">class </em><code class="descclassname">crawler.test.test_htmlDownloader.</code><code class="descname">test_HtmlDownloader</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlDownloader.html#test_HtmlDownloader"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_htmlDownloader.test_HtmlDownloader" title="永久链接至目标">¶</a></dt>
 <dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
 <dl class="method">
-<dt id="crawler.test.test_requestManager.requestManager_test.setUp">
-<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#requestManager_test.setUp"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.requestManager_test.setUp" title="永久链接至目标">¶</a></dt>
+<dt id="crawler.test.test_htmlDownloader.test_HtmlDownloader.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlDownloader.html#test_HtmlDownloader.setUp"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_htmlDownloader.test_HtmlDownloader.setUp" title="永久链接至目标">¶</a></dt>
 <dd><p>Hook method for setting up the test fixture before exercising it.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="crawler.test.test_requestManager.requestManager_test.test_add_new_request">
-<code class="descname">test_add_new_request</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#requestManager_test.test_add_new_request"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.requestManager_test.test_add_new_request" title="永久链接至目标">¶</a></dt>
+<dt id="crawler.test.test_htmlDownloader.test_HtmlDownloader.test_download">
+<code class="descname">test_download</code><span class="sig-paren">(</span><em>mock_get</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlDownloader.html#test_HtmlDownloader.test_download"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_htmlDownloader.test_HtmlDownloader.test_download" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="crawler.test.test_requestManager.requestManager_test.test_add_new_requests">
-<code class="descname">test_add_new_requests</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#requestManager_test.test_add_new_requests"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.requestManager_test.test_add_new_requests" title="永久链接至目标">¶</a></dt>
+<dt id="crawler.test.test_htmlDownloader.test_HtmlDownloader.test_refresh_headers">
+<code class="descname">test_refresh_headers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlDownloader.html#test_HtmlDownloader.test_refresh_headers"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_htmlDownloader.test_HtmlDownloader.test_refresh_headers" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="crawler.test.test_requestManager.requestManager_test.test_get_new_request">
-<code class="descname">test_get_new_request</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#requestManager_test.test_get_new_request"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.requestManager_test.test_get_new_request" title="永久链接至目标">¶</a></dt>
+<dt id="crawler.test.test_htmlDownloader.test_HtmlDownloader.test_refresh_proxy">
+<code class="descname">test_refresh_proxy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlDownloader.html#test_HtmlDownloader.test_refresh_proxy"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_htmlDownloader.test_HtmlDownloader.test_refresh_proxy" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="crawler.test.test_requestManager.requestManager_test.test_has_new_request">
-<code class="descname">test_has_new_request</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#requestManager_test.test_has_new_request"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.requestManager_test.test_has_new_request" title="永久链接至目标">¶</a></dt>
+<dt id="crawler.test.test_htmlDownloader.test_HtmlDownloader.test_refresh_useragent">
+<code class="descname">test_refresh_useragent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlDownloader.html#test_HtmlDownloader.test_refresh_useragent"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_htmlDownloader.test_HtmlDownloader.test_refresh_useragent" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="crawler.test.test_requestManager.requestManager_test.test_new_request_size">
-<code class="descname">test_new_request_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#requestManager_test.test_new_request_size"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.requestManager_test.test_new_request_size" title="永久链接至目标">¶</a></dt>
+<dt id="crawler.test.test_htmlDownloader.test_HtmlDownloader.test_set_headers">
+<code class="descname">test_set_headers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlDownloader.html#test_HtmlDownloader.test_set_headers"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_htmlDownloader.test_HtmlDownloader.test_set_headers" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="crawler.test.test_requestManager.requestManager_test.test_old_request_size">
-<code class="descname">test_old_request_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#requestManager_test.test_old_request_size"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.requestManager_test.test_old_request_size" title="永久链接至目标">¶</a></dt>
+<dt id="crawler.test.test_htmlDownloader.test_HtmlDownloader.test_set_timeout">
+<code class="descname">test_set_timeout</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlDownloader.html#test_HtmlDownloader.test_set_timeout"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_htmlDownloader.test_HtmlDownloader.test_set_timeout" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crawler.test.test_htmlParser">
+<span id="crawler-test-test-htmlparser"></span><h2>crawler.test.test_htmlParser<a class="headerlink" href="#module-crawler.test.test_htmlParser" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="crawler.test.test_htmlParser.test_HtmlParser">
+<em class="property">class </em><code class="descclassname">crawler.test.test_htmlParser.</code><code class="descname">test_HtmlParser</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlParser.html#test_HtmlParser"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_htmlParser.test_HtmlParser" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<dl class="method">
+<dt id="crawler.test.test_htmlParser.test_HtmlParser.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlParser.html#test_HtmlParser.setUp"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_htmlParser.test_HtmlParser.setUp" title="永久链接至目标">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crawler.test.test_requestManager">
+<span id="crawler-test-test-requestmanager"></span><h2>crawler.test.test_requestManager<a class="headerlink" href="#module-crawler.test.test_requestManager" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="crawler.test.test_requestManager.test_RequestManager">
+<em class="property">class </em><code class="descclassname">crawler.test.test_requestManager.</code><code class="descname">test_RequestManager</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#test_RequestManager"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.test_RequestManager" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<dl class="method">
+<dt id="crawler.test.test_requestManager.test_RequestManager.generate_requests">
+<code class="descname">generate_requests</code><span class="sig-paren">(</span><em>num</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#test_RequestManager.generate_requests"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.test_RequestManager.generate_requests" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_requestManager.test_RequestManager.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#test_RequestManager.setUp"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.test_RequestManager.setUp" title="永久链接至目标">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_requestManager.test_RequestManager.test_add_new_request">
+<code class="descname">test_add_new_request</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#test_RequestManager.test_add_new_request"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.test_RequestManager.test_add_new_request" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_requestManager.test_RequestManager.test_add_new_requests">
+<code class="descname">test_add_new_requests</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#test_RequestManager.test_add_new_requests"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.test_RequestManager.test_add_new_requests" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_requestManager.test_RequestManager.test_get_new_request">
+<code class="descname">test_get_new_request</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#test_RequestManager.test_get_new_request"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.test_RequestManager.test_get_new_request" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_requestManager.test_RequestManager.test_has_new_request">
+<code class="descname">test_has_new_request</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#test_RequestManager.test_has_new_request"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.test_RequestManager.test_has_new_request" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_requestManager.test_RequestManager.test_new_request_size">
+<code class="descname">test_new_request_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#test_RequestManager.test_new_request_size"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.test_RequestManager.test_new_request_size" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_requestManager.test_RequestManager.test_old_request_size">
+<code class="descname">test_old_request_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#test_RequestManager.test_old_request_size"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.test_RequestManager.test_old_request_size" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -221,7 +288,7 @@
         <a href="Install.html" class="btn btn-neutral float-right" title="Installer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Api use case.html" class="btn btn-neutral" title="Api use case" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Api use case.html" class="btn btn-neutral" title="Api test document" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -84,7 +84,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Api document.html">Api document</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Api use case.html">Api use case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Api use case.html">Api test document</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Install.html">Installer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../About.html">About</a></li>
 </ul>
@@ -167,13 +167,13 @@
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">limit_level</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        请求管理器初始化函数</span>
-<span class="sd">            </span>
+
 <span class="sd">            @param :: limit_level : 爬取层数限制，默认限制3层</span>
 <span class="sd">            @member :: __level : 当前爬取层数</span>
 <span class="sd">            @member :: new_requests : 未爬取请求集合，采用字典存储，key对应相应的层数，value相应层数未请求的请求集合</span>
 <span class="sd">            @member :: old_requests : 已存储请求集合，采用元组存储，每个请求计算128位md5码进行存储</span>
 <span class="sd">            @member :: limit_level : 爬取层数限制，默认限制3层</span>
-<span class="sd">            </span>
+
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__level</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">new_requests</span> <span class="o">=</span> <span class="p">{}</span>
@@ -183,15 +183,15 @@
 <div class="viewcode-block" id="RequestManager.add_new_requests"><a class="viewcode-back" href="../../crawler.html#crawler.requestManager.RequestManager.add_new_requests">[文档]</a>    <span class="k">def</span> <span class="nf">add_new_requests</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">requests</span><span class="p">,</span> <span class="n">add_level</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        添加请求集合</span>
-<span class="sd">            </span>
+
 <span class="sd">            @param :: requests : 待添加请求集合</span>
-<span class="sd">            </span>
+
 <span class="sd">            @param :: add_level : 待添加请求层数，默认比当前请求深入一层</span>
-<span class="sd">            </span>
+
 <span class="sd">            return : None</span>
-<span class="sd">            </span>
+
 <span class="sd">        &#39;&#39;&#39;</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">requests</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">requests</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">requests</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">requests</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">type</span><span class="p">(</span><span class="n">requests</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">:</span>
             <span class="k">return</span>
         <span class="k">for</span> <span class="n">request</span> <span class="ow">in</span> <span class="n">requests</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add_new_request</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">add_level</span><span class="p">)</span></div>
@@ -199,13 +199,13 @@
 <div class="viewcode-block" id="RequestManager.add_new_request"><a class="viewcode-back" href="../../crawler.html#crawler.requestManager.RequestManager.add_new_request">[文档]</a>    <span class="k">def</span> <span class="nf">add_new_request</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">add_level</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        添加请求</span>
-<span class="sd">            </span>
+
 <span class="sd">            @param :: requests : 待添加请求</span>
 
 <span class="sd">            @param :: add_level : 待添加请求层数，默认比当前请求深入一层</span>
 
 <span class="sd">            return : None</span>
-<span class="sd">            </span>
+
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">request</span><span class="p">:</span>
             <span class="k">return</span>
@@ -217,24 +217,24 @@
 <div class="viewcode-block" id="RequestManager.has_new_request"><a class="viewcode-back" href="../../crawler.html#crawler.requestManager.RequestManager.has_new_request">[文档]</a>    <span class="k">def</span> <span class="nf">has_new_request</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        判断是否还有待爬取的请求，当传入level后，判断相应的层数中是否还有待爬取的请求。默认判断所有层数</span>
-<span class="sd">            </span>
+
 <span class="sd">            @param :: level : 待添加请求集合</span>
 
 <span class="sd">            return : Bool</span>
-<span class="sd">            </span>
+
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">if</span> <span class="n">level</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_request_size</span><span class="p">(</span><span class="n">level</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_request_size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span></div>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_requests_size</span><span class="p">(</span><span class="n">level</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_requests_size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span></div>
 
 <div class="viewcode-block" id="RequestManager.get_new_request"><a class="viewcode-back" href="../../crawler.html#crawler.requestManager.RequestManager.get_new_request">[文档]</a>    <span class="k">def</span> <span class="nf">get_new_request</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        获取一个未被请求过的请求</span>
-<span class="sd">            </span>
+
 <span class="sd">            @param :: level : 从指定层数中提取，默认为None</span>
 
 <span class="sd">            return : request</span>
-<span class="sd">            </span>
+
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_new_request</span><span class="p">():</span>
             <span class="k">return</span> <span class="kc">None</span>
@@ -244,49 +244,49 @@
             <span class="n">level</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__level</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_new_request</span><span class="p">(</span><span class="n">level</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RequestManager.new_request_size"><a class="viewcode-back" href="../../crawler.html#crawler.requestManager.RequestManager.new_request_size">[文档]</a>    <span class="k">def</span> <span class="nf">new_request_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RequestManager.new_requests_size"><a class="viewcode-back" href="../../crawler.html#crawler.requestManager.RequestManager.new_requests_size">[文档]</a>    <span class="k">def</span> <span class="nf">new_requests_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        待爬取的请求集合长度</span>
-<span class="sd">            </span>
+
 <span class="sd">            @param :: level : 获取指定层数的请求集合长度</span>
 
 <span class="sd">            return : int</span>
-<span class="sd">            </span>
+
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">if</span> <span class="n">level</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__new_request_size</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">__new_request_size</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">__new_request_size</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_requests</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span></div>
+            <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">__new_request_size</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_requests</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="RequestManager.old_request_size"><a class="viewcode-back" href="../../crawler.html#crawler.requestManager.RequestManager.old_request_size">[文档]</a>    <span class="k">def</span> <span class="nf">old_request_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RequestManager.old_requests_size"><a class="viewcode-back" href="../../crawler.html#crawler.requestManager.RequestManager.old_requests_size">[文档]</a>    <span class="k">def</span> <span class="nf">old_requests_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        已请求的请求集合长度</span>
-<span class="sd">            </span>
+
 <span class="sd">            @param :: level : 获取指定层数的请求集合长度</span>
 
 <span class="sd">            return : int</span>
-<span class="sd">            </span>
+
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">old_requests</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">__add_level</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        (私有函数)增加当前爬取层数</span>
-<span class="sd">            </span>
+
 <span class="sd">            return : None</span>
-<span class="sd">            </span>
+
 <span class="sd">        &#39;&#39;&#39;</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_new_request</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__level</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_new_request</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__level</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">__level</span> <span class="o">+=</span> <span class="mi">1</span>
 
     <span class="k">def</span> <span class="nf">__init_level</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        (私有函数)初始化level层的待爬取请求集合</span>
-<span class="sd">            </span>
+
 <span class="sd">            @param :: level : 指定要初始化的level层</span>
 
 <span class="sd">            return : None</span>
-<span class="sd">            </span>
+
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">str</span><span class="p">(</span><span class="n">level</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_requests</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">new_requests</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">level</span><span class="p">)]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
@@ -294,22 +294,22 @@
     <span class="k">def</span> <span class="nf">__add_new_request</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">add_level</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        (私有函数)添加请求,向未爬取过的请求集合中添加请求</span>
-<span class="sd">            </span>
+
 <span class="sd">            @param :: requests : 待添加请求</span>
 
 <span class="sd">            @param :: add_level : 待添加请求层数，默认比当前请求深入一层</span>
 
 <span class="sd">            return : None</span>
-<span class="sd">            </span>
+
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__level</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_requests</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__level</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__init_level</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__level</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__level</span><span class="o">+</span><span class="n">add_level</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">limit_level</span><span class="p">:</span>
             <span class="k">return</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__level</span><span class="o">+</span><span class="n">add_level</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_requests</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__level</span><span class="o">+</span><span class="n">add_level</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__init_level</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__level</span><span class="o">+</span><span class="n">add_level</span><span class="p">)</span>
 
         <span class="n">request</span><span class="p">[</span><span class="s1">&#39;level&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__level</span><span class="o">+</span><span class="n">add_level</span>
         <span class="n">request_str</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
@@ -318,11 +318,11 @@
     <span class="k">def</span> <span class="nf">__add_old_request</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request_str</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        (私有函数)添加请求,向已爬取过的请求集合中添加请求。集合中添加请求文本的128位md5码</span>
-<span class="sd">            </span>
+
 <span class="sd">            @param :: request_str : 待添加请求文本</span>
 
 <span class="sd">            return : None</span>
-<span class="sd">            </span>
+
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">md5</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">()</span>
         <span class="n">md5</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">request_str</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
@@ -331,9 +331,9 @@
     <span class="k">def</span> <span class="nf">__get_new_request</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        (私有函数)获取一个未被请求过的请求</span>
-<span class="sd">            </span>
+
 <span class="sd">            @param :: level : 从指定层数中提取</span>
-<span class="sd">            </span>
+
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">level</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_requests</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_requests</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">level</span><span class="p">)]:</span>
             <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">new_requests</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">level</span><span class="p">)]</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
@@ -341,11 +341,11 @@
     <span class="k">def</span> <span class="nf">__new_request_size</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        (私有函数)获取level层未爬取的请求集合长度</span>
-<span class="sd">            </span>
+
 <span class="sd">            @param :: level : 从指定层数中提取</span>
 
 <span class="sd">            return : int</span>
-<span class="sd">            </span>
+
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">level</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">new_requests</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">new_requests</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">level</span><span class="p">)])</span>

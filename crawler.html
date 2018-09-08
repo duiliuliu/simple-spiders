@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>crawler Api &mdash; simple-spiders 1.0.0 文档</title>
+  <title>api document &mdash; simple-spiders 1.0.0 文档</title>
   
 
   
@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
-    <link rel="next" title="Api use case" href="Api use case.html" />
+    <link rel="next" title="Api test document" href="Api use case.html" />
     <link rel="prev" title="Api document" href="Api document.html" /> 
 
   
@@ -86,7 +86,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="Api document.html">Api document</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">crawler Api</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">api document</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#module-crawler.dataItem">crawler.dataItem</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-crawler.htmlDownloader">crawler.htmlDownloader</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-crawler.htmlParser">crawler.htmlParser</a></li>
@@ -99,7 +99,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Api use case.html">Api use case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Api use case.html">Api test document</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Install.html">Installer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="About.html">About</a></li>
 </ul>
@@ -149,7 +149,7 @@
         
           <li><a href="Api document.html">Api document</a> &raquo;</li>
         
-      <li>crawler Api</li>
+      <li>api document</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -168,8 +168,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="crawler-api">
-<h1>crawler Api<a class="headerlink" href="#crawler-api" title="永久链接至标题">¶</a></h1>
+  <div class="section" id="api-document">
+<h1>api document<a class="headerlink" href="#api-document" title="永久链接至标题">¶</a></h1>
 <div class="section" id="module-crawler.dataItem">
 <span id="crawler-dataitem"></span><h2>crawler.dataItem<a class="headerlink" href="#module-crawler.dataItem" title="永久链接至标题">¶</a></h2>
 <dl class="class">
@@ -205,30 +205,69 @@
 <dt id="crawler.htmlDownloader.HtmlDownloader">
 <em class="property">class </em><code class="descclassname">crawler.htmlDownloader.</code><code class="descname">HtmlDownloader</code><a class="reference internal" href="_modules/crawler/htmlDownloader.html#HtmlDownloader"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.htmlDownloader.HtmlDownloader" title="永久链接至目标">¶</a></dt>
 <dd><p>基类：<a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(在 Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>资源下载器
+进行网络请求资源，返回utf-8格式的文本</p>
 <dl class="method">
 <dt id="crawler.htmlDownloader.HtmlDownloader.download">
 <code class="descname">download</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/htmlDownloader.html#HtmlDownloader.download"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.htmlDownloader.HtmlDownloader.download" title="永久链接至目标">¶</a></dt>
-<dd></dd></dl>
+<dd><p>资源下载，返回一个response字典，属性有status:响应状态码；text: 响应内容；url:请求url；level：当前请求的网络层数</p>
+<blockquote>
+<div><p>&#64;param :: request : 打算访问的请求</p>
+<p>return : Response</p>
+</div></blockquote>
+</dd></dl>
 
 <dl class="method">
 <dt id="crawler.htmlDownloader.HtmlDownloader.refresh_headers">
 <code class="descname">refresh_headers</code><span class="sig-paren">(</span><em>headers</em>, <em>level=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/htmlDownloader.html#HtmlDownloader.refresh_headers"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.htmlDownloader.HtmlDownloader.refresh_headers" title="永久链接至目标">¶</a></dt>
-<dd></dd></dl>
+<dd><p>更新请求头，传入的请求头字典中，值为None表示请求头更新剔除相应的键，值不为None则更新相应的值</p>
+<blockquote>
+<div><p>&#64;param :: headers : 打算更新的请求头</p>
+<p>&#64;param :: level : 为相应的网络层级更新请求头，默认为None，即立即更新请求头</p>
+<p>return : None</p>
+</div></blockquote>
+</dd></dl>
 
 <dl class="method">
 <dt id="crawler.htmlDownloader.HtmlDownloader.refresh_proxy">
 <code class="descname">refresh_proxy</code><span class="sig-paren">(</span><em>proxy</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/htmlDownloader.html#HtmlDownloader.refresh_proxy"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.htmlDownloader.HtmlDownloader.refresh_proxy" title="永久链接至目标">¶</a></dt>
-<dd></dd></dl>
+<dd><p>更新请求代理，打算更新的请求代理为一个字典，应有键’http’</p>
+<blockquote>
+<div><p>&#64;param :: proxy : 打算更新的代理</p>
+<p>return : None</p>
+</div></blockquote>
+</dd></dl>
 
 <dl class="method">
 <dt id="crawler.htmlDownloader.HtmlDownloader.refresh_useragent">
 <code class="descname">refresh_useragent</code><span class="sig-paren">(</span><em>useragent</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/htmlDownloader.html#HtmlDownloader.refresh_useragent"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.htmlDownloader.HtmlDownloader.refresh_useragent" title="永久链接至目标">¶</a></dt>
-<dd></dd></dl>
+<dd><p>更新浏览器头</p>
+<blockquote>
+<div><p>&#64;param :: useragent : 打算更新的浏览器头</p>
+<p>return : None</p>
+</div></blockquote>
+</dd></dl>
 
 <dl class="method">
-<dt id="crawler.htmlDownloader.HtmlDownloader.set_header">
-<code class="descname">set_header</code><span class="sig-paren">(</span><em>headers</em>, <em>level=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/htmlDownloader.html#HtmlDownloader.set_header"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.htmlDownloader.HtmlDownloader.set_header" title="永久链接至目标">¶</a></dt>
-<dd></dd></dl>
+<dt id="crawler.htmlDownloader.HtmlDownloader.set_headers">
+<code class="descname">set_headers</code><span class="sig-paren">(</span><em>headers</em>, <em>level=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/htmlDownloader.html#HtmlDownloader.set_headers"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.htmlDownloader.HtmlDownloader.set_headers" title="永久链接至目标">¶</a></dt>
+<dd><p>设置请求头，直接以传入的请求头作为请求头</p>
+<blockquote>
+<div><p>&#64;param :: headers : 打算设置的请求头</p>
+<p>&#64;param :: level : 相应的网络层级设置请求头，默认为None，即立即设置请求头</p>
+<p>return : None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.htmlDownloader.HtmlDownloader.set_timeout">
+<code class="descname">set_timeout</code><span class="sig-paren">(</span><em>timeout</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/htmlDownloader.html#HtmlDownloader.set_timeout"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.htmlDownloader.HtmlDownloader.set_timeout" title="永久链接至目标">¶</a></dt>
+<dd><p>设置延时</p>
+<blockquote>
+<div><p>&#64;param :: timeout : 打算设置的延时</p>
+<p>return : None</p>
+</div></blockquote>
+</dd></dl>
 
 </dd></dl>
 
@@ -352,8 +391,8 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="crawler.requestManager.RequestManager.new_request_size">
-<code class="descname">new_request_size</code><span class="sig-paren">(</span><em>level=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.new_request_size"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.new_request_size" title="永久链接至目标">¶</a></dt>
+<dt id="crawler.requestManager.RequestManager.new_requests_size">
+<code class="descname">new_requests_size</code><span class="sig-paren">(</span><em>level=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.new_requests_size"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.new_requests_size" title="永久链接至目标">¶</a></dt>
 <dd><p>待爬取的请求集合长度</p>
 <blockquote>
 <div><p>&#64;param :: level : 获取指定层数的请求集合长度</p>
@@ -362,8 +401,8 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="crawler.requestManager.RequestManager.old_request_size">
-<code class="descname">old_request_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.old_request_size"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.old_request_size" title="永久链接至目标">¶</a></dt>
+<dt id="crawler.requestManager.RequestManager.old_requests_size">
+<code class="descname">old_requests_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.old_requests_size"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.old_requests_size" title="永久链接至目标">¶</a></dt>
 <dd><p>已请求的请求集合长度</p>
 <blockquote>
 <div><p>&#64;param :: level : 获取指定层数的请求集合长度</p>
@@ -466,7 +505,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Api use case.html" class="btn btn-neutral float-right" title="Api use case" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Api use case.html" class="btn btn-neutral float-right" title="Api test document" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="Api document.html" class="btn btn-neutral" title="Api document" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

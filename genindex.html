@@ -85,7 +85,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Api document.html">Api document</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Api use case.html">Api use case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Api use case.html">Api test document</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Install.html">Installer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="About.html">About</a></li>
 </ul>
@@ -197,11 +197,15 @@
 </li>
       <li><a href="crawler.html#module-crawler.logger">crawler.logger (模块)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="crawler.html#module-crawler.requestManager">crawler.requestManager (模块)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="crawler.html#module-crawler.spider">crawler.spider (模块)</a>
+</li>
+      <li><a href="crawler.test.html#module-crawler.test.test_htmlDownloader">crawler.test.test_htmlDownloader (模块)</a>
+</li>
+      <li><a href="crawler.test.html#module-crawler.test.test_htmlParser">crawler.test.test_htmlParser (模块)</a>
 </li>
       <li><a href="crawler.test.html#module-crawler.test.test_requestManager">crawler.test.test_requestManager (模块)</a>
 </li>
@@ -252,6 +256,10 @@
 
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="crawler.test.html#crawler.test.test_requestManager.test_RequestManager.generate_requests">generate_requests() (crawler.test.test_requestManager.test_RequestManager 方法)</a>
+</li>
+  </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="crawler.html#crawler.requestManager.RequestManager.get_new_request">get_new_request() (crawler.requestManager.RequestManager 方法)</a>
 </li>
@@ -307,7 +315,7 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="crawler.html#crawler.requestManager.RequestManager.new_request_size">new_request_size() (crawler.requestManager.RequestManager 方法)</a>
+      <li><a href="crawler.html#crawler.requestManager.RequestManager.new_requests_size">new_requests_size() (crawler.requestManager.RequestManager 方法)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -315,7 +323,7 @@
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="crawler.html#crawler.requestManager.RequestManager.old_request_size">old_request_size() (crawler.requestManager.RequestManager 方法)</a>
+      <li><a href="crawler.html#crawler.requestManager.RequestManager.old_requests_size">old_requests_size() (crawler.requestManager.RequestManager 方法)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -341,8 +349,6 @@
 </li>
       <li><a href="crawler.html#crawler.requestManager.RequestManager">RequestManager (crawler.requestManager 中的类)</a>
 </li>
-      <li><a href="crawler.test.html#crawler.test.test_requestManager.requestManager_test">requestManager_test (crawler.test.test_requestManager 中的类)</a>
-</li>
   </ul></td>
 </tr></table>
 
@@ -351,14 +357,22 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="crawler.html#crawler.logger.set_color">set_color() (在 crawler.logger 模块中)</a>
 </li>
-      <li><a href="crawler.html#crawler.htmlDownloader.HtmlDownloader.set_header">set_header() (crawler.htmlDownloader.HtmlDownloader 方法)</a>
+      <li><a href="crawler.html#crawler.htmlDownloader.HtmlDownloader.set_headers">set_headers() (crawler.htmlDownloader.HtmlDownloader 方法)</a>
+</li>
+      <li><a href="crawler.html#crawler.htmlDownloader.HtmlDownloader.set_timeout">set_timeout() (crawler.htmlDownloader.HtmlDownloader 方法)</a>
 </li>
       <li><a href="crawler.html#crawler.logger.set_win_color">set_win_color() (在 crawler.logger 模块中)</a>
 </li>
       <li><a href="crawler.html#crawler.dataItem.DataItem.setField">setField() (crawler.dataItem.DataItem 方法)</a>
 </li>
-      <li><a href="crawler.test.html#crawler.test.test_requestManager.requestManager_test.setUp">setUp() (crawler.test.test_requestManager.requestManager_test 方法)</a>
+      <li><a href="crawler.test.html#crawler.test.test_htmlDownloader.test_HtmlDownloader.setUp">setUp() (crawler.test.test_htmlDownloader.test_HtmlDownloader 方法)</a>
+
+      <ul>
+        <li><a href="crawler.test.html#crawler.test.test_htmlParser.test_HtmlParser.setUp">(crawler.test.test_htmlParser.test_HtmlParser 方法)</a>
 </li>
+        <li><a href="crawler.test.html#crawler.test.test_requestManager.test_RequestManager.setUp">(crawler.test.test_requestManager.test_RequestManager 方法)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="crawler.html#crawler.spider.Spider">Spider (crawler.spider 中的类)</a>
@@ -381,19 +395,37 @@
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="crawler.test.html#crawler.test.test_requestManager.requestManager_test.test_add_new_request">test_add_new_request() (crawler.test.test_requestManager.requestManager_test 方法)</a>
+      <li><a href="crawler.test.html#crawler.test.test_requestManager.test_RequestManager.test_add_new_request">test_add_new_request() (crawler.test.test_requestManager.test_RequestManager 方法)</a>
 </li>
-      <li><a href="crawler.test.html#crawler.test.test_requestManager.requestManager_test.test_add_new_requests">test_add_new_requests() (crawler.test.test_requestManager.requestManager_test 方法)</a>
+      <li><a href="crawler.test.html#crawler.test.test_requestManager.test_RequestManager.test_add_new_requests">test_add_new_requests() (crawler.test.test_requestManager.test_RequestManager 方法)</a>
 </li>
-      <li><a href="crawler.test.html#crawler.test.test_requestManager.requestManager_test.test_get_new_request">test_get_new_request() (crawler.test.test_requestManager.requestManager_test 方法)</a>
+      <li><a href="crawler.test.html#crawler.test.test_htmlDownloader.test_HtmlDownloader.test_download">test_download() (crawler.test.test_htmlDownloader.test_HtmlDownloader 方法)</a>
+</li>
+      <li><a href="crawler.test.html#crawler.test.test_requestManager.test_RequestManager.test_get_new_request">test_get_new_request() (crawler.test.test_requestManager.test_RequestManager 方法)</a>
+</li>
+      <li><a href="crawler.test.html#crawler.test.test_requestManager.test_RequestManager.test_has_new_request">test_has_new_request() (crawler.test.test_requestManager.test_RequestManager 方法)</a>
+</li>
+      <li><a href="crawler.test.html#crawler.test.test_htmlDownloader.test_HtmlDownloader">test_HtmlDownloader (crawler.test.test_htmlDownloader 中的类)</a>
+</li>
+      <li><a href="crawler.test.html#crawler.test.test_htmlParser.test_HtmlParser">test_HtmlParser (crawler.test.test_htmlParser 中的类)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="crawler.test.html#crawler.test.test_requestManager.requestManager_test.test_has_new_request">test_has_new_request() (crawler.test.test_requestManager.requestManager_test 方法)</a>
+      <li><a href="crawler.test.html#crawler.test.test_requestManager.test_RequestManager.test_new_request_size">test_new_request_size() (crawler.test.test_requestManager.test_RequestManager 方法)</a>
 </li>
-      <li><a href="crawler.test.html#crawler.test.test_requestManager.requestManager_test.test_new_request_size">test_new_request_size() (crawler.test.test_requestManager.requestManager_test 方法)</a>
+      <li><a href="crawler.test.html#crawler.test.test_requestManager.test_RequestManager.test_old_request_size">test_old_request_size() (crawler.test.test_requestManager.test_RequestManager 方法)</a>
 </li>
-      <li><a href="crawler.test.html#crawler.test.test_requestManager.requestManager_test.test_old_request_size">test_old_request_size() (crawler.test.test_requestManager.requestManager_test 方法)</a>
+      <li><a href="crawler.test.html#crawler.test.test_htmlDownloader.test_HtmlDownloader.test_refresh_headers">test_refresh_headers() (crawler.test.test_htmlDownloader.test_HtmlDownloader 方法)</a>
+</li>
+      <li><a href="crawler.test.html#crawler.test.test_htmlDownloader.test_HtmlDownloader.test_refresh_proxy">test_refresh_proxy() (crawler.test.test_htmlDownloader.test_HtmlDownloader 方法)</a>
+</li>
+      <li><a href="crawler.test.html#crawler.test.test_htmlDownloader.test_HtmlDownloader.test_refresh_useragent">test_refresh_useragent() (crawler.test.test_htmlDownloader.test_HtmlDownloader 方法)</a>
+</li>
+      <li><a href="crawler.test.html#crawler.test.test_requestManager.test_RequestManager">test_RequestManager (crawler.test.test_requestManager 中的类)</a>
+</li>
+      <li><a href="crawler.test.html#crawler.test.test_htmlDownloader.test_HtmlDownloader.test_set_headers">test_set_headers() (crawler.test.test_htmlDownloader.test_HtmlDownloader 方法)</a>
+</li>
+      <li><a href="crawler.test.html#crawler.test.test_htmlDownloader.test_HtmlDownloader.test_set_timeout">test_set_timeout() (crawler.test.test_htmlDownloader.test_HtmlDownloader 方法)</a>
 </li>
   </ul></td>
 </tr></table>

@@ -1,8 +1,7 @@
-crawler Api
-================
+api document
+===============
 
-
-crawler.dataItem 
+crawler.dataItem
 -----------------------
 
 .. automodule:: crawler.dataItem
@@ -10,7 +9,7 @@ crawler.dataItem
     :undoc-members:
     :show-inheritance:
 
-crawler.htmlDownloader 
+crawler.htmlDownloader
 -----------------------------
 
 .. automodule:: crawler.htmlDownloader
@@ -18,7 +17,7 @@ crawler.htmlDownloader
     :undoc-members:
     :show-inheritance:
 
-crawler.htmlParser 
+crawler.htmlParser
 -------------------------
 
 .. automodule:: crawler.htmlParser

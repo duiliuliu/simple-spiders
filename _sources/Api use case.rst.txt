@@ -1,4 +1,4 @@
-Api use case
+Api test document
 ==================
 
 .. toctree::
