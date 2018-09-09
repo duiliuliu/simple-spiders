@@ -1,7 +1,6 @@
 # -*- coding： utf-8 -*-
 # author：pengr
 import os
-import sys
 import threading
 import xlsxwriter
 import csv
@@ -20,12 +19,22 @@ def synchronized(func):
     return lock_func
 
 
-class DataWrite():
+class DataWriter():
+    '''
+    数据写入类
+    支持多种数据格式写入文本，初始化类实例时，可传入一个字典格式的headers,key作为所有数据的key,value作为数据写入后的头部
+    '''
 
     instance = {}
 
     @synchronized
     def __new__(cls, *args, **kwargs):
+        '''
+        数据写入构造器，按照文件名构造写入类，相同的文件名返回同一个实例
+
+            @member :: instance : 存贮实例集合
+
+        '''
         if args:
             filename = args[0]
         else:
@@ -35,68 +44,119 @@ class DataWrite():
         return cls.instance[filename]
 
     def __init__(self, filename, **kwargs):
-        if not os.path.exists('./source'):
-            os.mkdir('./source')
-        self.filename = filename
-        self.headers = []
+        '''
+        请求管理器初始化函数
+
+            @param :: filename : 数据写入文件名
+
+            @member :: headers : 数据写入文件头部
+
+            @member :: type : 数据写入文件格式，默认txt
+
+            @member :: encoding : 数据写入文件编码，默认utf-8
+
+            @member :: write_type : 数据写入文件方式，默认'a'
+
+            @member :: logger : 日志
+        '''
+        self.__filename = filename
+        self.__headers = []
         if filename.split('.')[-1]:
-            self.type = filename.split('.')[-1]
+            self.__type = filename.split('.')[-1]
         else:
-            self.type = 'txt'
-        self.encoding = 'utf-8'
-        self.write_type = 'a'
+            self.__type = 'txt'
+        self.__encoding = 'utf-8'
+        self.__write_type = 'a'
         self.__attribute = {}
         self.__data = []
-        self.logger = Logger(__name__)
+        self.__logger = Logger(__name__)
 
         for k, v in kwargs.items():
             setattr(self, k, v)
 
     @staticmethod
     def _writter_buffer_flush():
-        for name in DataWrite.instance:
-            writter = DataWrite.instance[name]
+        '''
+        类方法，刷新文件内容
+
+            @param :: filename : 打算刷新的文件名称
+
+            return : None
+        '''
+        for name in DataWriter.instance:
+            writter = DataWriter.instance[name]
             writter.flush_buffer()
 
     def write(self, items=None):
-        if self.type == 'txt':
+        '''
+        文件写入，写入数据格式为二维结构，即二维列表或者二维字典，或者相互组合
+
+            @param :: items : 数据序列
+
+            return : None
+        '''
+        if self.__type == 'txt':
             self._write_txt(items)
-        elif self.type == 'csv':
+        elif self.__type == 'csv':
             self._write_csv(items)
-        elif self.type == 'xexcel':
+        elif self.__type == 'xexcel':
             self._write_xexcel(items)
-        elif self.type == 'excel':
+        elif self.__type == 'excel':
             self._write_excel(items)
         else:
-            self.logger.exception("Illegal file-type defined")
+            self.__logger.exception("Illegal file-type defined")
 
     def write_buffer(self, item, flush_num=1000):
+        '''
+        文件以缓冲方式写入，写入数据格式为二维结构，即二维列表或者二维字典，或者相互组合
+
+            @param :: items : 数据序列
+
+            return : None
+        '''
         if not item:
             return
         if type(item) == dict:
             item = self._dict_to_list(item)
-        self.__data.append(item)
+        self.__data.extend(item)
         if len(self.__data) > flush_num:
             self.flush_buffer()
 
     # @staticmethod
     def has_buffer(self):
+        '''
+        缓冲区是否有数据
+
+            return : Bool
+        '''
         return len(self.__data) > 0
 
     def flush_buffer(self):
+        '''
+        刷新缓冲
+
+            return : None
+        '''
         if len(self.__data) > 0:
             self.write(self.__data)
             del self.__data[:]
 
     def _write_txt(self, items):
-        with open(self.filename, self.write_type, encoding=self.encoding) as f:
-            if self.headers and (self.filename not in self.__attribute):
-                item = self.headers
-                if type(self.headers) == dict:
-                    item = self._dict_to_list(self.headers)
+        '''
+        (私有函数)txt格式写入，写入数据格式为二维结构，即二维列表或者二维字典，或者相互组合
+
+            @param :: items : 数据序列
+
+            return : None
+        '''
+        with open(self.__filename, self.__write_type, encoding=self.__encoding) as f:
+            if self.__headers and (self.__filename not in self.__attribute):
+                item = self.__headers
+                if type(self.__headers) == dict:
+                    item = self._dict_to_list(self.__headers)
                 f.write('\t'.join(item)+'\n')
                 f.write('-'*40+'\n')
-                self.__attribute[self.filename] = '1'
+                self.__attribute[self.__filename] = '1'
 
             for item in items:
                 if type(item) == dict:
@@ -104,20 +164,27 @@ class DataWrite():
                 f.write('\t'.join(item)+'\n')
 
     def _write_excel(self, items):
+        '''
+        (私有函数)xls格式写入，写入数据格式为二维结构，即二维列表或者二维字典，或者相互组合
+
+            @param :: items : 数据序列
+
+            return : None
+        '''
         book = Workbook()
         worksheet = book.add_sheet("Sheet 1")
         row = 0
         col = 0
-        if self.headers and (self.filename not in self.__attribute):
-            item = self.headers
-            if type(self.headers) == dict:
-                item = self._dict_to_list(self.headers)
+        if self.__headers and (self.__filename not in self.__attribute):
+            item = self.__headers
+            if type(self.__headers) == dict:
+                item = self._dict_to_list(self.__headers)
             for h in item:
                 worksheet.write.write(row, col, h)
                 col += 1
             row += 1
             col = 0
-            self.__attribute[self.filename] = '1'
+            self.__attribute[self.__filename] = '1'
 
         for item in items:
             if type(item) == dict:
@@ -128,26 +195,32 @@ class DataWrite():
             row += 1
             col = 0
             if row > 65535:
-                print(
-                    "\033[31mHit limit of #of rows in one sheet(65535).\033[0m", file=sys.stderr)
+                self.__logger.warn("Hit limit of #of rows in one sheet(65535).")
                 break
-        book.save(self.filename)
+        book.save(self.__filename)
 
     def _write_xexcel(self, items):
-        workbook = xlsxwriter.Workbook(self.filename)
+        '''
+        (私有函数)xlsx格式写入，写入数据格式为二维结构，即二维列表或者二维字典，或者相互组合
+
+            @param :: items : 数据序列
+
+            return : None
+        '''
+        workbook = xlsxwriter.Workbook(self.__filename)
         worksheet = workbook.add_worksheet()
         row = 0
         col = 0
-        if self.headers and (self.filename not in self.__attribute):
-            item = self.headers
-            if type(self.headers) == dict:
-                item = self._dict_to_list(self.headers)
+        if self.__headers and (self.__filename not in self.__attribute):
+            item = self.__headers
+            if type(self.__headers) == dict:
+                item = self._dict_to_list(self.__headers)
             for h in item:
                 worksheet.write(row, col, h)
                 col += 1
             row += 1
             col = 0
-            self.__attribute[self.filename] = '1'
+            self.__attribute[self.__filename] = '1'
 
         for item in items:
             if type(item) == dict:
@@ -161,14 +234,21 @@ class DataWrite():
         workbook.close()
 
     def _write_csv(self, items):
-        with open(self.filename, self.write_type, newline='', encoding=self.encoding) as f:
+        '''
+        (私有函数)csv格式写入，写入数据格式为二维结构，即二维列表或者二维字典，或者相互组合
+
+            @param :: items : 数据序列
+
+            return : None
+        '''
+        with open(self.__filename, self.__write_type, newline='', encoding=self.__encoding) as f:
             csvfile = csv.writer(f)
-            if self.headers and (self.filename not in self.__attribute):
-                item = self.headers
-                if type(self.headers) == dict:
-                    item = self._dict_to_list(self.headers)
+            if self.__headers and (self.__filename not in self.__attribute):
+                item = self.__headers
+                if type(self.__headers) == dict:
+                    item = self._dict_to_list(self.__headers)
                 csvfile.writerow(item)
-                self.__attribute[self.filename] = '1'
+                self.__attribute[self.__filename] = '1'
 
             for item in items:
                 if type(item) == dict:
@@ -176,12 +256,19 @@ class DataWrite():
                 csvfile.writerow(item)
 
     def _dict_to_list(self, items_dict):
+        '''
+        (私有函数)字典转换列表，以文件头部为基准
+
+            @param :: items_dict : 打算转换的列表
+
+            return : None
+        '''
         try:
             items = []
-            if not self.headers:
+            if not self.__headers:
                 self.header = list(items_dict.keys())
 
-            for key in self.headers:
+            for key in self.__headers:
                 try:
                     items.append(items_dict[key])
                 except:
@@ -189,4 +276,4 @@ class DataWrite():
 
             return items
         except Exception as e:
-            self.logger.exception('please set ture headers in writter!\n')
+            self.__logger.exception('please set true headers in writter!')

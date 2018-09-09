@@ -56,12 +56,6 @@ def set_win_color(color, handle=std_out_handle):
 
 
 class Logger:
-    instance = None
-
-    def __new__(cls, *args, **kwargs):
-        if cls.instance is None:
-            cls.instance = super().__new__(cls)
-        return cls.instance
 
     def __init__(self, name, clevel=logging.DEBUG, Flevel=logging.DEBUG):
         self.logger = logging.getLogger(name)

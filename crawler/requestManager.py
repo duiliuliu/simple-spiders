@@ -16,17 +16,17 @@ class RequestManager(object):
         '''
         请求管理器初始化函数
 
-            @param :: limit_level : 爬取层数限制，默认限制3层
+            @param :: __limit_level : 爬取层数限制，默认限制3层
             @member :: __level : 当前爬取层数
-            @member :: new_requests : 未爬取请求集合，采用字典存储，key对应相应的层数，value相应层数未请求的请求集合
-            @member :: old_requests : 已存储请求集合，采用元组存储，每个请求计算128位md5码进行存储
-            @member :: limit_level : 爬取层数限制，默认限制3层
+            @member :: __new_requests : 未爬取请求集合，采用字典存储，key对应相应的层数，value相应层数未请求的请求集合
+            @member :: __old_requests : 已存储请求集合，采用元组存储，每个请求计算128位md5码进行存储
+            @member :: __limit_level : 爬取层数限制，默认限制3层
 
         '''
         self.__level = 0
-        self.new_requests = {}
-        self.old_requests = set()
-        self.limit_level = limit_level
+        self.__new_requests = {}
+        self.__old_requests = set()
+        self.__limit_level = limit_level
 
     def add_new_requests(self, requests, add_level=1):
         '''
@@ -55,10 +55,10 @@ class RequestManager(object):
             return : None
 
         '''
-        if not request:
-            return
+        if not request or not type(request) == dict:
+            raise Exception('please construst right request dict')
         request_str = json.dumps(request)
-        if not request_str in self.old_requests:
+        if not request_str in self.__old_requests:
             self.__add_new_request(request, add_level)
             self.__add_old_request(request_str)
 
@@ -86,11 +86,20 @@ class RequestManager(object):
         '''
         if not self.has_new_request():
             return None
-        if len(self.new_requests[str(self.__level)]) <= 0:
+        if len(self.__new_requests[str(self.__level)]) <= 1:
             self.__add_level()
         if not level:
             level = self.__level
         return self.__get_new_request(level)
+
+    def get_level(self,):
+        '''
+        获取当前层级
+
+            return : int
+
+        '''
+        return self.__level
 
     def new_requests_size(self, level=None):
         '''
@@ -104,7 +113,7 @@ class RequestManager(object):
         if level:
             return self.__new_request_size(level)
         else:
-            return sum(map(lambda x: self.__new_request_size(x), self.new_requests))
+            return sum(map(lambda x: self.__new_request_size(x), self.__new_requests))
 
     def old_requests_size(self):
         '''
@@ -115,7 +124,7 @@ class RequestManager(object):
             return : int
 
         '''
-        return len(self.old_requests)
+        return len(self.__old_requests)
 
     def __add_level(self,):
         '''
@@ -124,8 +133,7 @@ class RequestManager(object):
             return : None
 
         '''
-        if self.has_new_request(self.__level):
-            self.__level += 1
+        self.__level += 1
 
     def __init_level(self, level):
         '''
@@ -136,8 +144,8 @@ class RequestManager(object):
             return : None
 
         '''
-        if not str(level) in self.new_requests:
-            self.new_requests[str(level)] = set()
+        if not str(level) in self.__new_requests:
+            self.__new_requests[str(level)] = set()
 
     def __add_new_request(self, request, add_level=1):
         '''
@@ -150,18 +158,18 @@ class RequestManager(object):
             return : None
 
         '''
-        if not str(self.__level) in self.new_requests:
+        if not str(self.__level) in self.__new_requests:
             self.__init_level(self.__level)
 
-        if self.__level+add_level > self.limit_level:
+        if self.__level+add_level > self.__limit_level:
             return
 
-        if not str(self.__level+add_level) in self.new_requests:
+        if not str(self.__level+add_level) in self.__new_requests:
             self.__init_level(self.__level+add_level)
 
         request['level'] = self.__level+add_level
         request_str = json.dumps(request)
-        self.new_requests[str(self.__level+add_level)].add(request_str)
+        self.__new_requests[str(self.__level+add_level)].add(request_str)
 
     def __add_old_request(self, request_str):
         '''
@@ -174,7 +182,7 @@ class RequestManager(object):
         '''
         md5 = hashlib.md5()
         md5.update(request_str.encode('utf-8'))
-        self.old_requests.add(md5.hexdigest()[8:-8])
+        self.__old_requests.add(md5.hexdigest()[8:-8])
 
     def __get_new_request(self, level):
         '''
@@ -183,8 +191,8 @@ class RequestManager(object):
             @param :: level : 从指定层数中提取
 
         '''
-        if str(level) in self.new_requests and self.new_requests[str(level)]:
-            return json.loads(self.new_requests[str(level)].pop())
+        if str(level) in self.__new_requests and self.__new_requests[str(level)]:
+            return json.loads(self.__new_requests[str(level)].pop())
 
     def __new_request_size(self, level):
         '''
@@ -195,6 +203,6 @@ class RequestManager(object):
             return : int
 
         '''
-        if str(level) in self.new_requests:
-            return len(self.new_requests[str(level)])
+        if str(level) in self.__new_requests:
+            return len(self.__new_requests[str(level)])
         return 0

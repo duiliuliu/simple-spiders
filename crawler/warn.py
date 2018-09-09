@@ -3,9 +3,25 @@
 
 
 class Warn():
+    '''
+    警告
+    警告对象，成员变量为警告message，__str__()返回message
+    '''
 
     def __init__(self, message):
-        self.message = message
+        '''
+        警告初始化
+
+            @member :: __message : 警告message
+
+        '''
+        self.__message = message
 
     def __str__(self):
-        return self.message
+        '''
+        对象toString函数
+
+            return message
+
+        '''
+        return self.__message
