@@ -25,7 +25,7 @@
 
 ## 开始入门
 
-`git clone` https://github.com/duiliuliu
+`git clone` https://github.com/duiliuliu/simple-spiders
 
 `python main baidu.com`
 
