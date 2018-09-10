@@ -1,0 +1,60 @@
+Api document
+===============
+
+
+crawler.htmlDownloader
+-----------------------------
+
+.. automodule:: crawler.htmlDownloader
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+crawler.htmlParser
+-------------------------
+
+.. automodule:: crawler.htmlParser
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+crawler.logger
+---------------------
+
+.. automodule:: crawler.logger
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+crawler.requestManager
+-----------------------------
+
+.. automodule:: crawler.requestManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+crawler.spider
+---------------------
+
+.. automodule:: crawler.spider
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+crawler.warn
+-------------------
+
+.. automodule:: crawler.warn
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+crawler.writter
+----------------------
+
+.. automodule:: crawler.writter
+    :members:
+    :undoc-members:
+    :show-inheritance:
+

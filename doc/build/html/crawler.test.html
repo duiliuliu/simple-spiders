@@ -1,0 +1,379 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-ch" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-ch" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Api test document &mdash; simple-spiders 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="入门指南" href="Api use case.html" />
+    <link rel="prev" title="Api单元测试" href="Api test.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> simple-spiders
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">documentation:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">综述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Api document.html">APi文档</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Api test.html">Api单元测试</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Api test document</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-crawler.test.test_htmlDownloader">crawler.test.test_htmlDownloader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crawler.test.test_htmlParser">crawler.test.test_htmlParser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crawler.test.test_requestManager">crawler.test.test_requestManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-crawler.test.test_writter">crawler.test.test_writter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Api use case.html">入门指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Install.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="About.html">关于simple-spiders</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">simple-spiders</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="Api test.html">Api单元测试</a> &raquo;</li>
+        
+      <li>Api test document</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/crawler.test.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="api-test-document">
+<h1>Api test document<a class="headerlink" href="#api-test-document" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-crawler.test.test_htmlDownloader">
+<span id="crawler-test-test-htmldownloader"></span><h2>crawler.test.test_htmlDownloader<a class="headerlink" href="#module-crawler.test.test_htmlDownloader" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="crawler.test.test_htmlDownloader.test_HtmlDownloader">
+<em class="property">class </em><code class="descclassname">crawler.test.test_htmlDownloader.</code><code class="descname">test_HtmlDownloader</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlDownloader.html#test_HtmlDownloader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_htmlDownloader.test_HtmlDownloader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<dl class="method">
+<dt id="crawler.test.test_htmlDownloader.test_HtmlDownloader.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlDownloader.html#test_HtmlDownloader.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_htmlDownloader.test_HtmlDownloader.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_htmlDownloader.test_HtmlDownloader.test_download">
+<code class="descname">test_download</code><span class="sig-paren">(</span><em>mock_get</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlDownloader.html#test_HtmlDownloader.test_download"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_htmlDownloader.test_HtmlDownloader.test_download" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_htmlDownloader.test_HtmlDownloader.test_refresh_headers">
+<code class="descname">test_refresh_headers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlDownloader.html#test_HtmlDownloader.test_refresh_headers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_htmlDownloader.test_HtmlDownloader.test_refresh_headers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_htmlDownloader.test_HtmlDownloader.test_refresh_proxy">
+<code class="descname">test_refresh_proxy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlDownloader.html#test_HtmlDownloader.test_refresh_proxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_htmlDownloader.test_HtmlDownloader.test_refresh_proxy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_htmlDownloader.test_HtmlDownloader.test_refresh_useragent">
+<code class="descname">test_refresh_useragent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlDownloader.html#test_HtmlDownloader.test_refresh_useragent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_htmlDownloader.test_HtmlDownloader.test_refresh_useragent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_htmlDownloader.test_HtmlDownloader.test_set_headers">
+<code class="descname">test_set_headers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlDownloader.html#test_HtmlDownloader.test_set_headers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_htmlDownloader.test_HtmlDownloader.test_set_headers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_htmlDownloader.test_HtmlDownloader.test_set_timeout">
+<code class="descname">test_set_timeout</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlDownloader.html#test_HtmlDownloader.test_set_timeout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_htmlDownloader.test_HtmlDownloader.test_set_timeout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crawler.test.test_htmlParser">
+<span id="crawler-test-test-htmlparser"></span><h2>crawler.test.test_htmlParser<a class="headerlink" href="#module-crawler.test.test_htmlParser" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="crawler.test.test_htmlParser.test_HtmlParser">
+<em class="property">class </em><code class="descclassname">crawler.test.test_htmlParser.</code><code class="descname">test_HtmlParser</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlParser.html#test_HtmlParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_htmlParser.test_HtmlParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<dl class="method">
+<dt id="crawler.test.test_htmlParser.test_HtmlParser.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlParser.html#test_HtmlParser.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_htmlParser.test_HtmlParser.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_htmlParser.test_HtmlParser.test_parse">
+<code class="descname">test_parse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlParser.html#test_HtmlParser.test_parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_htmlParser.test_HtmlParser.test_parse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_htmlParser.test_HtmlParser.test_self_parse_data">
+<code class="descname">test_self_parse_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlParser.html#test_HtmlParser.test_self_parse_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_htmlParser.test_HtmlParser.test_self_parse_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_htmlParser.test_HtmlParser.test_self_parse_url">
+<code class="descname">test_self_parse_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_htmlParser.html#test_HtmlParser.test_self_parse_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_htmlParser.test_HtmlParser.test_self_parse_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crawler.test.test_requestManager">
+<span id="crawler-test-test-requestmanager"></span><h2>crawler.test.test_requestManager<a class="headerlink" href="#module-crawler.test.test_requestManager" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="crawler.test.test_requestManager.test_RequestManager">
+<em class="property">class </em><code class="descclassname">crawler.test.test_requestManager.</code><code class="descname">test_RequestManager</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#test_RequestManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.test_RequestManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<dl class="method">
+<dt id="crawler.test.test_requestManager.test_RequestManager.generate_requests">
+<code class="descname">generate_requests</code><span class="sig-paren">(</span><em>num</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#test_RequestManager.generate_requests"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.test_RequestManager.generate_requests" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_requestManager.test_RequestManager.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#test_RequestManager.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.test_RequestManager.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_requestManager.test_RequestManager.test_add_new_request">
+<code class="descname">test_add_new_request</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#test_RequestManager.test_add_new_request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.test_RequestManager.test_add_new_request" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_requestManager.test_RequestManager.test_add_new_requests">
+<code class="descname">test_add_new_requests</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#test_RequestManager.test_add_new_requests"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.test_RequestManager.test_add_new_requests" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_requestManager.test_RequestManager.test_get_new_request">
+<code class="descname">test_get_new_request</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#test_RequestManager.test_get_new_request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.test_RequestManager.test_get_new_request" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_requestManager.test_RequestManager.test_has_new_request">
+<code class="descname">test_has_new_request</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#test_RequestManager.test_has_new_request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.test_RequestManager.test_has_new_request" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_requestManager.test_RequestManager.test_new_request_size">
+<code class="descname">test_new_request_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#test_RequestManager.test_new_request_size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.test_RequestManager.test_new_request_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_requestManager.test_RequestManager.test_old_request_size">
+<code class="descname">test_old_request_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_requestManager.html#test_RequestManager.test_old_request_size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_requestManager.test_RequestManager.test_old_request_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crawler.test.test_writter">
+<span id="crawler-test-test-writter"></span><h2>crawler.test.test_writter<a class="headerlink" href="#module-crawler.test.test_writter" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="crawler.test.test_writter.test_DataWriter">
+<em class="property">class </em><code class="descclassname">crawler.test.test_writter.</code><code class="descname">test_DataWriter</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_writter.html#test_DataWriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_writter.test_DataWriter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<dl class="method">
+<dt id="crawler.test.test_writter.test_DataWriter.setUp">
+<code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_writter.html#test_DataWriter.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_writter.test_DataWriter.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.test.test_writter.test_DataWriter.test_write_txt">
+<code class="descname">test_write_txt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/test/test_writter.html#test_DataWriter.test_write_txt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.test.test_writter.test_DataWriter.test_write_txt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Api use case.html" class="btn btn-neutral float-right" title="入门指南" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Api test.html" class="btn btn-neutral" title="Api单元测试" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, pengr.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            LANGUAGE:'zh-ch',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

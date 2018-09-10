@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-ch" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-ch" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>入门指南 &mdash; simple-spiders 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> simple-spiders
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">综述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Api document.html">APi文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Api test.html">Api单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Api use case.html">入门指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Install.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="About.html">关于simple-spiders</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">simple-spiders</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>入门指南</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/11.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>入门指南<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-crawler.use_case.douban_multiThread_spiders">
+<span id="crawler-use-case-douban-multithread-spiders"></span><h2>crawler.use_case.douban_multiThread_spiders<a class="headerlink" href="#module-crawler.use_case.douban_multiThread_spiders" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="crawler.use_case.douban_multiThread_spiders.多线程爬取示例">
+<code class="descclassname">crawler.use_case.douban_multiThread_spiders.</code><code class="descname">多线程爬取示例</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/use_case/douban_multiThread_spiders.html#多线程爬取示例"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.use_case.douban_multiThread_spiders.多线程爬取示例" title="Permalink to this definition">¶</a></dt>
+<dd><p>simple-spiders多线程爬取案列 本篇案列带你完成下列任务：</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>创建一个simple-spiders项目</li>
+<li>创建爬取网站的spider</li>
+<li>存储爬取到的数据</li>
+<li>以多线程方式启动</li>
+</ol>
+</div></blockquote>
+<p>导入库</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+<span class="go">from crawler.spider import Spider</span>
+<span class="go">from crawler.writter import DataWriter</span>
+<span class="go">from lxml import html</span>
+</pre></div>
+</div>
+<p>创建写入对象</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+<span class="go">writter = DataWriter(&#39;data_multi_process.txt&#39;)</span>
+</pre></div>
+</div>
+<p>URL解析函数实现</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+<span class="go">def geturl(response):</span>
+<span class="go">    body = html.fromstring(response[&#39;text&#39;])</span>
+<span class="go">    if response[&#39;level&#39;] == 1:</span>
+<span class="go">        urls = [{&#39;url&#39;: &#39;https://movie.douban.com/subject/26810318/comments&#39; +</span>
+<span class="go">                url} for url in body.xpath(&#39;//*[@id=&quot;paginator&quot;]/a/@href&#39;)]</span>
+<span class="go">    else:</span>
+<span class="go">        urls = [{&#39;url&#39;: &#39;https://movie.douban.com/subject/26810318/comments&#39; +</span>
+<span class="go">                url} for url in body.xpath(&#39;//*[@id=&quot;paginator&quot;]/a[3]/@href&#39;)]</span>
+</pre></div>
+</div>
+<blockquote>
+<div>return urls</div></blockquote>
+<p>Data解析函数实现</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+<span class="go">def getdata(response):</span>
+<span class="go">    body = html.fromstring(response[&#39;text&#39;])</span>
+<span class="go">    comments = body.xpath(&#39;//*[@id=&quot;comments&quot;]/div/div[2]/p/span/text()&#39;)</span>
+<span class="go">    writter.write_buffer([comments])</span>
+</pre></div>
+</div>
+<p>main函数实现</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+<span class="go">if __name__ == &#39;__main__&#39;:</span>
+<span class="go">    requests = []</span>
+<span class="go">    for i in range(0, 100, 20):</span>
+<span class="go">        requests.append({</span>
+<span class="go">            &#39;url&#39;: &#39;https://movie.douban.com/subject/26810318/comments?start={}&amp;limit=20&amp;sort=new_score&amp;status=P&#39;.format(i)</span>
+<span class="go">        })</span>
+<span class="go">    spider = Spider(requests,</span>
+<span class="go">                    getUrl_func=geturl, getData_func=getdata, level=3)</span>
+<span class="go">    spider.start_multiThread_crawl(4)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-crawler.use_case.douban_spiders">
+<span id="crawler-use-case-douban-spiders"></span><h2>crawler.use_case.douban_spiders<a class="headerlink" href="#module-crawler.use_case.douban_spiders" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="crawler.use_case.douban_spiders.简单示例">
+<code class="descclassname">crawler.use_case.douban_spiders.</code><code class="descname">简单示例</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/use_case/douban_spiders.html#简单示例"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.use_case.douban_spiders.简单示例" title="Permalink to this definition">¶</a></dt>
+<dd><p>simple-spiders实战小案例
+本篇案列带你完成下列任务：</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>创建一个simple-spiders项目</li>
+<li>编写爬取网站的spider</li>
+<li>存储爬取到的数据</li>
+</ol>
+</div></blockquote>
+<p>首先我们创建简单的simple-spider项目，创建一个spiders.py(文件命名随意)</p>
+<blockquote>
+<div><p>'引入我们需要的库'</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">crawler.spider</span> <span class="k">import</span> <span class="n">Spider</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">crawler.writter</span> <span class="k">import</span> <span class="n">DataWriter</span>
+</pre></div>
+</div>
+<p>'创建爬虫'</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">spider</span> <span class="o">=</span> <span class="n">Spider</span><span class="p">(</span>
+<span class="go">    &#39;https://movie.douban.com/subject/26810318/comments?start=0&amp;limit=20&amp;sort=new_score&amp;status=P&#39;)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">spider</span><span class="o">.</span><span class="n">start_crawl</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>这样我们就通过simple-spiders 简单建立了一个爬虫</p>
+</div></blockquote>
+<p>通常，对于所有爬取的数据我们是有所甄别的，而且也并不是获取所有网站中的URL再次进行爬取
+而是对于特定的URL，添加进队列。这个时候，我们可以自定义解析URL的函数与解析数据的函数，然后传入spider()中</p>
+<p>如：</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="crawler.use_case.douban_spiders.自定义解析函数示例">
+<code class="descclassname">crawler.use_case.douban_spiders.</code><code class="descname">自定义解析函数示例</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/use_case/douban_spiders.html#自定义解析函数示例"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.use_case.douban_spiders.自定义解析函数示例" title="Permalink to this definition">¶</a></dt>
+<dd><p>导入库</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+<span class="go"> from crawler.spider import Spider</span>
+<span class="go"> from crawler.writter import DataWriter</span>
+<span class="go"> from lxml import html</span>
+</pre></div>
+</div>
+<p>创建写入对象</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+<span class="go"> writter = DataWriter(&#39;data.txt&#39;)</span>
+</pre></div>
+</div>
+<p>自定义URL解析</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+<span class="go"> def geturl(response):</span>
+<span class="go">     #自定义URL解析函数，对下一页的URL进行提取。观察网站结构可以看出：</span>
+<span class="go">     #    首页与其他页的下一页不是同一个xpath路径，根据不同的网络层级进行解析</span>
+<span class="go">     body = html.fromstring(response[&#39;text&#39;])</span>
+<span class="go">     if response[&#39;level&#39;] == 1:</span>
+<span class="go">         urls = [{&#39;url&#39;: &#39;https://movie.douban.com/subject/26810318/comments&#39; +</span>
+<span class="go">                 url} for url in body.xpath(&#39;//*[@id=&quot;paginator&quot;]/a/@href&#39;)]</span>
+<span class="go">     else:</span>
+<span class="go">         urls = [{&#39;url&#39;: &#39;https://movie.douban.com/subject/26810318/comments&#39; +</span>
+<span class="go">                 url} for url in body.xpath(&#39;//*[@id=&quot;paginator&quot;]/a[3]/@href&#39;)]</span>
+<span class="go">     return urls</span>
+</pre></div>
+</div>
+<p>自定义Data解析</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+<span class="go"> def getdata(response):</span>
+<span class="go">    自定义data解析函数，对我们所需要的数据进行提取。</span>
+<span class="go">    body = html.fromstring(response[&#39;text&#39;])</span>
+<span class="go">    comments = body.xpath(&#39;//*[@id=&quot;comments&quot;]/div/div[2]/p/span/text()&#39;)</span>
+<span class="go">    writter.write_buffer([comments])</span>
+</pre></div>
+</div>
+<p>进行构建spider,传入我们自定义的解析函数进行解析</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span>
+<span class="go"> spider = Spider(</span>
+<span class="go">     &#39;https://movie.douban.com/subject/26810318/comments?start=0&amp;limit=20&amp;sort=new_score&amp;status=P&#39;,</span>
+<span class="go">     getUrl_func=geturl, getData_func=getdata, level=6)</span>
+<span class="go"> spider.start_crawl()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, pengr.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            LANGUAGE:'zh-ch',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
