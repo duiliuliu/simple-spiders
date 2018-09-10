@@ -1,13 +1,6 @@
-api document
+Api document
 ===============
 
-crawler.dataItem
------------------------
-
-.. automodule:: crawler.dataItem
-    :members:
-    :undoc-members:
-    :show-inheritance:
 
 crawler.htmlDownloader
 -----------------------------

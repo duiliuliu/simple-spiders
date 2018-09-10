@@ -1,4 +1,4 @@
-Installer
+安装
 =================
 
 `git clone` https://github.com/duiliuliu

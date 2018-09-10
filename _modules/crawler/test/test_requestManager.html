@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-ch" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-ch" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>crawler.test.test_requestManager &mdash; simple-spiders 1.0.0 文档</title>
+  <title>crawler.test.test_requestManager &mdash; simple-spiders 0.0.1 documentation</title>
   
 
   
@@ -26,8 +26,8 @@
 
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="index" title="索引" href="../../../genindex.html" />
-    <link rel="search" title="搜索" href="../../../search.html" /> 
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
 
   
   <script src="../../../_static/js/modernizr.min.js"></script>
@@ -55,10 +55,6 @@
           
             
             
-              <div class="version">
-                0.1.1
-              </div>
-            
           
 
           
@@ -82,11 +78,12 @@
             
               <p class="caption"><span class="caption-text">documentation:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../Api document.html">Api document</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../Api use case.html">Api test document</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../Install.html">Installer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../About.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">综述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Api document.html">APi文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Api test.html">Api单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Api use case.html">入门指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Install.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../About.html">关于simple-spiders</a></li>
 </ul>
 
             
@@ -132,7 +129,7 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../index.html">模块代码</a> &raquo;</li>
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
         
       <li>crawler.test.test_requestManager</li>
     
@@ -149,7 +146,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>crawler.test.test_requestManager 源代码</h1><div class="highlight"><pre>
+  <h1>Source code for crawler.test.test_requestManager</h1><div class="highlight"><pre>
 <span></span><span class="c1"># -*- coding： utf-8 -*-</span>
 <span class="c1"># author：pengr</span>
 
@@ -157,8 +154,8 @@
 <span class="kn">import</span> <span class="nn">unittest</span>
 
 
-<div class="viewcode-block" id="test_RequestManager"><a class="viewcode-back" href="../../../crawler.test.html#crawler.test.test_requestManager.test_RequestManager">[文档]</a><span class="k">class</span> <span class="nc">test_RequestManager</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
-<div class="viewcode-block" id="test_RequestManager.setUp"><a class="viewcode-back" href="../../../crawler.test.html#crawler.test.test_requestManager.test_RequestManager.setUp">[文档]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="test_RequestManager"><a class="viewcode-back" href="../../../crawler.test.html#crawler.test.test_requestManager.test_RequestManager">[docs]</a><span class="k">class</span> <span class="nc">test_RequestManager</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="viewcode-block" id="test_RequestManager.setUp"><a class="viewcode-back" href="../../../crawler.test.html#crawler.test.test_requestManager.test_RequestManager.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">manager</span> <span class="o">=</span> <span class="n">RequestManager</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">request</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;www.baidu.com&#39;</span><span class="p">,</span>
@@ -168,7 +165,7 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">requests_add_level</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span></div>
 
-<div class="viewcode-block" id="test_RequestManager.generate_requests"><a class="viewcode-back" href="../../../crawler.test.html#crawler.test.test_requestManager.test_RequestManager.generate_requests">[文档]</a>    <span class="k">def</span> <span class="nf">generate_requests</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+<div class="viewcode-block" id="test_RequestManager.generate_requests"><a class="viewcode-back" href="../../../crawler.test.html#crawler.test.test_requestManager.test_RequestManager.generate_requests">[docs]</a>    <span class="k">def</span> <span class="nf">generate_requests</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
         <span class="n">requests</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
             <span class="n">requests</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
@@ -177,13 +174,13 @@
             <span class="p">})</span>
         <span class="k">return</span> <span class="n">requests</span></div>
 
-<div class="viewcode-block" id="test_RequestManager.test_add_new_request"><a class="viewcode-back" href="../../../crawler.test.html#crawler.test.test_requestManager.test_RequestManager.test_add_new_request">[文档]</a>    <span class="k">def</span> <span class="nf">test_add_new_request</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="test_RequestManager.test_add_new_request"><a class="viewcode-back" href="../../../crawler.test.html#crawler.test.test_requestManager.test_RequestManager.test_add_new_request">[docs]</a>    <span class="k">def</span> <span class="nf">test_add_new_request</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">add_new_request</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">new_requests_size</span><span class="p">(),</span> <span class="mi">1</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">new_requests_size</span><span class="p">(</span>
             <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="test_RequestManager.test_add_new_requests"><a class="viewcode-back" href="../../../crawler.test.html#crawler.test.test_requestManager.test_RequestManager.test_add_new_requests">[文档]</a>    <span class="k">def</span> <span class="nf">test_add_new_requests</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="test_RequestManager.test_add_new_requests"><a class="viewcode-back" href="../../../crawler.test.html#crawler.test.test_requestManager.test_RequestManager.test_add_new_requests">[docs]</a>    <span class="k">def</span> <span class="nf">test_add_new_requests</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">add_new_requests</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">requests</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">new_requests_size</span><span class="p">(</span>
             <span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">requests</span><span class="p">))</span>
@@ -194,7 +191,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">new_requests_size</span><span class="p">(</span>
             <span class="n">level</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="test_RequestManager.test_has_new_request"><a class="viewcode-back" href="../../../crawler.test.html#crawler.test.test_requestManager.test_RequestManager.test_has_new_request">[文档]</a>    <span class="k">def</span> <span class="nf">test_has_new_request</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="test_RequestManager.test_has_new_request"><a class="viewcode-back" href="../../../crawler.test.html#crawler.test.test_requestManager.test_RequestManager.test_has_new_request">[docs]</a>    <span class="k">def</span> <span class="nf">test_has_new_request</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">requests</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate_requests</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">add_new_requests</span><span class="p">(</span><span class="n">requests</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">has_new_request</span><span class="p">())</span>
@@ -203,16 +200,16 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">has_new_request</span><span class="p">(</span>
             <span class="n">level</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="test_RequestManager.test_get_new_request"><a class="viewcode-back" href="../../../crawler.test.html#crawler.test.test_requestManager.test_RequestManager.test_get_new_request">[文档]</a>    <span class="k">def</span> <span class="nf">test_get_new_request</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="test_RequestManager.test_get_new_request"><a class="viewcode-back" href="../../../crawler.test.html#crawler.test.test_requestManager.test_RequestManager.test_get_new_request">[docs]</a>    <span class="k">def</span> <span class="nf">test_get_new_request</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">add_new_requests</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">get_new_request</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="test_RequestManager.test_new_request_size"><a class="viewcode-back" href="../../../crawler.test.html#crawler.test.test_requestManager.test_RequestManager.test_new_request_size">[文档]</a>    <span class="k">def</span> <span class="nf">test_new_request_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="test_RequestManager.test_new_request_size"><a class="viewcode-back" href="../../../crawler.test.html#crawler.test.test_requestManager.test_RequestManager.test_new_request_size">[docs]</a>    <span class="k">def</span> <span class="nf">test_new_request_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">requests</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate_requests</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">add_new_requests</span><span class="p">(</span><span class="n">requests</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">new_requests_size</span><span class="p">(),</span> <span class="nb">len</span><span class="p">(</span><span class="n">requests</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="test_RequestManager.test_old_request_size"><a class="viewcode-back" href="../../../crawler.test.html#crawler.test.test_requestManager.test_RequestManager.test_old_request_size">[文档]</a>    <span class="k">def</span> <span class="nf">test_old_request_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="test_RequestManager.test_old_request_size"><a class="viewcode-back" href="../../../crawler.test.html#crawler.test.test_requestManager.test_RequestManager.test_old_request_size">[docs]</a>    <span class="k">def</span> <span class="nf">test_old_request_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">requests</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate_requests</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">add_new_requests</span><span class="p">(</span><span class="n">requests</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">old_requests_size</span><span class="p">(),</span> <span class="nb">len</span><span class="p">(</span><span class="n">requests</span><span class="p">))</span></div></div>
@@ -250,8 +247,8 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'1.0.0',
-            LANGUAGE:'zh_cn',
+            VERSION:'0.0.1',
+            LANGUAGE:'zh-ch',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -261,7 +258,6 @@
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
-      <script type="text/javascript" src="../../../_static/translations.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

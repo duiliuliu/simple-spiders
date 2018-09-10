@@ -1,4 +1,4 @@
-api test document
+Api test document
 ====================
 
 
@@ -25,3 +25,13 @@ crawler.test.test\_requestManager
     :members:
     :undoc-members:
     :show-inheritance:
+
+crawler.test.test\_writter
+---------------------------------
+
+.. automodule:: crawler.test.test_writter
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
