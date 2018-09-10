@@ -25,7 +25,7 @@ A simple web crawling framework.[Document](https://duiliuliu.github.io/simple-sp
 
 ## Getting Started
 
-`git clone` https://github.com/duiliuliu
+`git clone` https://github.com/duiliuliu/simple-spiders
 
 `python main baidu.com`
 
