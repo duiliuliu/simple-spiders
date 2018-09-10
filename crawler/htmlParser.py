@@ -14,9 +14,9 @@ class HtmlParser():
         '''
         网页解析器初始化函数
 
-            @member :: __seed_url : 种子url，所有解析到的url与seed_url进行拼接，构成完整url
-            @member :: __getUrl_func : 自定义解析url函数
-            @member :: __getData_func : 自定义解析数据函数
+            @member :: seed_url : 种子url，所有解析到的url与seed_url进行拼接，构成完整url
+            @member :: getUrl_func : 自定义解析url函数
+            @member :: getData_func : 自定义解析数据函数
 
         '''
         self.__seed_url = seed_url
@@ -45,7 +45,15 @@ class HtmlParser():
         '''
         if self.__getUrl_func:
             try:
-                return self.__getUrl_func(response)
+                requests = self.__getUrl_func(response)
+                for i in range(len(requests)):
+                    if type(requests[i]) == str:
+                        requests[i] = {
+                            'url': requests[i]
+                        }
+                    if not 'level' in requests[i]:
+                        requests[i]['level'] = response['level']+1
+                return requests
             except Exception as e:
                 return Warn(repr(e))
         content = html.fromstring(response['text'])

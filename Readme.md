@@ -21,7 +21,7 @@
 
 ## Overview
 
-A simple web crawling framework.
+A simple web crawling framework.[Document](https://duiliuliu.github.io/simple-spiders/)
 
 ## Getting Started
 
@@ -65,3 +65,9 @@ You should revise main.py to suit your needs
 
 - main.py
 ```
+
+## License
+
+本项目采用 [![license](./images/license-LGPL--3.0-orange.svg)](https://github.com/duiliuliu/simple-spiders) 协议开源发布，请您在修改后维持开源发布，并为原作者额外署名，谢谢您的尊重。
+
+若您需要将本项目应用于商业目的，请单独联系本人( [@pengr](https://github.com/duiliuliu) )，获取商业授权。

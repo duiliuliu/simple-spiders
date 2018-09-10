@@ -4,6 +4,7 @@ import logging
 import os
 import ctypes
 import platform
+import threading
 
 FOREGROUND_WHITE = ''
 FOREGROUND_BLUE = ''
@@ -31,7 +32,15 @@ elif platform.system() == 'Linux':
 else:
     pass
 
+def synchronized(func):
+    func.__lock__ = threading.Lock()
 
+    def lock_func(*args, **kwargs):
+        with func.__lock__:
+            return func(*args, **kwargs)
+    return lock_func
+
+@synchronized
 def set_color(color):
     def wrapper(func):
         def inner_wrapper(*args):

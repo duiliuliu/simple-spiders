@@ -116,9 +116,7 @@ class DataWriter():
         '''
         if not item:
             return
-        if type(item) == dict:
-            item = self._dict_to_list(item)
-        self.__data.extend(item)
+        self._add_buffer_data(item)
         if len(self.__data) > flush_num:
             self.flush_buffer()
 
@@ -137,7 +135,7 @@ class DataWriter():
 
             return : None
         '''
-        if len(self.__data) > 0:
+        if self.has_buffer():
             self.write(self.__data)
             del self.__data[:]
 
@@ -195,7 +193,8 @@ class DataWriter():
             row += 1
             col = 0
             if row > 65535:
-                self.__logger.warn("Hit limit of #of rows in one sheet(65535).")
+                self.__logger.warn(
+                    "Hit limit of #of rows in one sheet(65535).")
                 break
         book.save(self.__filename)
 
@@ -254,6 +253,12 @@ class DataWriter():
                 if type(item) == dict:
                     item = self._dict_to_list(item)
                 csvfile.writerow(item)
+
+    @synchronized
+    def _add_buffer_data(self, item):
+        if type(item) == dict:
+            item = self._dict_to_list(item)
+        self.__data.extend(item)
 
     def _dict_to_list(self, items_dict):
         '''

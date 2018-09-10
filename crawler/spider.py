@@ -8,7 +8,7 @@ from crawler.logger import Logger
 from crawler.writter import DataWriter
 from crawler.warn import Warn
 from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor, wait
-import re
+import time
 
 
 class Spider():
@@ -31,19 +31,17 @@ class Spider():
             self.__seed_url = '/'.join(start_request[0]['url'].split('/')[:-1])
         elif type(start_request) == dict:
             self.__seed_url = '/'.join(start_request['url'].split('/')[:-1])
+            start_request = [start_request]
         else:
             self.__seed_url = '/'.join(start_request.split('/')[:-1])
-            start_request = {'url': start_request}
+            start_request = [{'url': start_request}]
 
         self.__start_request = start_request
         self.__downloader = HtmlDownloader()
         self.__parser = HtmlParser(
             self.__seed_url, getUrl_func=getUrl_func, getData_func=getData_func)
         self.__requestManager = RequestManager(level)
-        if type(start_request) == list:
-            self.__requestManager.add_new_requests(start_request)
-        else:
-            self.__requestManager.add_new_request(start_request)
+        self.__requestManager.add_new_requests(start_request)
         self.__logger = Logger(__name__)
         # self.sleep_time = 10
 
@@ -76,6 +74,7 @@ class Spider():
         self.__logger.info('\tStart multiProcess_crawl...')
         pool = ProcessPoolExecutor(capacity)
         futures = []
+        # import pdb;pdb.set_trace()
         while self.__requestManager.has_new_request():
             level = self.__requestManager.get_level()
             while self.__requestManager.has_new_request(level):
@@ -84,7 +83,7 @@ class Spider():
                 self.__logger.info(
                     '\tWaiting level-{} subprocesses done...'.format(level))
             wait(futures)
-            #wait(futures, timeout=None, return_when='FIRST_COMPLETED')
+            # wait(futures, timeout=None, return_when='FIRST_COMPLETED')
         self.__logger.info('\tAll subprocesses done!')
         DataWriter._writter_buffer_flush()
 
@@ -100,19 +99,22 @@ class Spider():
         self.__logger.info('\tStart multiProcess_crawl...')
         pool = ThreadPoolExecutor(capacity)
         futures = []
+        # import pdb;pdb.set_trace()
         while self.__requestManager.has_new_request():
-            level = self.__requestManager.get_level()
+            level = self.__requestManager.get_level() 
             while self.__requestManager.has_new_request(level):
                 request = self.__requestManager.get_new_request(level)
                 futures.append(pool.submit(self._crawl, request))
                 self.__logger.info(
                     '\tWaiting level-{} subthreads done...'.format(level))
             wait(futures)
-            #wait(futures, timeout=None, return_when='FIRST_COMPLETED')
+            # wait(futures, timeout=None, return_when='FIRST_COMPLETED')
         self.__logger.info('\tAll subthreads done!')
         DataWriter._writter_buffer_flush()
 
     def _crawl(self, request):
+        if not request:
+            return
         try:
             self.__logger.info('\t'+request['url'])
             response = self.__downloader.download(request)

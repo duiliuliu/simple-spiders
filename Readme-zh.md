@@ -17,7 +17,7 @@
 ```      
  
 
-[中文](./Readme-zh.md)
+[英文](./Readme-zh.md)
 
 ## 概述
 

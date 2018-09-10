@@ -16,25 +16,23 @@ class RequestManager(object):
         '''
         请求管理器初始化函数
 
-            @param :: __limit_level : 爬取层数限制，默认限制3层
-            @member :: __level : 当前爬取层数
-            @member :: __new_requests : 未爬取请求集合，采用字典存储，key对应相应的层数，value相应层数未请求的请求集合
-            @member :: __old_requests : 已存储请求集合，采用元组存储，每个请求计算128位md5码进行存储
-            @member :: __limit_level : 爬取层数限制，默认限制3层
+            @param :: limit_level : 爬取层数限制，默认限制3层
+            @member :: level : 当前爬取层数
+            @member :: new_requests : 未爬取请求集合，采用字典存储，key对应相应的层数，value相应层数未请求的请求集合
+            @member :: old_requests : 已存储请求集合，采用元组存储，每个请求计算128位md5码进行存储
+            @member :: limit_level : 爬取层数限制，默认限制3层
 
         '''
-        self.__level = 0
+        self.__level = 1
         self.__new_requests = {}
         self.__old_requests = set()
         self.__limit_level = limit_level
 
-    def add_new_requests(self, requests, add_level=1):
+    def add_new_requests(self, requests):
         '''
         添加请求集合
 
             @param :: requests : 待添加请求集合
-
-            @param :: add_level : 待添加请求层数，默认比当前请求深入一层
 
             return : None
 
@@ -42,15 +40,13 @@ class RequestManager(object):
         if not requests or len(requests) == 0 or not type(requests) == list:
             return
         for request in requests:
-            self.add_new_request(request, add_level)
+            self.add_new_request(request)
 
-    def add_new_request(self, request, add_level=1):
+    def add_new_request(self, request):
         '''
         添加请求
 
             @param :: requests : 待添加请求
-
-            @param :: add_level : 待添加请求层数，默认比当前请求深入一层
 
             return : None
 
@@ -59,7 +55,7 @@ class RequestManager(object):
             raise Exception('please construst right request dict')
         request_str = json.dumps(request)
         if not request_str in self.__old_requests:
-            self.__add_new_request(request, add_level)
+            self.__add_new_request(request)
             self.__add_old_request(request_str)
 
     def has_new_request(self, level=None):
@@ -86,10 +82,10 @@ class RequestManager(object):
         '''
         if not self.has_new_request():
             return None
-        if len(self.__new_requests[str(self.__level)]) <= 1:
-            self.__add_level()
         if not level:
             level = self.__level
+        if len(self.__new_requests[str(self.__level)]) <= 1:
+            self.__add_level()
         return self.__get_new_request(level)
 
     def get_level(self,):
@@ -147,29 +143,28 @@ class RequestManager(object):
         if not str(level) in self.__new_requests:
             self.__new_requests[str(level)] = set()
 
-    def __add_new_request(self, request, add_level=1):
+    def __add_new_request(self, request):
         '''
         (私有函数)添加请求,向未爬取过的请求集合中添加请求
 
             @param :: requests : 待添加请求
 
-            @param :: add_level : 待添加请求层数，默认比当前请求深入一层
-
             return : None
 
         '''
+        if not 'level' in request:
+            request['level'] = self.__level
         if not str(self.__level) in self.__new_requests:
             self.__init_level(self.__level)
 
-        if self.__level+add_level > self.__limit_level:
+        if request['level'] > self.__limit_level:
             return
 
-        if not str(self.__level+add_level) in self.__new_requests:
-            self.__init_level(self.__level+add_level)
+        if not str(request['level']) in self.__new_requests:
+            self.__init_level(request['level'])
 
-        request['level'] = self.__level+add_level
         request_str = json.dumps(request)
-        self.__new_requests[str(self.__level+add_level)].add(request_str)
+        self.__new_requests[str(request['level'])].add(request_str)
 
     def __add_old_request(self, request_str):
         '''
