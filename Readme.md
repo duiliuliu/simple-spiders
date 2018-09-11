@@ -75,6 +75,6 @@ spider.start_crawl()
 
 ## License
 
-This project is published open source under [![license](./images/license-LGPL--3.0-orange.svg)] agreement. Please maintain the open source release after modification and sign the name of the original author. Thank you for your respect
+This project is published open source under ![license](./images/license-LGPL--3.0-orange.svg) agreement. Please maintain the open source release after modification and sign the name of the original author. Thank you for your respect
 
 If you need to apply this project for commercial purposes, please contact me( [@pengr](https://github.com/duiliuliu) ) separately to obtain commercial authorization
