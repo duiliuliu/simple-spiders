@@ -21,7 +21,7 @@
 
 ## Overview
 
-A simple web crawling framework.[Document](https://duiliuliu.github.io/simple-spiders/)
+A simple web crawling framework.[Document](https://simple-spiders.readthedocs.io/)
 
 ## Getting Started
 
