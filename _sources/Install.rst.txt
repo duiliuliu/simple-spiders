@@ -1,10 +1,19 @@
-安装
+安装使用
 =================
 
-`git clone` https://github.com/duiliuliu
+``pip install simple-spiders``
 
-`python main baidu.com`
+You should construst project.py to suit your needs
 
-You should revise main.py to suit your needs 
+::
 
-`Ctrl-C to stop`
+    from crawler.spider import Spider
+    from crawler.writter import DataWriter
+
+    spider = Spider(
+        'https://movie.douban.com/subject/26810318/comments?start=0&limit=20&sort=new_score&status=P')
+    spider.start_crawl()
+
+``python project.py``
+
+``Ctrl-C to stop``

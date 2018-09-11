@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>安装 &mdash; simple-spiders 0.0.1 documentation</title>
+  <title>安装使用 &mdash; simple-spiders 0.0.1 documentation</title>
   
 
   
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="关于simple-spiders" href="About.html" />
-    <link rel="prev" title="入门指南" href="crawler.use_case.html" /> 
+    <link rel="next" title="入门指南" href="Api use case.html" />
+    <link rel="prev" title="综述" href="Overview.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -81,10 +81,10 @@
               <p class="caption"><span class="caption-text">documentation:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Overview.html">综述</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">安装使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Api use case.html">入门指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Api document.html">APi文档</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Api test.html">Api单元测试</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Api use case.html">入门指南</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">安装</a></li>
 <li class="toctree-l1"><a class="reference internal" href="About.html">关于simple-spiders</a></li>
 </ul>
 
@@ -131,7 +131,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>安装</li>
+      <li>安装使用</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -151,11 +151,19 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>安装<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p><cite>git clone</cite> <a class="reference external" href="https://github.com/duiliuliu">https://github.com/duiliuliu</a></p>
-<p><cite>python main baidu.com</cite></p>
-<p>You should revise main.py to suit your needs</p>
-<p><cite>Ctrl-C to stop</cite></p>
+<h1>安装使用<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">simple-spiders</span></code></p>
+<p>You should construst project.py to suit your needs</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">crawler.spider</span> <span class="k">import</span> <span class="n">Spider</span>
+<span class="kn">from</span> <span class="nn">crawler.writter</span> <span class="k">import</span> <span class="n">DataWriter</span>
+
+<span class="n">spider</span> <span class="o">=</span> <span class="n">Spider</span><span class="p">(</span>
+    <span class="s1">&#39;https://movie.douban.com/subject/26810318/comments?start=0&amp;limit=20&amp;sort=new_score&amp;status=P&#39;</span><span class="p">)</span>
+<span class="n">spider</span><span class="o">.</span><span class="n">start_crawl</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">project.py</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Ctrl-C</span> <span class="pre">to</span> <span class="pre">stop</span></code></p>
 </div>
 
 
@@ -166,10 +174,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="About.html" class="btn btn-neutral float-right" title="关于simple-spiders" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Api use case.html" class="btn btn-neutral float-right" title="入门指南" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="crawler.use_case.html" class="btn btn-neutral" title="入门指南" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Overview.html" class="btn btn-neutral" title="综述" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

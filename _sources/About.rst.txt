@@ -1,6 +1,8 @@
 关于simple-spiders
-===========
+======================
 
 还在构建中....
 
-[github](https://github.com/duiliuliu/simple-spiders)
+欢迎各位多多指教
+
+项目地址 `github <https://github.com/duiliuliu/simple-spiders>`__
