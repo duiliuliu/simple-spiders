@@ -6,8 +6,10 @@ import unittest
 
 
 class test_DataWriter(unittest.TestCase):
-    def setUp(self):
-        self.writter = DataWriter()
+ 
         
     def test_write_txt(self):
-        pass
+        writter = DataWriter(filename='data.txt',type='txt')
+
+    def test_write_csv(self):
+        writter = DataWriter(filename='data.csv',type='csv')

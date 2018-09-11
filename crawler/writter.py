@@ -23,6 +23,16 @@ class DataWriter():
     '''
     数据写入类
     支持多种数据格式写入文本，初始化类实例时，可传入一个字典格式的headers,key作为所有数据的key,value作为数据写入后的头部
+
+            @param :: filename : 数据写入文件名
+
+            @member :: headers : 数据写入文件头部
+
+            @member :: type : 数据写入文件格式，默认txt
+
+            @member :: encoding : 数据写入文件编码，默认utf-8
+
+            @member :: write_type : 数据写入文件方式，默认'a'
     '''
 
     instance = {}
@@ -59,20 +69,19 @@ class DataWriter():
 
             @member :: logger : 日志
         '''
+        
+        
         self.__filename = filename
-        self.__headers = []
-        if filename.split('.')[-1]:
-            self.__type = filename.split('.')[-1]
-        else:
-            self.__type = 'txt'
-        self.__encoding = 'utf-8'
-        self.__write_type = 'a'
+        self._headers = []
+        self.type = filename.split('.')[-1] if len(filename.split('.')) > 1 else ''
+        self._encoding = 'utf-8'
+        self._write_type = 'a'
         self.__attribute = {}
         self.__data = []
         self.__logger = Logger(__name__)
 
         for k, v in kwargs.items():
-            setattr(self, k, v)
+            self.__setattr__(k, v)
 
     @staticmethod
     def _writter_buffer_flush():
@@ -95,13 +104,13 @@ class DataWriter():
 
             return : None
         '''
-        if self.__type == 'txt':
+        if self.type == 'txt':
             self._write_txt(items)
-        elif self.__type == 'csv':
+        elif self.type == 'csv':
             self._write_csv(items)
-        elif self.__type == 'xexcel':
+        elif self.type == 'xexcel':
             self._write_xexcel(items)
-        elif self.__type == 'excel':
+        elif self.type == 'excel':
             self._write_excel(items)
         else:
             self.__logger.exception("Illegal file-type defined")
@@ -147,19 +156,19 @@ class DataWriter():
 
             return : None
         '''
-        with open(self.__filename, self.__write_type, encoding=self.__encoding) as f:
-            if self.__headers and (self.__filename not in self.__attribute):
-                item = self.__headers
-                if type(self.__headers) == dict:
-                    item = self._dict_to_list(self.__headers)
-                f.write('\t'.join(item)+'\n')
+        with open(self.__filename, self._write_type, encoding=self._encoding) as f:
+            if self._headers and (self.__filename not in self.__attribute):
+                item = self._headers
+                if type(self._headers) == dict:
+                    item = self._dict_to_list(self._headers)
+                f.write('\t'.join(str(i) for i in item)+'\n')
                 f.write('-'*40+'\n')
                 self.__attribute[self.__filename] = '1'
 
             for item in items:
                 if type(item) == dict:
                     item = self._dict_to_list(item)
-                f.write('\t'.join(item)+'\n')
+                f.write('\t'.join(str(i) for i in item)+'\n')
 
     def _write_excel(self, items):
         '''
@@ -173,10 +182,10 @@ class DataWriter():
         worksheet = book.add_sheet("Sheet 1")
         row = 0
         col = 0
-        if self.__headers and (self.__filename not in self.__attribute):
-            item = self.__headers
-            if type(self.__headers) == dict:
-                item = self._dict_to_list(self.__headers)
+        if self._headers and (self.__filename not in self.__attribute):
+            item = self._headers
+            if type(self._headers) == dict:
+                item = self._dict_to_list(self._headers)
             for h in item:
                 worksheet.write.write(row, col, h)
                 col += 1
@@ -210,10 +219,10 @@ class DataWriter():
         worksheet = workbook.add_worksheet()
         row = 0
         col = 0
-        if self.__headers and (self.__filename not in self.__attribute):
-            item = self.__headers
-            if type(self.__headers) == dict:
-                item = self._dict_to_list(self.__headers)
+        if self._headers and (self.__filename not in self.__attribute):
+            item = self._headers
+            if type(self._headers) == dict:
+                item = self._dict_to_list(self._headers)
             for h in item:
                 worksheet.write(row, col, h)
                 col += 1
@@ -240,12 +249,12 @@ class DataWriter():
 
             return : None
         '''
-        with open(self.__filename, self.__write_type, newline='', encoding=self.__encoding) as f:
+        with open(self.__filename, self._write_type, newline='', encoding=self._encoding) as f:
             csvfile = csv.writer(f)
-            if self.__headers and (self.__filename not in self.__attribute):
-                item = self.__headers
-                if type(self.__headers) == dict:
-                    item = self._dict_to_list(self.__headers)
+            if self._headers and (self.__filename not in self.__attribute):
+                item = self._headers
+                if type(self._headers) == dict:
+                    item = self._dict_to_list(self._headers)
                 csvfile.writerow(item)
                 self.__attribute[self.__filename] = '1'
 
@@ -270,10 +279,10 @@ class DataWriter():
         '''
         try:
             items = []
-            if not self.__headers:
+            if not self._headers:
                 self.header = list(items_dict.keys())
 
-            for key in self.__headers:
+            for key in self._headers:
                 try:
                     items.append(items_dict[key])
                 except:
