@@ -81,10 +81,10 @@
               <p class="caption"><span class="caption-text">documentation:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Overview.html">综述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Install.html">安装使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Api use case.html">入门指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Api document.html">APi文档</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Api test.html">Api单元测试</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Api use case.html">入门指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Install.html">安装</a></li>
 <li class="toctree-l1"><a class="reference internal" href="About.html">关于simple-spiders</a></li>
 </ul>
 
@@ -154,6 +154,134 @@
             
   <div class="section" id="api-document">
 <h1>Api document<a class="headerlink" href="#api-document" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-crawler.spider">
+<span id="crawler-spider"></span><h2>crawler.spider<a class="headerlink" href="#module-crawler.spider" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="crawler.spider.Spider">
+<em class="property">class </em><code class="descclassname">crawler.spider.</code><code class="descname">Spider</code><span class="sig-paren">(</span><em>start_request</em>, <em>name='spider'</em>, <em>getUrl_func=None</em>, <em>getData_func=None</em>, <em>level=3</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/spider.html#Spider"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.spider.Spider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>爬取调度器
+初始化需传入一个start_request</p>
+<dl class="attribute">
+<dt id="crawler.spider.Spider.count">
+<code class="descname">count</code><em class="property"> = 0</em><a class="headerlink" href="#crawler.spider.Spider.count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="crawler.spider.Spider.instance">
+<code class="descname">instance</code><em class="property"> = {}</em><a class="headerlink" href="#crawler.spider.Spider.instance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="crawler.spider.Spider.start_crawl">
+<code class="descname">start_crawl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/spider.html#Spider.start_crawl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.spider.Spider.start_crawl" title="Permalink to this definition">¶</a></dt>
+<dd><p>爬取方法，对requestManager中的url进行请求downloa，然后解析。</p>
+<blockquote>
+<div>return : None</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.spider.Spider.start_multiProcess_crawl">
+<code class="descname">start_multiProcess_crawl</code><span class="sig-paren">(</span><em>capacity</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/spider.html#Spider.start_multiProcess_crawl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.spider.Spider.start_multiProcess_crawl" title="Permalink to this definition">¶</a></dt>
+<dd><p>多进程爬取方法，对requestManager中的url进行请求downloa，然后解析。</p>
+<blockquote>
+<div><p>&#64;param :: capacity : 进程池容量</p>
+<p>return : None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.spider.Spider.start_multiThread_crawl">
+<code class="descname">start_multiThread_crawl</code><span class="sig-paren">(</span><em>capacity</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/spider.html#Spider.start_multiThread_crawl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.spider.Spider.start_multiThread_crawl" title="Permalink to this definition">¶</a></dt>
+<dd><p>多线程爬取方法，对requestManager中的url进行请求downloa，然后解析。</p>
+<blockquote>
+<div><p>&#64;param :: capacity : 线程池容量</p>
+<p>return : None</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crawler.requestManager">
+<span id="crawler-requestmanager"></span><h2>crawler.requestManager<a class="headerlink" href="#module-crawler.requestManager" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="crawler.requestManager.RequestManager">
+<em class="property">class </em><code class="descclassname">crawler.requestManager.</code><code class="descname">RequestManager</code><span class="sig-paren">(</span><em>limit_level=3</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>请求管理器
+统一管理所有的请求，包括待请求的与已请求的请求。</p>
+<dl class="method">
+<dt id="crawler.requestManager.RequestManager.add_new_request">
+<code class="descname">add_new_request</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.add_new_request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.add_new_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>添加请求</p>
+<blockquote>
+<div><p>&#64;param :: requests : 待添加请求</p>
+<p>return : None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.requestManager.RequestManager.add_new_requests">
+<code class="descname">add_new_requests</code><span class="sig-paren">(</span><em>requests</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.add_new_requests"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.add_new_requests" title="Permalink to this definition">¶</a></dt>
+<dd><p>添加请求集合</p>
+<blockquote>
+<div><p>&#64;param :: requests : 待添加请求集合</p>
+<p>return : None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.requestManager.RequestManager.get_level">
+<code class="descname">get_level</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.get_level"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.get_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>获取当前层级</p>
+<blockquote>
+<div>return : int</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.requestManager.RequestManager.get_new_request">
+<code class="descname">get_new_request</code><span class="sig-paren">(</span><em>level=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.get_new_request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.get_new_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>获取一个未被请求过的请求</p>
+<blockquote>
+<div><p>&#64;param :: level : 从指定层数中提取，默认为None</p>
+<p>return : request</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.requestManager.RequestManager.has_new_request">
+<code class="descname">has_new_request</code><span class="sig-paren">(</span><em>level=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.has_new_request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.has_new_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>判断是否还有待爬取的请求，当传入level后，判断相应的层数中是否还有待爬取的请求。默认判断所有层数</p>
+<blockquote>
+<div><p>&#64;param :: level : 待添加请求集合</p>
+<p>return : Bool</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.requestManager.RequestManager.new_requests_size">
+<code class="descname">new_requests_size</code><span class="sig-paren">(</span><em>level=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.new_requests_size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.new_requests_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>待爬取的请求集合长度</p>
+<blockquote>
+<div><p>&#64;param :: level : 获取指定层数的请求集合长度</p>
+<p>return : int</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.requestManager.RequestManager.old_requests_size">
+<code class="descname">old_requests_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.old_requests_size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.old_requests_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>已请求的请求集合长度</p>
+<blockquote>
+<div><p>&#64;param :: level : 获取指定层数的请求集合长度</p>
+<p>return : int</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="module-crawler.htmlDownloader">
 <span id="crawler-htmldownloader"></span><h2>crawler.htmlDownloader<a class="headerlink" href="#module-crawler.htmlDownloader" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
@@ -245,199 +373,6 @@
 </div></blockquote>
 </dd></dl>
 
-</dd></dl>
-
-</div>
-<div class="section" id="module-crawler.logger">
-<span id="crawler-logger"></span><h2>crawler.logger<a class="headerlink" href="#module-crawler.logger" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="crawler.logger.Logger">
-<em class="property">class </em><code class="descclassname">crawler.logger.</code><code class="descname">Logger</code><span class="sig-paren">(</span><em>name</em>, <em>clevel=10</em>, <em>Flevel=10</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/logger.html#Logger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.logger.Logger" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<dl class="method">
-<dt id="crawler.logger.Logger.cri">
-<code class="descname">cri</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/logger.html#Logger.cri"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.logger.Logger.cri" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="crawler.logger.Logger.debug">
-<code class="descname">debug</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/logger.html#Logger.debug"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.logger.Logger.debug" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="crawler.logger.Logger.error">
-<code class="descname">error</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/logger.html#Logger.error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.logger.Logger.error" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="crawler.logger.Logger.exception">
-<code class="descname">exception</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/logger.html#Logger.exception"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.logger.Logger.exception" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="crawler.logger.Logger.info">
-<code class="descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/logger.html#Logger.info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.logger.Logger.info" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="crawler.logger.Logger.warn">
-<code class="descname">warn</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/logger.html#Logger.warn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.logger.Logger.warn" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="function">
-<dt id="crawler.logger.set_color">
-<code class="descclassname">crawler.logger.</code><code class="descname">set_color</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/logger.html#set_color"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.logger.set_color" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="crawler.logger.set_win_color">
-<code class="descclassname">crawler.logger.</code><code class="descname">set_win_color</code><span class="sig-paren">(</span><em>color</em>, <em>handle=312</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/logger.html#set_win_color"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.logger.set_win_color" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="crawler.logger.synchronized">
-<code class="descclassname">crawler.logger.</code><code class="descname">synchronized</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/logger.html#synchronized"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.logger.synchronized" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</div>
-<div class="section" id="module-crawler.requestManager">
-<span id="crawler-requestmanager"></span><h2>crawler.requestManager<a class="headerlink" href="#module-crawler.requestManager" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="crawler.requestManager.RequestManager">
-<em class="property">class </em><code class="descclassname">crawler.requestManager.</code><code class="descname">RequestManager</code><span class="sig-paren">(</span><em>limit_level=3</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<p>请求管理器
-统一管理所有的请求，包括待请求的与已请求的请求。</p>
-<dl class="method">
-<dt id="crawler.requestManager.RequestManager.add_new_request">
-<code class="descname">add_new_request</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.add_new_request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.add_new_request" title="Permalink to this definition">¶</a></dt>
-<dd><p>添加请求</p>
-<blockquote>
-<div><p>&#64;param :: requests : 待添加请求</p>
-<p>return : None</p>
-</div></blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="crawler.requestManager.RequestManager.add_new_requests">
-<code class="descname">add_new_requests</code><span class="sig-paren">(</span><em>requests</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.add_new_requests"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.add_new_requests" title="Permalink to this definition">¶</a></dt>
-<dd><p>添加请求集合</p>
-<blockquote>
-<div><p>&#64;param :: requests : 待添加请求集合</p>
-<p>return : None</p>
-</div></blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="crawler.requestManager.RequestManager.get_level">
-<code class="descname">get_level</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.get_level"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.get_level" title="Permalink to this definition">¶</a></dt>
-<dd><p>获取当前层级</p>
-<blockquote>
-<div>return : int</div></blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="crawler.requestManager.RequestManager.get_new_request">
-<code class="descname">get_new_request</code><span class="sig-paren">(</span><em>level=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.get_new_request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.get_new_request" title="Permalink to this definition">¶</a></dt>
-<dd><p>获取一个未被请求过的请求</p>
-<blockquote>
-<div><p>&#64;param :: level : 从指定层数中提取，默认为None</p>
-<p>return : request</p>
-</div></blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="crawler.requestManager.RequestManager.has_new_request">
-<code class="descname">has_new_request</code><span class="sig-paren">(</span><em>level=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.has_new_request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.has_new_request" title="Permalink to this definition">¶</a></dt>
-<dd><p>判断是否还有待爬取的请求，当传入level后，判断相应的层数中是否还有待爬取的请求。默认判断所有层数</p>
-<blockquote>
-<div><p>&#64;param :: level : 待添加请求集合</p>
-<p>return : Bool</p>
-</div></blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="crawler.requestManager.RequestManager.new_requests_size">
-<code class="descname">new_requests_size</code><span class="sig-paren">(</span><em>level=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.new_requests_size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.new_requests_size" title="Permalink to this definition">¶</a></dt>
-<dd><p>待爬取的请求集合长度</p>
-<blockquote>
-<div><p>&#64;param :: level : 获取指定层数的请求集合长度</p>
-<p>return : int</p>
-</div></blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="crawler.requestManager.RequestManager.old_requests_size">
-<code class="descname">old_requests_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.old_requests_size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.old_requests_size" title="Permalink to this definition">¶</a></dt>
-<dd><p>已请求的请求集合长度</p>
-<blockquote>
-<div><p>&#64;param :: level : 获取指定层数的请求集合长度</p>
-<p>return : int</p>
-</div></blockquote>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-crawler.spider">
-<span id="crawler-spider"></span><h2>crawler.spider<a class="headerlink" href="#module-crawler.spider" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="crawler.spider.Spider">
-<em class="property">class </em><code class="descclassname">crawler.spider.</code><code class="descname">Spider</code><span class="sig-paren">(</span><em>start_request</em>, <em>name='spider'</em>, <em>getUrl_func=None</em>, <em>getData_func=None</em>, <em>level=3</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/spider.html#Spider"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.spider.Spider" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<p>爬取调度器
-初始化需传入一个start_request</p>
-<dl class="attribute">
-<dt id="crawler.spider.Spider.count">
-<code class="descname">count</code><em class="property"> = 0</em><a class="headerlink" href="#crawler.spider.Spider.count" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="crawler.spider.Spider.instance">
-<code class="descname">instance</code><em class="property"> = {}</em><a class="headerlink" href="#crawler.spider.Spider.instance" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="crawler.spider.Spider.start_crawl">
-<code class="descname">start_crawl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/spider.html#Spider.start_crawl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.spider.Spider.start_crawl" title="Permalink to this definition">¶</a></dt>
-<dd><p>爬取方法，对requestManager中的url进行请求downloa，然后解析。</p>
-<blockquote>
-<div>return : None</div></blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="crawler.spider.Spider.start_multiProcess_crawl">
-<code class="descname">start_multiProcess_crawl</code><span class="sig-paren">(</span><em>capacity</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/spider.html#Spider.start_multiProcess_crawl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.spider.Spider.start_multiProcess_crawl" title="Permalink to this definition">¶</a></dt>
-<dd><p>多进程爬取方法，对requestManager中的url进行请求downloa，然后解析。</p>
-<blockquote>
-<div><p>&#64;param :: capacity : 进程池容量</p>
-<p>return : None</p>
-</div></blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="crawler.spider.Spider.start_multiThread_crawl">
-<code class="descname">start_multiThread_crawl</code><span class="sig-paren">(</span><em>capacity</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/spider.html#Spider.start_multiThread_crawl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.spider.Spider.start_multiThread_crawl" title="Permalink to this definition">¶</a></dt>
-<dd><p>多线程爬取方法，对requestManager中的url进行请求downloa，然后解析。</p>
-<blockquote>
-<div><p>&#64;param :: capacity : 线程池容量</p>
-<p>return : None</p>
-</div></blockquote>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-crawler.warn">
-<span id="crawler-warn"></span><h2>crawler.warn<a class="headerlink" href="#module-crawler.warn" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="crawler.warn.Warn">
-<em class="property">class </em><code class="descclassname">crawler.warn.</code><code class="descname">Warn</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/warn.html#Warn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.warn.Warn" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<p>警告
-警告对象，成员变量为警告message，__str__()返回message</p>
 </dd></dl>
 
 </div>

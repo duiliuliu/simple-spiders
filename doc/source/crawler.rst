@@ -2,26 +2,10 @@ Api document
 ===============
 
 
-crawler.htmlDownloader
------------------------------
-
-.. automodule:: crawler.htmlDownloader
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-crawler.htmlParser
--------------------------
-
-.. automodule:: crawler.htmlParser
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-crawler.logger
+crawler.spider
 ---------------------
 
-.. automodule:: crawler.logger
+.. automodule:: crawler.spider
     :members:
     :undoc-members:
     :show-inheritance:
@@ -34,18 +18,18 @@ crawler.requestManager
     :undoc-members:
     :show-inheritance:
 
-crawler.spider
----------------------
+crawler.htmlDownloader
+-----------------------------
 
-.. automodule:: crawler.spider
+.. automodule:: crawler.htmlDownloader
     :members:
     :undoc-members:
     :show-inheritance:
 
-crawler.warn
--------------------
+crawler.htmlParser
+-------------------------
 
-.. automodule:: crawler.warn
+.. automodule:: crawler.htmlParser
     :members:
     :undoc-members:
     :show-inheritance:

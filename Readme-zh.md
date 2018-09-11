@@ -1,7 +1,7 @@
 # simple Spider 
 
 ![python -> 3.4+](./images/python-3.4+-green.svg)
-![coverage -> 0%](https://img.shields.io/badge/coverage-37%25-yellowgreen.svg)
+![coverage -> 37%](https://img.shields.io/badge/coverage-37%25-yellowgreen.svg)
 ![build -> passing](./images/build-passing-orange.svg)
 
 ```
@@ -25,11 +25,20 @@
 
 ## 开始入门
 
-`git clone` https://github.com/duiliuliu/simple-spiders
+`pip install simple-spiders`
 
-`python main baidu.com`
+You should construst project.py to suit your needs 
 
-You should revise main.py to suit your needs 
+```
+from crawler.spider import Spider
+from crawler.writter import DataWriter
+
+spider = Spider(
+    'https://movie.douban.com/subject/26810318/comments?start=0&limit=20&sort=new_score&status=P')
+spider.start_crawl()
+```
+
+`python project.py`
 
 `Ctrl-C to stop`
 
@@ -40,8 +49,6 @@ You should revise main.py to suit your needs
 * Using [csv](http://www.python-csv.org) provide feature that export file as csv type
 * Using [xlwt](http://www.python-excel.org/) provide feature that export file as excel type
 * Using [xlsxwriter](https://xlsxwriter.readthedocs.io) provide feature that export file as xexcel type
-
-## 用法
 
 ## 项目结构
 

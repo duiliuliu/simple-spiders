@@ -1,7 +1,7 @@
 # simple Spider 
 
 ![python -> 3.4+](./images/python-3.4+-green.svg)
-![coverage -> 0%](https://img.shields.io/badge/coverage-37%25-yellowgreen.svg)
+![coverage -> 37%](https://img.shields.io/badge/coverage-37%25-yellowgreen.svg)
 ![build -> passing](./images/build-passing-orange.svg)
 
 ```
@@ -25,11 +25,20 @@ A simple web crawling framework.[Document](https://duiliuliu.github.io/simple-sp
 
 ## Getting Started
 
-`git clone` https://github.com/duiliuliu/simple-spiders
+`pip install simple-spiders`
 
-`python main baidu.com`
+You should construst project.py to suit your needs 
 
-You should revise main.py to suit your needs 
+```
+from crawler.spider import Spider
+from crawler.writter import DataWriter
+
+spider = Spider(
+    'https://movie.douban.com/subject/26810318/comments?start=0&limit=20&sort=new_score&status=P')
+spider.start_crawl()
+```
+
+`python project.py`
 
 `Ctrl-C to stop`
 
@@ -40,8 +49,6 @@ You should revise main.py to suit your needs
 * Using [csv](http://www.python-csv.org) provide feature that export file as csv type
 * Using [xlwt](http://www.python-excel.org/) provide feature that export file as excel type
 * Using [xlsxwriter](https://xlsxwriter.readthedocs.io) provide feature that export file as xexcel type
-
-## Usage
 
 ## Project structure
 
@@ -68,6 +75,6 @@ You should revise main.py to suit your needs
 
 ## License
 
-本项目采用 [![license](./images/license-LGPL--3.0-orange.svg)](https://github.com/duiliuliu/simple-spiders) 协议开源发布，请您在修改后维持开源发布，并为原作者额外署名，谢谢您的尊重。
+This project is published open source under [![license](./images/license-LGPL--3.0-orange.svg)] agreement. Please maintain the open source release after modification and sign the name of the original author. Thank you for your respect
 
-若您需要将本项目应用于商业目的，请单独联系本人( [@pengr](https://github.com/duiliuliu) )，获取商业授权。
+If you need to apply this project for commercial purposes, please contact me( [@pengr](https://github.com/duiliuliu) ) separately to obtain commercial authorization

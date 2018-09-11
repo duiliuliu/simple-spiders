@@ -6,18 +6,17 @@ import sys
  
 setup(
     name="simple-spiders",
-    version="0.0.1",
-    author="Pengr",
+    version="0.1.1",
+    author="pengr",
     author_email="pengrui55555@163.com",
     description="A simple web crawling framework.",
-    long_description=open("README.rst").read(),
+    long_description=open("README.rst",encoding="utf-8").read(),
     license="MIT",
     url="https://github.com/duiliuliu/simple-spiders",
-    packages=['tidypage'],
+    packages=['crawler'],
     install_requires=[
         "requests",
         "lxml",
-        "csv",
         "xlwt",
         "xlsxwriter"
         ],

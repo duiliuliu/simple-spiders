@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018, pengr
+# This file is distributed under the same license as the simple-spiders
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: simple-spiders \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-11 11:26+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/crawler.use_case.rst:2
+msgid "入门指南"
+msgstr ""
+
+#: ../../source/crawler.use_case.rst:5
+msgid "crawler.use\\_case.douban\\_spiders"
+msgstr ""
+
+#: crawler.use_case.douban_spiders.简单示例:1 of
+msgid "simple-spiders实战小案例 本篇案列带你完成下列任务："
+msgstr ""
+
+#: crawler.use_case.douban_multiThread_spiders.多线程爬取示例:3
+#: crawler.use_case.douban_spiders.简单示例:4 of
+msgid "创建一个simple-spiders项目"
+msgstr ""
+
+#: crawler.use_case.douban_spiders.简单示例:6 of
+msgid "编写爬取网站的spider"
+msgstr ""
+
+#: crawler.use_case.douban_multiThread_spiders.多线程爬取示例:7
+#: crawler.use_case.douban_spiders.简单示例:8 of
+msgid "存储爬取到的数据"
+msgstr ""
+
+#: crawler.use_case.douban_spiders.简单示例:10 of
+msgid "首先我们创建简单的simple-spider项目，创建一个spiders.py(文件命名随意)"
+msgstr ""
+
+#: crawler.use_case.douban_spiders.简单示例:12 of
+msgid "'引入我们需要的库'"
+msgstr ""
+
+#: crawler.use_case.douban_spiders.简单示例:18 of
+msgid "'创建爬虫'"
+msgstr ""
+
+#: crawler.use_case.douban_spiders.简单示例:25 of
+msgid "这样我们就通过simple-spiders 简单建立了一个爬虫"
+msgstr ""
+
+#: crawler.use_case.douban_spiders.简单示例:27 of
+msgid ""
+"通常，对于所有爬取的数据我们是有所甄别的，而且也并不是获取所有网站中的URL再次进行爬取 "
+"而是对于特定的URL，添加进队列。这个时候，我们可以自定义解析URL的函数与解析数据的函数，然后传入spider()中"
+msgstr ""
+
+#: crawler.use_case.douban_spiders.简单示例:30 of
+msgid "如："
+msgstr ""
+
+#: crawler.use_case.douban_multiThread_spiders.多线程爬取示例:12
+#: crawler.use_case.douban_spiders.自定义解析函数示例:1 of
+msgid "导入库"
+msgstr ""
+
+#: crawler.use_case.douban_multiThread_spiders.多线程爬取示例:19
+#: crawler.use_case.douban_spiders.自定义解析函数示例:8 of
+msgid "创建写入对象"
+msgstr ""
+
+#: crawler.use_case.douban_spiders.自定义解析函数示例:13 of
+msgid "自定义URL解析"
+msgstr ""
+
+#: crawler.use_case.douban_spiders.自定义解析函数示例:28 of
+msgid "自定义Data解析"
+msgstr ""
+
+#: crawler.use_case.douban_spiders.自定义解析函数示例:38 of
+msgid "进行构建spider,传入我们自定义的解析函数进行解析"
+msgstr ""
+
+#: ../../source/crawler.use_case.rst:14
+msgid "crawler.use\\_case.douban\\_multiThread\\_spiders"
+msgstr ""
+
+#: crawler.use_case.douban_multiThread_spiders.多线程爬取示例:1 of
+msgid "simple-spiders多线程爬取案列 本篇案列带你完成下列任务："
+msgstr ""
+
+#: crawler.use_case.douban_multiThread_spiders.多线程爬取示例:5 of
+msgid "创建爬取网站的spider"
+msgstr ""
+
+#: crawler.use_case.douban_multiThread_spiders.多线程爬取示例:9 of
+msgid "以多线程方式启动"
+msgstr ""
+
+#: crawler.use_case.douban_multiThread_spiders.多线程爬取示例:24 of
+msgid "URL解析函数实现"
+msgstr ""
+
+#: crawler.use_case.douban_multiThread_spiders.多线程爬取示例:36 of
+msgid "return urls"
+msgstr ""
+
+#: crawler.use_case.douban_multiThread_spiders.多线程爬取示例:38 of
+msgid "Data解析函数实现"
+msgstr ""
+
+#: crawler.use_case.douban_multiThread_spiders.多线程爬取示例:46 of
+msgid "main函数实现"
+msgstr ""
+
