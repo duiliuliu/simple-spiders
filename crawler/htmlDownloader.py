@@ -1,7 +1,7 @@
 # -*- coding： utf-8 -*-
 # author：pengr
 import requests
-import sys
+from user_agent import generate_user_agent
 
 
 class HtmlDownloader():
@@ -15,18 +15,18 @@ class HtmlDownloader():
         '''
         资源下载器初始化函数
 
-            @member :: __headers : 请求头，默认设置useAgent属性
-            @member :: __proxy : 请求代理，默认None
-            @member :: __timeout : 请求延时设置，默认延时5秒
-            @member :: __level : 当前请求层数，对应不同的层数可以有不同的设置
+            @member :: headers : 请求头，默认设置useAgent属性
+            @member :: proxy : 请求代理，默认None
+            @member :: timeout : 请求延时设置，默认延时5秒
+            @member :: level : 当前请求层数，对应不同的层数可以有不同的设置
 
         '''
-        self.__headers = {
+        self._headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.108 Safari/537.36 2345Explorer/8.8.0.16453'
         }
-        self.__proxy = {}
-        self.__timeout = 5
-        self.__level = 0
+        self._proxy = {}
+        self._timeout = 5
+        self._level = 0
 
     def download(self, request):
         '''
@@ -46,7 +46,7 @@ class HtmlDownloader():
                 'level': ''
             }
 
-        self.__level = request['level']
+        self._level = request['level']
 
         try:
             if 'request_type' in request and request['request_type'] == 'post':
@@ -66,7 +66,7 @@ class HtmlDownloader():
             'level': request['level']
         }
 
-    def refresh_useragent(self, useragent):
+    def refresh_useragent(self, useragent=None):
         '''
         更新浏览器头
 
@@ -76,7 +76,9 @@ class HtmlDownloader():
 
         '''
         if useragent:
-            self.__headers['User-Agent'] = useragent
+            self._headers['User-Agent'] = useragent
+        else:
+            self._headers['User-Agent'] = generate_user_agent()
 
     def refresh_proxy(self, proxy):
         '''
@@ -88,7 +90,7 @@ class HtmlDownloader():
 
         '''
         if proxy and 'http' in proxy:
-            self.__proxy = proxy
+            self._proxy = proxy
 
     def refresh_headers(self, headers, level=None):
         '''
@@ -103,12 +105,12 @@ class HtmlDownloader():
         '''
         if not headers:
             return
-        if not level or level == self.__level:
+        if not level or level == self._level:
             for h in headers:
                 if headers[h]:
-                    self.__headers[h] = headers[h]
+                    self._headers[h] = headers[h]
                 else:
-                    self.__headers.pop(h)
+                    self._headers.pop(h)
 
     def set_timeout(self, timeout):
         '''
@@ -120,7 +122,7 @@ class HtmlDownloader():
 
         '''
         if timeout:
-            self.__timeout = timeout
+            self._timeout = timeout
 
     def set_headers(self, headers, level=None):
         '''
@@ -135,8 +137,8 @@ class HtmlDownloader():
         '''
         if not headers:
             return
-        if not level or level == self.__level:
-            self.__headers = headers
+        if not level or level == self._level:
+            self._headers = headers
 
     def _get(self, url):
         '''
@@ -147,7 +149,7 @@ class HtmlDownloader():
             return : <Response>
 
         '''
-        return requests.get(url, headers=self.__headers, proxies=self.__proxy, timeout=self.__timeout)
+        return requests.get(url, headers=self._headers, proxies=self._proxy, timeout=self._timeout)
 
     def _post(self, url, data):
         '''
@@ -161,4 +163,4 @@ class HtmlDownloader():
 
         '''
         return requests.post(
-            url, headers=self.__headers, data=data, proxies=self.__proxy, timeout=self.__timeout)
+            url, headers=self._headers, data=data, proxies=self._proxy, timeout=self._timeout)

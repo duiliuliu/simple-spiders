@@ -37,7 +37,7 @@ class test_RequestManager(unittest.TestCase):
             level=1), len(self.requests))
         self.assertEqual(self.manager.new_requests_size(), len(self.requests))
 
-        self.manager.add_new_requests(self.requests, add_level=1)
+        self.manager.add_new_requests(self.requests)
         self.assertEqual(self.manager.new_requests_size(), len(self.requests))
         self.assertEqual(self.manager.new_requests_size(
             level=2), 0)
@@ -52,7 +52,7 @@ class test_RequestManager(unittest.TestCase):
             level=2))
 
     def test_get_new_request(self):
-        self.manager.add_new_requests(self.request)
+        self.manager.add_new_request(self.request)
         self.assertEqual(self.manager.get_new_request(), self.request)
 
     def test_new_request_size(self):
