@@ -6,7 +6,7 @@ import sys
  
 setup(
     name="simple-spiders",
-    version="0.1.1",
+    version="0.1.4",
     author="pengr",
     author_email="pengrui55555@163.com",
     description="A simple web crawling framework.",
@@ -18,7 +18,8 @@ setup(
         "requests",
         "lxml",
         "xlwt",
-        "xlsxwriter"
+        "xlsxwriter",
+        "user_agent"
         ],
     classifiers=[
         "Environment :: Console",

@@ -68,7 +68,7 @@ def 自定义解析函数示例():
 
     >>>
      def getdata(response):
-        自定义data解析函数，对我们所需要的数据进行提取。
+        #自定义data解析函数，对我们所需要的数据进行提取。
         body = html.fromstring(response['text'])
         comments = body.xpath('//*[@id="comments"]/div/div[2]/p/span/text()')
         writter.write_buffer([comments])
