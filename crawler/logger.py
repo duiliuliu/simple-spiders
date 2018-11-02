@@ -32,6 +32,7 @@ elif platform.system() == 'Linux':
 else:
     pass
 
+
 def synchronized(func):
     func.__lock__ = threading.Lock()
 
@@ -39,6 +40,7 @@ def synchronized(func):
         with func.__lock__:
             return func(*args, **kwargs)
     return lock_func
+
 
 @synchronized
 def set_color(color):
@@ -67,6 +69,14 @@ def set_win_color(color, handle=std_out_handle):
 class Logger:
 
     def __init__(self, name, clevel=logging.DEBUG, Flevel=logging.DEBUG):
+        '''
+        日志类
+
+            @param :: name : 日志名称
+            @member :: clevel : 打印控制台级别
+            @member :: Flevel : 输出日志文件级别
+
+        '''
         self.logger = logging.getLogger(name)
         self.logger.setLevel(logging.DEBUG)
         fmt = logging.Formatter(
