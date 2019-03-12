@@ -75,7 +75,7 @@ class DataWriter():
         self._headers = []
         self.type = filename.split('.')[-1] if len(filename.split('.')) > 1 else ''
         self._encoding = 'utf-8'
-        self._write_type = 'a'
+        self._write_type = 'w'
         self.__attribute = {}
         self.__data = []
         self.__logger = Logger(__name__)
@@ -123,6 +123,7 @@ class DataWriter():
 
             return : None
         '''
+        self._write_type = 'a'
         if not item:
             return
         self._add_buffer_data(item)
