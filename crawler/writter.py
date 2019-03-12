@@ -69,13 +69,12 @@ class DataWriter():
 
             @member :: logger : 日志
         '''
-        
-        
-        self.__filename = filename
-        self._headers = []
+
+        self.filename = filename
+        self.headers = []
         self.type = filename.split('.')[-1] if len(filename.split('.')) > 1 else ''
-        self._encoding = 'utf-8'
-        self._write_type = 'w'
+        self.encoding = 'utf-8'
+        self.write_type = 'a'
         self.__attribute = {}
         self.__data = []
         self.__logger = Logger(__name__)
@@ -123,7 +122,6 @@ class DataWriter():
 
             return : None
         '''
-        self._write_type = 'a'
         if not item:
             return
         self._add_buffer_data(item)
@@ -157,14 +155,14 @@ class DataWriter():
 
             return : None
         '''
-        with open(self.__filename, self._write_type, encoding=self._encoding) as f:
-            if self._headers and (self.__filename not in self.__attribute):
-                item = self._headers
-                if type(self._headers) == dict:
-                    item = self._dict_to_list(self._headers)
+        with open(self.filename, self.write_type, encoding=self.encoding) as f:
+            if self.headers and (self.filename not in self.__attribute):
+                item = self.headers
+                if type(self.headers) == dict:
+                    item = self.headers.values()
                 f.write('\t'.join(str(i) for i in item)+'\n')
                 f.write('-'*40+'\n')
-                self.__attribute[self.__filename] = '1'
+                self.__attribute[self.filename] = '1'
 
             for item in items:
                 if type(item) == dict:
@@ -183,16 +181,16 @@ class DataWriter():
         worksheet = book.add_sheet("Sheet 1")
         row = 0
         col = 0
-        if self._headers and (self.__filename not in self.__attribute):
-            item = self._headers
-            if type(self._headers) == dict:
-                item = self._dict_to_list(self._headers)
+        if self.headers and (self.filename not in self.__attribute):
+            item = self.headers
+            if type(self.headers) == dict:
+                item = self.headers.values()
             for h in item:
                 worksheet.write.write(row, col, h)
                 col += 1
             row += 1
             col = 0
-            self.__attribute[self.__filename] = '1'
+            self.__attribute[self.filename] = '1'
 
         for item in items:
             if type(item) == dict:
@@ -206,7 +204,7 @@ class DataWriter():
                 self.__logger.warn(
                     "Hit limit of #of rows in one sheet(65535).")
                 break
-        book.save(self.__filename)
+        book.save(self.filename)
 
     def _write_xexcel(self, items):
         '''
@@ -216,20 +214,20 @@ class DataWriter():
 
             return : None
         '''
-        workbook = xlsxwriter.Workbook(self.__filename)
+        workbook = xlsxwriter.Workbook(self.filename)
         worksheet = workbook.add_worksheet()
         row = 0
         col = 0
-        if self._headers and (self.__filename not in self.__attribute):
-            item = self._headers
-            if type(self._headers) == dict:
-                item = self._dict_to_list(self._headers)
+        if self.headers and (self.filename not in self.__attribute):
+            item = self.headers
+            if type(self.headers) == dict:
+                item = self.headers.values()
             for h in item:
                 worksheet.write(row, col, h)
                 col += 1
             row += 1
             col = 0
-            self.__attribute[self.__filename] = '1'
+            self.__attribute[self.filename] = '1'
 
         for item in items:
             if type(item) == dict:
@@ -250,14 +248,14 @@ class DataWriter():
 
             return : None
         '''
-        with open(self.__filename, self._write_type, newline='', encoding=self._encoding) as f:
+        with open(self.filename, self.write_type, newline='', encoding=self.encoding) as f:
             csvfile = csv.writer(f)
-            if self._headers and (self.__filename not in self.__attribute):
-                item = self._headers
-                if type(self._headers) == dict:
-                    item = self._dict_to_list(self._headers)
+            if self.headers and (self.filename not in self.__attribute):
+                item = self.headers
+                if type(self.headers) == dict:
+                    item = self.headers.values()
                 csvfile.writerow(item)
-                self.__attribute[self.__filename] = '1'
+                self.__attribute[self.filename] = '1'
 
             for item in items:
                 if type(item) == dict:
@@ -280,10 +278,10 @@ class DataWriter():
         '''
         try:
             items = []
-            if not self._headers:
-                self.header = list(items_dict.keys())
+            if not self.headers:
+                self.headers = list(items_dict.keys())
 
-            for key in self._headers:
+            for key in self.headers:
                 try:
                     items.append(items_dict[key])
                 except:
