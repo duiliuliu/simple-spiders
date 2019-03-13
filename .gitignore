@@ -10,3 +10,4 @@ simple_spiders.egg-info/
 # use-case
 /crawler/use_case
 
+.vscode/settings.json
