@@ -3,5 +3,10 @@
 # doc
 /doc
 
+# dist
+/dist
+simple_spiders.egg-info/
+
 # use-case
 /crawler/use_case
+
