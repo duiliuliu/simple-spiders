@@ -6,7 +6,7 @@ import sys
  
 setup(
     name="simple-spiders",
-    version="0.1.4",
+    version="0.1.5",
     author="pengr",
     author_email="pengrui55555@163.com",
     description="A simple web crawling framework.",
