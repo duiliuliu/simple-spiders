@@ -5,9 +5,13 @@
 
 # dist
 /dist
+/build
 simple_spiders.egg-info/
 
 # use-case
 /crawler/use_case
 
 .vscode/settings.json
+
+/crawler1.0
+/case1.0

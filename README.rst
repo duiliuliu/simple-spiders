@@ -7,14 +7,12 @@ simple Spider
 
 ::
 
-          _                 _         _____       _     _           
-         (_)               | |       / ____|     (_)   | |          
-      ___ _ _ __ ___  _ __ | | ___  | (___  _ __  _  __| | ___ _ __ 
-     / __| | '_ ` _ \| '_ \| |/ _ \  \___ \| '_ \| |/ _` |/ _ \ '__|
-     \__ \ | | | | | | |_) | |  __/  ____) | |_) | | (_| |  __/ |   
-     |___/_|_| |_| |_| .__/|_|\___| |_____/| .__/|_|\__,_|\___|_|   
-                     | |                   | |                      
-                     |_|                   |_|                      
+     _              _       ___       _    _           
+ ___<_>._ _ _  ___ | | ___ / __> ___ <_> _| | ___  _ _ 
+<_-<| || ' ' || . \| |/ ._>\__ \| . \| |/ . |/ ._>| '_>
+/__/|_||_|_|_||  _/|_|\___.<___/|  _/|_|\___|\___.|_|  
+              |_|               |_|                    
+
 
 `中文 <./Readme-zh.md>`__
 
@@ -27,18 +25,22 @@ framework.\ `Document <https://duiliuliu.github.io/simple-spiders/>`__
 Getting Started
 ---------------
 
-``pip install simple-spiders``
+``pip install sspider``
 
 You should construst project.py to suit your needs
 
 ::
 
-    from crawler.spider import Spider
-    from crawler.writter import DataWriter
-
-    spider = Spider(
-        'https://movie.douban.com/subject/26810318/comments?start=0&limit=20&sort=new_score&status=P')
-    spider.start_crawl()
+   >>> from sspider import Spider, Request
+   >>> # 建立request对象
+   >>> request = Request('get', 'https://movie.douban.com/subject/27202819/reviews')
+   >>> # 建立爬虫对象
+   >>> spider = Spider()
+   >>> # 运行爬虫
+   >>> spider.run(request)
+   ...
+   >>> # 保存爬取结果
+   >>> spider.write('test.txt)
 
 ``python project.py``
 
@@ -57,32 +59,7 @@ Referenced Libraries
 -  Using `xlsxwriter <https://xlsxwriter.readthedocs.io>`__ provide
    feature that export file as xexcel type
 
-Usage
------
 
-Project structure
------------------
-
-::
-
-    - crawler/
-        - __init__.py
-        - test/
-          - htmlDownloder_test
-          - htmlParser_test
-          - requestManager_test
-          - writter_test
-          - logger_test
-          - spider_test
-          
-        - htmlDownloder
-        - htmlParser
-        - requestManager
-        - writter
-        - logger
-        - spider
-
-    - main.py
 
 License
 -------

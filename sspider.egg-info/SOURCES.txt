@@ -1,0 +1,12 @@
+README.rst
+setup.py
+sspider/__init__.py
+sspider/__version__.py
+sspider/commons.py
+sspider/spider.py
+sspider/utils.py
+sspider.egg-info/PKG-INFO
+sspider.egg-info/SOURCES.txt
+sspider.egg-info/dependency_links.txt
+sspider.egg-info/requires.txt
+sspider.egg-info/top_level.txt

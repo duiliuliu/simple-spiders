@@ -2,25 +2,24 @@
 # author：pengr
 from __future__ import print_function
 from setuptools import setup, find_packages
-import sys
- 
+
 setup(
-    name="simple-spiders",
-    version="0.1.5",
+    name="sspider",
+    version="0.1.0",
     author="pengr",
     author_email="pengrui55555@163.com",
     description="A simple web crawling framework.",
-    long_description=open("README.rst",encoding="utf-8").read(),
+    long_description=open("README.rst", encoding="utf-8").read(),
     license="MIT",
     url="https://github.com/duiliuliu/simple-spiders",
-    packages=['crawler'],
+    packages=['sspider'],
     install_requires=[
         "requests",
         "lxml",
         "xlwt",
         "xlsxwriter",
         "user_agent"
-        ],
+    ],
     classifiers=[
         "Environment :: Console",
         "Intended Audience :: Developers",
