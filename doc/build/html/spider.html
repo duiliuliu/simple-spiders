@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-ch">
+  <head>
+    <meta charset="utf-8" />
+    <title>sspider &#8212; simple-spiders 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="关于simplespiders" href="About.html" />
+    <link rel="prev" title="安装使用" href="Install.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          simple-spiders</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">documentation:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">综述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Install.html">安装使用</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">sspider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="About.html">关于simplespiders</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">sspider</a><ul>
+<li><a class="reference internal" href="#id1">sspider.抽象结构</a></li>
+<li><a class="reference internal" href="#id2">sspider 通用实现</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="Install.html" title="Previous Chapter: 安装使用"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 安装使用</span>
+    </a>
+  </li>
+  <li>
+    <a href="About.html" title="Next Chapter: 关于simplespiders"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">关于simplespiders &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/spider.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="module-sspider.spider">
+<span id="sspider"></span><h1>sspider<a class="headerlink" href="#module-sspider.spider" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>sspider.抽象结构<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>该模块时爬虫整体的抽象架构，可直接继承该模块中的类进行扩展功能</p>
+<dl class="class">
+<dt id="sspider.spider.AbstractDownloader">
+<em class="property">class </em><code class="descclassname">sspider.spider.</code><code class="descname">AbstractDownloader</code><a class="reference internal" href="_modules/sspider/spider.html#AbstractDownloader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractDownloader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>下载器</p>
+<p>对传入的请求进行请求下载</p>
+<dl class="method">
+<dt id="sspider.spider.AbstractDownloader.download">
+<code class="descname">download</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/spider.html#AbstractDownloader.download"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractDownloader.download" title="Permalink to this definition">¶</a></dt>
+<dd><p>对request进行请求下载，需要将请求到的response返回</p>
+<blockquote>
+<div><p>&#64;param :: request : 请求对象
+return response</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sspider.spider.AbstractLogger">
+<em class="property">class </em><code class="descclassname">sspider.spider.</code><code class="descname">AbstractLogger</code><a class="reference internal" href="_modules/sspider/spider.html#AbstractLogger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractLogger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>日志类</p>
+<p>记录爬虫运行</p>
+<dl class="method">
+<dt id="sspider.spider.AbstractLogger.debug">
+<code class="descname">debug</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/spider.html#AbstractLogger.debug"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractLogger.debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>debug级别日志</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sspider.spider.AbstractLogger.error">
+<code class="descname">error</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/spider.html#AbstractLogger.error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractLogger.error" title="Permalink to this definition">¶</a></dt>
+<dd><p>error级别日志</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sspider.spider.AbstractLogger.exception">
+<code class="descname">exception</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/spider.html#AbstractLogger.exception"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractLogger.exception" title="Permalink to this definition">¶</a></dt>
+<dd><p>exception级别日志</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sspider.spider.AbstractLogger.info">
+<code class="descname">info</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/spider.html#AbstractLogger.info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractLogger.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>info级别日志</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sspider.spider.AbstractLogger.warn">
+<code class="descname">warn</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/spider.html#AbstractLogger.warn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractLogger.warn" title="Permalink to this definition">¶</a></dt>
+<dd><p>warn级别日志</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sspider.spider.AbstractParser">
+<em class="property">class </em><code class="descclassname">sspider.spider.</code><code class="descname">AbstractParser</code><a class="reference internal" href="_modules/sspider/spider.html#AbstractParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>解析器</p>
+<p>对传入的文本进行解析</p>
+<dl class="method">
+<dt id="sspider.spider.AbstractParser.parse">
+<code class="descname">parse</code><span class="sig-paren">(</span><em>response</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/spider.html#AbstractParser.parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractParser.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>对response进行解析，需要将解析到的requests与data返回</p>
+<blockquote>
+<div><p>&#64;param :: response : 响应对象
+return requests,data</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sspider.spider.AbstractRequestManager">
+<em class="property">class </em><code class="descclassname">sspider.spider.</code><code class="descname">AbstractRequestManager</code><a class="reference internal" href="_modules/sspider/spider.html#AbstractRequestManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractRequestManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>请求管理器</p>
+<p>管理所有的请求</p>
+<dl class="method">
+<dt id="sspider.spider.AbstractRequestManager.add_new_request">
+<code class="descname">add_new_request</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/spider.html#AbstractRequestManager.add_new_request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractRequestManager.add_new_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>添加request对象到requestManager中进行管理</p>
+<blockquote>
+<div><p>&#64;param :: request : request对象
+return None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="sspider.spider.AbstractRequestManager.add_new_requests">
+<code class="descname">add_new_requests</code><span class="sig-paren">(</span><em>requests</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/spider.html#AbstractRequestManager.add_new_requests"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractRequestManager.add_new_requests" title="Permalink to this definition">¶</a></dt>
+<dd><p>模板方法，不需要子类重写
+添加requests序列到requestManager中进行管理</p>
+<blockquote>
+<div><p>&#64;param :: requests : request对象列表
+return None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="sspider.spider.AbstractRequestManager.get_new_request">
+<code class="descname">get_new_request</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/spider.html#AbstractRequestManager.get_new_request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractRequestManager.get_new_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>从requestManager中取新的请求</p>
+<blockquote>
+<div><p>return request</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="sspider.spider.AbstractRequestManager.has_new_request">
+<code class="descname">has_new_request</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/spider.html#AbstractRequestManager.has_new_request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractRequestManager.has_new_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>判断requestManager中是否还有新的请求，返回布尔类型结果</p>
+<blockquote>
+<div><p>return Bool</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sspider.spider.AbstractSpider">
+<em class="property">class </em><code class="descclassname">sspider.spider.</code><code class="descname">AbstractSpider</code><span class="sig-paren">(</span><em>downloader=&lt;sspider.spider.AbstractDownloader object&gt;</em>, <em>parser=&lt;sspider.spider.AbstractParser object&gt;</em>, <em>requestManager=&lt;sspider.spider.AbstractRequestManager object&gt;</em>, <em>writter=&lt;sspider.spider.AbstractWritter object&gt;</em>, <em>logger=&lt;sspider.spider.AbstractLogger object&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/spider.html#AbstractSpider"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractSpider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>爬取调度器</p>
+<blockquote>
+<div><p>&#64;member :: downloader : 下载器
+&#64;member :: parser : 解析器
+&#64;member :: requestManager : 请求管理器
+&#64;member :: writter : 文本写入
+&#64;member :: logger : 日志</p>
+</div></blockquote>
+<dl class="attribute">
+<dt id="sspider.spider.AbstractSpider.attrs">
+<code class="descname">attrs</code><em class="property"> = ['downloader', 'parser', 'requestManager', 'writter', 'logger']</em><a class="headerlink" href="#sspider.spider.AbstractSpider.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sspider.spider.AbstractSpider.crawl">
+<code class="descname">crawl</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/spider.html#AbstractSpider.crawl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractSpider.crawl" title="Permalink to this definition">¶</a></dt>
+<dd><p>对request进行请求进行爬取并解析结果的运行单元，子类可对该方法重写进行多线程、多进程运行或异步抓取与解析
+下载器对传入的request进行下载，解析器解析下载到的文档，并将解析出的request扔进requestManager中进行管理，以进行深度爬取；将解析出的data扔进writter中，将数据存储到磁盘上</p>
+<blockquote>
+<div><p>&#64;param :: request : 请求
+return None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="sspider.spider.AbstractSpider.run">
+<code class="descname">run</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/spider.html#AbstractSpider.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractSpider.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>运行爬虫方法，从requestManager中取出可用的request，然后扔进下载器中进行下载，通过解析器对下载到的文档进行解析；
+需要传入一个或者一组request作为初始request进行抓取</p>
+<blockquote>
+<div><p>&#64;param :: request : 请求
+return : None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="sspider.spider.AbstractSpider.write">
+<code class="descname">write</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/spider.html#AbstractSpider.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractSpider.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>传入文件名及格式，数据写入文件</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sspider.spider.AbstractWritter">
+<em class="property">class </em><code class="descclassname">sspider.spider.</code><code class="descname">AbstractWritter</code><a class="reference internal" href="_modules/sspider/spider.html#AbstractWritter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractWritter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>数据写入类</p>
+<p>将数据以特定格式写入到磁盘中</p>
+<dl class="method">
+<dt id="sspider.spider.AbstractWritter.flush_buffer">
+<code class="descname">flush_buffer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/spider.html#AbstractWritter.flush_buffer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractWritter.flush_buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>刷新缓存数据到磁盘上</p>
+<blockquote>
+<div><p>return None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="sspider.spider.AbstractWritter.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/spider.html#AbstractWritter.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractWritter.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>将数据data写入磁盘</p>
+<blockquote>
+<div><p>return None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="sspider.spider.AbstractWritter.write_buffer">
+<code class="descname">write_buffer</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/spider.html#AbstractWritter.write_buffer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.spider.AbstractWritter.write_buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>缓存数据</p>
+<blockquote>
+<div><p>return None</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<span class="target" id="module-sspider.commons"></span><div class="section" id="id2">
+<h2>sspider 通用实现<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>commons模块下是对spider模块下的接口的通用实现，可直接对commons下的模块组件进行扩展，也可以对spider下的接口直接继承实现</p>
+<dl class="class">
+<dt id="sspider.commons.CommonWritter">
+<em class="property">class </em><code class="descclassname">sspider.commons.</code><code class="descname">CommonWritter</code><a class="reference internal" href="_modules/sspider/commons.html#CommonWritter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.CommonWritter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sspider.spider.AbstractWritter" title="sspider.spider.AbstractWritter"><code class="xref py py-class docutils literal notranslate"><span class="pre">sspider.spider.AbstractWritter</span></code></a></p>
+<p>数据写入类</p>
+<p>将数据以特定格式写入到磁盘中</p>
+<dl class="method">
+<dt id="sspider.commons.CommonWritter.flush_buffer">
+<code class="descname">flush_buffer</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sspider.commons.CommonWritter.flush_buffer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sspider.commons.CommonWritter.headers">
+<code class="descname">headers</code><a class="headerlink" href="#sspider.commons.CommonWritter.headers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sspider.commons.CommonWritter.items">
+<code class="descname">items</code><a class="headerlink" href="#sspider.commons.CommonWritter.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sspider.commons.CommonWritter.remove_buffer">
+<code class="descname">remove_buffer</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sspider.commons.CommonWritter.remove_buffer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sspider.commons.CommonWritter.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>filename</em>, <em>data=None</em>, <em>mode='w+'</em>, <em>encode='utf-8'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#CommonWritter.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.CommonWritter.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>将数据data写入磁盘</p>
+<p>return None</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sspider.commons.CommonWritter.write_buffer">
+<code class="descname">write_buffer</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sspider.commons.CommonWritter.write_buffer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sspider.commons.HtmlDownloader">
+<em class="property">class </em><code class="descclassname">sspider.commons.</code><code class="descname">HtmlDownloader</code><span class="sig-paren">(</span><em>timeout=3</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#HtmlDownloader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.HtmlDownloader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sspider.spider.AbstractDownloader" title="sspider.spider.AbstractDownloader"><code class="xref py py-class docutils literal notranslate"><span class="pre">sspider.spider.AbstractDownloader</span></code></a></p>
+<p>下载器</p>
+<p>对传入的请求进行请求下载</p>
+<p>&#64;member :: timeout : 下载超时时间</p>
+<p>对与下载器下载前后，很多时候都需要进行一些扩展中间件，在此框架中，可以运用装饰者模式对其进行扩展，也可以自己继承实现 AbstractDownloader 接口中的方法。</p>
+<p>例如：通过装饰器实现添加代理</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># 我们需要一个代理池（可将代理池设置为单例类），类似与requestManager.假定我们得代理池如下：</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">ProxyPool</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">def</span> <span class="nf">get_new_proxy</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="sd">&#39;&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="sd">        请求代理，返回一个可用的、未被使用过的代理</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="sd">            return proxy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="sd">        &#39;&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="n">passs</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">proxyWrapper</span><span class="p">():</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="sd">&#39;&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="sd">    通过装饰器给请求动态添加代理</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="sd">    &#39;&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">decorate</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">proxy</span> <span class="o">=</span> <span class="n">ProxyPool</span><span class="p">()</span><span class="o">.</span><span class="n">get_new_proxy</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="n">request</span><span class="o">.</span><span class="n">proxy</span> <span class="o">=</span> <span class="n">proxy</span>
+<span class="gp">&gt;&gt;&gt; </span>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="k">return</span> <span class="n">wrapper</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">return</span> <span class="n">decorate</span>
+</pre></div>
+</div>
+<p>完成代理的装饰器后可直接在 download 方法中进行使用：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nd">@typeassert</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">Request</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nd">@proxyWrapper</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">with</span> <span class="n">sessions</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">session</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="o">**</span><span class="n">request</span><span class="o">.</span><span class="n">TransRequestParam</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>同样的，也可以将下载单元加入单线程、多进程进行下载请求资源，这样就与解析异步进行，提高爬取效率
+对于cookie，请求头等的设置类似上面代理装饰器</p>
+<dl class="method">
+<dt id="sspider.commons.HtmlDownloader.download">
+<code class="descname">download</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#HtmlDownloader.download"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.HtmlDownloader.download" title="Permalink to this definition">¶</a></dt>
+<dd><p>对request进行请求下载，需要将请求到的response返回</p>
+<p>&#64;param :: request : 请求对象
+return response</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sspider.commons.HtmlParser">
+<em class="property">class </em><code class="descclassname">sspider.commons.</code><code class="descname">HtmlParser</code><a class="reference internal" href="_modules/sspider/commons.html#HtmlParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.HtmlParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sspider.spider.AbstractParser" title="sspider.spider.AbstractParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">sspider.spider.AbstractParser</span></code></a></p>
+<p>解析器</p>
+<p>对传入的文本进行解析</p>
+<p>在爬取网页中，这部分时很难统一的，各个网站有不同的特色，所以此部分是一般需要用户自己独立重写的</p>
+<dl class="method">
+<dt id="sspider.commons.HtmlParser.parse">
+<code class="descname">parse</code><span class="sig-paren">(</span><em>response</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#HtmlParser.parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.HtmlParser.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>对response进行解析，需要将解析到的requests与data返回</p>
+<p>&#64;param :: response : 响应对象
+return requests,data</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sspider.commons.Logger">
+<em class="property">class </em><code class="descclassname">sspider.commons.</code><code class="descname">Logger</code><span class="sig-paren">(</span><em>name</em>, <em>path=None</em>, <em>clevel=10</em>, <em>Flevel=10</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#Logger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sspider.spider.AbstractLogger" title="sspider.spider.AbstractLogger"><code class="xref py py-class docutils literal notranslate"><span class="pre">sspider.spider.AbstractLogger</span></code></a></p>
+<dl class="method">
+<dt id="sspider.commons.Logger.cri">
+<code class="descname">cri</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#Logger.cri"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.Logger.cri" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sspider.commons.Logger.debug">
+<code class="descname">debug</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#Logger.debug"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.Logger.debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>debug级别日志</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sspider.commons.Logger.error">
+<code class="descname">error</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#Logger.error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.Logger.error" title="Permalink to this definition">¶</a></dt>
+<dd><p>error级别日志</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sspider.commons.Logger.exception">
+<code class="descname">exception</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#Logger.exception"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.Logger.exception" title="Permalink to this definition">¶</a></dt>
+<dd><p>exception级别日志</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sspider.commons.Logger.info">
+<code class="descname">info</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#Logger.info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.Logger.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>info级别日志</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sspider.commons.Logger.warn">
+<code class="descname">warn</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#Logger.warn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.Logger.warn" title="Permalink to this definition">¶</a></dt>
+<dd><p>warn级别日志</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sspider.commons.Request">
+<em class="property">class </em><code class="descclassname">sspider.commons.</code><code class="descname">Request</code><span class="sig-paren">(</span><em>method</em>, <em>url</em>, <em>params=None</em>, <em>data=None</em>, <em>headers=None</em>, <em>cookies=None</em>, <em>files=None</em>, <em>auth=None</em>, <em>timeout=None</em>, <em>allow_redirects=True</em>, <em>proxies=None</em>, <em>hooks=None</em>, <em>stream=None</em>, <em>verify=None</em>, <em>cert=None</em>, <em>json=None</em>, <em>level=1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#Request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.Request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>请求对象</p>
+<p>&#64;member :: method : 请求方法，有GET、POST、PUT、DELETE、OPTION</p>
+<p>&#64;member :: url : 请求url</p>
+<p>&#64;member :: params : 请求参数</p>
+<p>&#64;member :: data : 请求body数据</p>
+<p>&#64;member :: headers : 请求headers</p>
+<p>&#64;member :: cookies : cookies</p>
+<p>&#64;member :: files : files</p>
+<p>&#64;member :: auth : auth</p>
+<p>&#64;member :: timeout : timeout</p>
+<p>&#64;member :: allow_redirects : allow_redirects</p>
+<p>&#64;member :: proxies : 代理，为字典结构，{'http':'10.10.154.23:10002','https':'10.10.154.23:10004'}</p>
+<p>&#64;member :: hooks : hooks</p>
+<p>&#64;member :: stream : stream</p>
+<p>&#64;member :: verify : verify</p>
+<p>&#64;member :: cert : cert</p>
+<p>&#64;member :: json : json</p>
+<p>&#64;member :: level : level</p>
+<p>通常开始爬虫时，我们需要初始化一个Request对象或者一组request对象。</p>
+<p>初始化Request对象，必须初始化其请求方法method与请求url，其余可选
+<cite>request = Request('get','http://www.baidu.com')</cite></p>
+<p>带有请求头的Request对象
+<cite>headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36'}</cite>
+<cite>request = Request('get','http://www.baidu.com', headers=headers)</cite></p>
+<dl class="method">
+<dt id="sspider.commons.Request.transRequestParam">
+<code class="descname">transRequestParam</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#Request.transRequestParam"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.Request.transRequestParam" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sspider.commons.RequestManager">
+<em class="property">class </em><code class="descclassname">sspider.commons.</code><code class="descname">RequestManager</code><span class="sig-paren">(</span><em>limit_level=1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#RequestManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.RequestManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sspider.spider.AbstractRequestManager" title="sspider.spider.AbstractRequestManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">sspider.spider.AbstractRequestManager</span></code></a></p>
+<p>请求管理器</p>
+<p>管理所有的请求</p>
+<dl class="method">
+<dt id="sspider.commons.RequestManager.add_new_request">
+<code class="descname">add_new_request</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#RequestManager.add_new_request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.RequestManager.add_new_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>添加请求</p>
+<blockquote>
+<div><p>&#64;param :: request : Request请求</p>
+<p>return : None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="sspider.commons.RequestManager.get_new_request">
+<code class="descname">get_new_request</code><span class="sig-paren">(</span><em>level=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#RequestManager.get_new_request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.RequestManager.get_new_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>获取一个未被请求过的请求</p>
+<blockquote>
+<div><p>&#64;param :: level : 从指定层数中提取，默认为None</p>
+<p>return : request</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="sspider.commons.RequestManager.has_new_request">
+<code class="descname">has_new_request</code><span class="sig-paren">(</span><em>level=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#RequestManager.has_new_request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.RequestManager.has_new_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>判断是否还有待爬取的请求，当传入level后，判断相应的层数中是否还有待爬取的请求。默认判断所有层数</p>
+<blockquote>
+<div><p>&#64;param :: level : 待添加请求集合</p>
+<p>return : Bool</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sspider.commons.RequestManager.level">
+<code class="descname">level</code><a class="headerlink" href="#sspider.commons.RequestManager.level" title="Permalink to this definition">¶</a></dt>
+<dd><p>获取当前层级</p>
+<blockquote>
+<div><p>return : int</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="sspider.commons.RequestManager.new_requests_size">
+<code class="descname">new_requests_size</code><span class="sig-paren">(</span><em>level=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#RequestManager.new_requests_size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.RequestManager.new_requests_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>待爬取的请求集合长度</p>
+<blockquote>
+<div><p>&#64;param :: level : 获取指定层数的请求集合长度</p>
+<p>return : int</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="sspider.commons.RequestManager.old_requests_size">
+<code class="descname">old_requests_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#RequestManager.old_requests_size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.RequestManager.old_requests_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>已请求的请求集合长度</p>
+<blockquote>
+<div><p>&#64;param :: level : 获取指定层数的请求集合长度</p>
+<p>return : int</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sspider.commons.Response">
+<em class="property">class </em><code class="descclassname">sspider.commons.</code><code class="descname">Response</code><span class="sig-paren">(</span><em>request</em>, <em>cls=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#Response"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.Response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">requests.models.Response</span></code></p>
+<p>响应对象</p>
+<p>&#64;member :: _content : 响应二进制数据</p>
+<p>&#64;member :: _content_consumed : _content_consumed</p>
+<p>&#64;member :: _next : _next</p>
+<p>&#64;member :: status_code : 响应状态码</p>
+<p>&#64;member :: headers : 响应头</p>
+<p>&#64;member :: raw : raw</p>
+<p>&#64;member :: url : 请求url</p>
+<p>&#64;member :: encoding : 响应编码</p>
+<p>&#64;member :: history : 响应历史</p>
+<p>&#64;member :: reason : reason</p>
+<p>&#64;member :: cookies : 响应cookies</p>
+<p>&#64;member :: elapsed : elapsed</p>
+<p>&#64;member :: request : request</p>
+<p>&#64;member :: level : 对应request的level</p>
+<dl class="method">
+<dt id="sspider.commons.Response.html">
+<code class="descname">html</code><span class="sig-paren">(</span><em>encoding=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#Response.html"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.Response.html" title="Permalink to this definition">¶</a></dt>
+<dd><p>将response解析为HtmlElement对象，可通过css选择器或者xpath语法获取数据</p>
+<dl>
+<dt>如：</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">doc</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">html</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 通过xpath获取a元素里的href</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">links</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//a/@href&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 通过xpath获取span元素中的text</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spans</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//span/text()&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 更多用法，请自行查询css选择器与xpath语法进行使用</span>
+</pre></div>
+</div>
+<p>常用方法：
+find, findall, findtext, get, getchildren, getiterator, getnext, getparent, getprevious, getroottree, index, insert, items, iter, iterancestors, iterchildren, iterdescendants, iterfind, itersiblings, itertext, keys, makeelement, remove, replace, values, xpath</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="o">.</span><span class="n">drop_tree</span><span class="p">():</span>
+<span class="go">Drops the element and all its children. Unlike el.getparent().remove(el) this does not remove the tail text; with drop_tree the tail text is merged with the previous element.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">.</span><span class="n">drop_tag</span><span class="p">():</span>
+<span class="go">Drops the tag, but keeps its children and text.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">.</span><span class="n">find_class</span><span class="p">(</span><span class="n">class_name</span><span class="p">):</span>
+<span class="go">Returns a list of all the elements with the given CSS class name. Note that class names are space separated in HTML, so doc.find_class_name(&#39;highlight&#39;) will find an element like &lt;div class=&quot;sidebar highlight&quot;&gt;. Class names are case sensitive.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">.</span><span class="n">find_rel_links</span><span class="p">(</span><span class="n">rel</span><span class="p">):</span>
+<span class="go">Returns a list of all the &lt;a rel=&quot;{rel}&quot;&gt; elements. E.g., doc.find_rel_links(&#39;tag&#39;) returns all the links marked as tags.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">.</span><span class="n">get_element_by_id</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="go">Return the element with the given id, or the default if none is found. If there are multiple elements with the same id (which there shouldn&#39;t be, but there often is), this returns only the first.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">.</span><span class="n">text_content</span><span class="p">():</span>
+<span class="go">Returns the text content of the element, including the text content of its children, with no markup.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">.</span><span class="n">cssselect</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
+<span class="go">Select elements from this element and its children, using a CSS selector expression. (Note that .xpath(expr) is also available as on all lxml elements.)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">.</span><span class="n">label</span><span class="p">:</span>
+<span class="go">Returns the corresponding &lt;label&gt; element for this element, if any exists (None if there is none). Label elements have a label.for_element attribute that points back to the element.</span>
+<span class="go">&gt;&gt; .base_url:</span>
+<span class="go">The base URL for this element, if one was saved from the parsing. This attribute is not settable. Is None when no base URL was saved.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">.</span><span class="n">classes</span><span class="p">:</span>
+<span class="go">Returns a set-like object that allows accessing and modifying the names in the &#39;class&#39; attribute of the element. (New in lxml 3.5).</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="go">Sets an HTML attribute. If no value is given, or if the value is None, it creates a boolean attribute like &lt;form novalidate&gt;&lt;/form&gt; or &lt;div custom-attribute&gt;&lt;/div&gt;. In XML, attributes must have at least the empty string as their value like &lt;form novalidate=&quot;&quot;&gt;&lt;/form&gt;, but HTML boolean attributes can also be just present or absent from an element without having a value.</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sspider.commons.Spider">
+<em class="property">class </em><code class="descclassname">sspider.commons.</code><code class="descname">Spider</code><span class="sig-paren">(</span><em>downloader=&lt;sspider.commons.HtmlDownloader object&gt;</em>, <em>parser=&lt;sspider.commons.HtmlParser object&gt;</em>, <em>requestManager=&lt;sspider.commons.RequestManager object&gt;</em>, <em>writter=&lt;sspider.commons.CommonWritter object&gt;</em>, <em>logger=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#Spider"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.Spider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sspider.spider.AbstractSpider" title="sspider.spider.AbstractSpider"><code class="xref py py-class docutils literal notranslate"><span class="pre">sspider.spider.AbstractSpider</span></code></a></p>
+<dl class="method">
+<dt id="sspider.commons.Spider.getItems">
+<code class="descname">getItems</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#Spider.getItems"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.Spider.getItems" title="Permalink to this definition">¶</a></dt>
+<dd><p>获取抓取到的数据</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sspider.commons.Spider.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#Spider.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.Spider.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>将数据写入磁盘，依赖于初始化Spider时的writter，默认为CommonWritter，即将数据打印到控制台</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sspider.commons.TxtWritter">
+<em class="property">class </em><code class="descclassname">sspider.commons.</code><code class="descname">TxtWritter</code><a class="reference internal" href="_modules/sspider/commons.html#TxtWritter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.TxtWritter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sspider.commons.CommonWritter" title="sspider.commons.CommonWritter"><code class="xref py py-class docutils literal notranslate"><span class="pre">sspider.commons.CommonWritter</span></code></a></p>
+<dl class="method">
+<dt id="sspider.commons.TxtWritter.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>filename</em>, <em>data=None</em>, <em>mode='w+'</em>, <em>encode='utf-8'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sspider/commons.html#TxtWritter.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sspider.commons.TxtWritter.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>将数据data写入磁盘</p>
+<p>return None</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018, pengr.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

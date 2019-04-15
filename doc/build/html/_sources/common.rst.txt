@@ -1,0 +1,9 @@
+sspider通用实现
+==============
+
+commons模块下是对spider模块下的接口的通用实现，可直接对commons下的模块组件进行扩展，也可以对spider下的接口直接继承实现
+
+.. automodule:: sspider.commons
+    :members:
+    :undoc-members:
+    :show-inheritance:

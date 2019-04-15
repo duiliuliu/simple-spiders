@@ -1,7 +1,7 @@
-crawler
+sspider
 =======
 
 .. toctree::
    :maxdepth: 4
 
-   crawler
+   sspider

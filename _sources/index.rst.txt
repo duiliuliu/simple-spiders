@@ -12,9 +12,7 @@ Welcome to simple-spiders's documentation!
 
    Overview.rst
    Install.rst
-   Api use case.rst
-   Api document.rst
-   Api test.rst
+   spider.rst
    About.rst
 
 

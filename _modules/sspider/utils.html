@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-ch">
+  <head>
+    <meta charset="utf-8" />
+    <title>sspider.utils &#8212; simple-spiders 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          simple-spiders</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">综述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Install.html">安装使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../spider.html">sspider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../About.html">关于simplespiders</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm"></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <h1>Source code for sspider.utils</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1"># author: pengr</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">sspider.api</span>
+<span class="sd">~~~~~~~~~~~~</span>
+
+<span class="sd">该模块提供一些常用功能函数</span>
+
+<span class="sd">:copyright: (c) 2018 by pengr.</span>
+<span class="sd">:license: GNU GENERAL PUBLIC LICENSE, see LICENSE for more details.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">from</span> <span class="nn">inspect</span> <span class="k">import</span> <span class="n">signature</span>
+<span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">wraps</span>
+<span class="kn">import</span> <span class="nn">codecs</span>
+<span class="kn">import</span> <span class="nn">ctypes</span>
+<span class="kn">import</span> <span class="nn">platform</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+
+
+<div class="viewcode-block" id="get__function_name"><a class="viewcode-back" href="../../sspider.html#sspider.commons.get__function_name">[docs]</a><span class="k">def</span> <span class="nf">get__function_name</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    获取正在运行函数(或方法)名称</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="n">inspect</span><span class="o">.</span><span class="n">stack</span><span class="p">()[</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="synchronized"><a class="viewcode-back" href="../../sspider.html#sspider.commons.synchronized">[docs]</a><span class="k">def</span> <span class="nf">synchronized</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    锁（装饰器）</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">func</span><span class="o">.</span><span class="n">__lock__</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">lock_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">func</span><span class="o">.</span><span class="n">__lock__</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">lock_func</span></div>
+
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">设置颜色</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">FOREGROUND_WHITE</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">FOREGROUND_BLUE</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">FOREGROUND_GREEN</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">FOREGROUND_RED</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">FOREGROUND_YELLOW</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+<span class="n">STD_OUTPUT_HANDLE</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">std_out_handle</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;Windows&#39;</span><span class="p">:</span>
+    <span class="n">FOREGROUND_WHITE</span> <span class="o">=</span> <span class="mh">0x0007</span>
+    <span class="n">FOREGROUND_BLUE</span> <span class="o">=</span> <span class="mh">0x01</span>
+    <span class="n">FOREGROUND_GREEN</span> <span class="o">=</span> <span class="mh">0x0a</span>
+    <span class="n">FOREGROUND_RED</span> <span class="o">=</span> <span class="mh">0x0c</span>
+    <span class="n">FOREGROUND_YELLOW</span> <span class="o">=</span> <span class="n">FOREGROUND_RED</span> <span class="o">|</span> <span class="n">FOREGROUND_GREEN</span>
+
+    <span class="n">STD_OUTPUT_HANDLE</span> <span class="o">=</span> <span class="o">-</span><span class="mi">11</span>
+    <span class="n">std_out_handle</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">windll</span><span class="o">.</span><span class="n">kernel32</span><span class="o">.</span><span class="n">GetStdHandle</span><span class="p">(</span><span class="n">STD_OUTPUT_HANDLE</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;Linux&#39;</span><span class="p">:</span>
+    <span class="n">FOREGROUND_WHITE</span> <span class="o">=</span> <span class="mh">0x0007</span>
+    <span class="n">FOREGROUND_BLUE</span> <span class="o">=</span> <span class="mh">0x01</span>
+    <span class="n">FOREGROUND_GREEN</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[1; 32m; </span><span class="si">{}</span><span class="se">\033</span><span class="s1">[0m&#39;</span>
+    <span class="n">FOREGROUND_RED</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[1;31m;</span><span class="si">{}</span><span class="se">\033</span><span class="s1">[0m&#39;</span>
+    <span class="n">FOREGROUND_YELLOW</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[1;33m;</span><span class="si">{}</span><span class="se">\033</span><span class="s1">[0m&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+
+<div class="viewcode-block" id="set_color"><a class="viewcode-back" href="../../sspider.html#sspider.commons.set_color">[docs]</a><span class="k">def</span> <span class="nf">set_color</span><span class="p">(</span><span class="n">color</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    设置颜色</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+        <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">inner_wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;Windows&#39;</span><span class="p">:</span>
+                <span class="n">set_win_color</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+                <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+                <span class="n">set_win_color</span><span class="p">(</span><span class="n">FOREGROUND_WHITE</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;Linux&#39;</span><span class="p">:</span>
+                <span class="n">message</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                <span class="n">new_args</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">message</span><span class="p">])</span>
+                <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">new_args</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">return</span> <span class="n">inner_wrapper</span>
+    <span class="k">return</span> <span class="n">wrapper</span></div>
+
+
+<div class="viewcode-block" id="set_win_color"><a class="viewcode-back" href="../../sspider.html#sspider.commons.set_win_color">[docs]</a><span class="k">def</span> <span class="nf">set_win_color</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="n">std_out_handle</span><span class="p">):</span>
+    <span class="nb">bool</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">windll</span><span class="o">.</span><span class="n">kernel32</span><span class="o">.</span><span class="n">SetConsoleTextAttribute</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">bool</span></div>
+
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">类型检测</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+
+<div class="viewcode-block" id="typeassert"><a class="viewcode-back" href="../../sspider.html#sspider.commons.typeassert">[docs]</a><span class="k">def</span> <span class="nf">typeassert</span><span class="p">(</span><span class="o">*</span><span class="n">ty_args</span><span class="p">,</span> <span class="o">**</span><span class="n">ty_kwargs</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    对函数进行类型检测</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="nf">decorate</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+        <span class="c1"># If in optimized mode, disable type checking</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">__debug__</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">func</span>
+
+        <span class="c1"># Map function argument names to supplied types</span>
+        <span class="n">sig</span> <span class="o">=</span> <span class="n">signature</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+        <span class="n">bound_types</span> <span class="o">=</span> <span class="n">sig</span><span class="o">.</span><span class="n">bind_partial</span><span class="p">(</span><span class="o">*</span><span class="n">ty_args</span><span class="p">,</span> <span class="o">**</span><span class="n">ty_kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">arguments</span>
+
+        <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="n">bound_values</span> <span class="o">=</span> <span class="n">sig</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="c1"># Enforce type assertions across supplied arguments</span>
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">bound_values</span><span class="o">.</span><span class="n">arguments</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">bound_types</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">bound_types</span><span class="p">[</span><span class="n">name</span><span class="p">]):</span>
+                        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                            <span class="s1">&#39;Argument </span><span class="si">{}</span><span class="s1"> must be </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                                <span class="n">name</span><span class="p">,</span> <span class="n">bound_types</span><span class="p">[</span><span class="n">name</span><span class="p">])</span>
+                        <span class="p">)</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">wrapper</span>
+    <span class="k">return</span> <span class="n">decorate</span></div>
+
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">判断字符编码</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="c1"># Null bytes; no need to recreate these on each call to guess_json_utf</span>
+<span class="n">_null</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\x00</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>  <span class="c1"># encoding to ASCII for Python 3</span>
+<span class="n">_null2</span> <span class="o">=</span> <span class="n">_null</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">_null3</span> <span class="o">=</span> <span class="n">_null</span> <span class="o">*</span> <span class="mi">3</span>
+
+
+<div class="viewcode-block" id="guess_utf"><a class="viewcode-back" href="../../sspider.html#sspider.commons.guess_utf">[docs]</a><span class="k">def</span> <span class="nf">guess_utf</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    :rtype: str</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">sample</span> <span class="ow">in</span> <span class="p">(</span><span class="n">codecs</span><span class="o">.</span><span class="n">BOM_UTF32_LE</span><span class="p">,</span> <span class="n">codecs</span><span class="o">.</span><span class="n">BOM_UTF32_BE</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;utf-32&#39;</span>     <span class="c1"># BOM included</span>
+    <span class="k">if</span> <span class="n">sample</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="n">codecs</span><span class="o">.</span><span class="n">BOM_UTF8</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;utf-8-sig&#39;</span>  <span class="c1"># BOM included, MS style (discouraged)</span>
+    <span class="k">if</span> <span class="n">sample</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="ow">in</span> <span class="p">(</span><span class="n">codecs</span><span class="o">.</span><span class="n">BOM_UTF16_LE</span><span class="p">,</span> <span class="n">codecs</span><span class="o">.</span><span class="n">BOM_UTF16_BE</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;utf-16&#39;</span>     <span class="c1"># BOM included</span>
+    <span class="n">nullcount</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">_null</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">nullcount</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;utf-8&#39;</span>
+    <span class="k">if</span> <span class="n">nullcount</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">sample</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">_null2</span><span class="p">:</span>   <span class="c1"># 1st and 3rd are null</span>
+            <span class="k">return</span> <span class="s1">&#39;utf-16-be&#39;</span>
+        <span class="k">if</span> <span class="n">sample</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">_null2</span><span class="p">:</span>  <span class="c1"># 2nd and 4th are null</span>
+            <span class="k">return</span> <span class="s1">&#39;utf-16-le&#39;</span>
+        <span class="c1"># Did not detect 2 valid UTF-16 ascii-range characters</span>
+    <span class="k">if</span> <span class="n">nullcount</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">sample</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="n">_null3</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;utf-32-be&#39;</span>
+        <span class="k">if</span> <span class="n">sample</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">==</span> <span class="n">_null3</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;utf-32-le&#39;</span>
+        <span class="c1"># Did not detect a valid UTF-32 ascii-range character</span>
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="print_func"><a class="viewcode-back" href="../../sspider.html#sspider.commons.print_func">[docs]</a><span class="k">def</span> <span class="nf">print_func</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    监测函数运行</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;- &#39;</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="o">+</span><span class="s1">&#39; running&#39;</span><span class="o">+</span><span class="s1">&#39;- &#39;</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wrapper</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018, pengr.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
