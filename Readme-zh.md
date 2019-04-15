@@ -41,6 +41,13 @@ You should construst project.py to suit your needs
 
 `Ctrl-C to stop`
 
+## 相关文档
+
+- [项目文档](https://simple-spiders.readthedocs.io)
+- 博客文档：
+  - [自己写python爬虫框架(一)](https://duiliuliu.github.io/2019/04/10/%E8%87%AA%E5%B7%B1%E5%86%99python%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E4%B8%80/)
+  - [自己写python爬虫框架(二)-下载器](https://duiliuliu.github.io/2019/04/11/%E8%87%AA%E5%B7%B1%E5%86%99python%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E4%BA%8C/)
+
 ## 相关引用库
 
 - Using [requests](https://github.com/requests/requests) as htmlDownloader
@@ -50,27 +57,6 @@ You should construst project.py to suit your needs
 - Using [xlsxwriter](https://xlsxwriter.readthedocs.io) provide feature that export file as xexcel type
 
 ## 项目结构
-
-```
-- crawler/
-    - __init__.py
-    - test/
-      - htmlDownloder_test
-      - htmlParser_test
-      - requestManager_test
-      - writter_test
-      - logger_test
-      - spider_test
-
-    - htmlDownloder
-    - htmlParser
-    - requestManager
-    - writter
-    - logger
-    - spider
-
-- main.py
-```
 
 ## License
 

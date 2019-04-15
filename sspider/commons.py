@@ -464,7 +464,7 @@ class CommonWritter(AbstractWritter):
         self._items = []
         self._headers = {}
         self._buffer_file = 'buffer_'+self.__class__.__name__+'.txt'
-        self.max_buffer = 10
+        self.max_buffer = 1000
 
     @property
     def items(self):

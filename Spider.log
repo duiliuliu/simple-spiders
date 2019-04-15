@@ -1,0 +1,2022 @@
+2019-04-15 13:29:26 - Spider - INFO - 	Start crawl...
+2019-04-15 13:29:26 - Spider - INFO - 	https://movie.douban.com/subject/27202819/reviews
+2019-04-15 13:29:27 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:27 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:27 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:27 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:27 - Spider - INFO - 	https://movie.douban.com/review/10098947/#comments
+2019-04-15 13:29:27 - Spider - INFO - 	https://movie.douban.com/review/10112263/#comments
+2019-04-15 13:29:27 - Spider - INFO - 	javascript:;;
+2019-04-15 13:29:27 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;;'
+2019-04-15 13:29:27 - Spider - INFO - 	javascript:;;
+2019-04-15 13:29:27 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;;'
+2019-04-15 13:29:27 - Spider - INFO - 	https://www.douban.com/people/194794563/
+2019-04-15 13:29:28 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:29:28 - Spider - INFO - 	https://www.douban.com/people/191216642/
+2019-04-15 13:29:30 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:29:30 - Spider - INFO - 	https://www.douban.com/people/194794563/
+2019-04-15 13:29:30 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:29:30 - Spider - INFO - 	https://www.douban.com/people/191216642/
+2019-04-15 13:29:31 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:29:31 - Spider - INFO - 	https://movie.douban.com/review/10114804/
+2019-04-15 13:29:31 - Spider - INFO - 	https://movie.douban.com/review/10111885/
+2019-04-15 13:29:32 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:32 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:32 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:32 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:32 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:32 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:32 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:32 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:32 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:32 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:32 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:32 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:32 - Spider - INFO - 	https://movie.douban.com/review/10114804/#comments
+2019-04-15 13:29:32 - Spider - INFO - 	https://movie.douban.com/review/10111885/#comments
+2019-04-15 13:29:32 - Spider - INFO - 	javascript:;;
+2019-04-15 13:29:32 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;;'
+2019-04-15 13:29:32 - Spider - INFO - 	javascript:;;
+2019-04-15 13:29:32 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;;'
+2019-04-15 13:29:32 - Spider - INFO - 	https://www.douban.com/people/186190676/
+2019-04-15 13:29:33 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:29:33 - Spider - INFO - 	https://www.douban.com/people/194674933/
+2019-04-15 13:29:34 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:29:34 - Spider - INFO - 	https://www.douban.com/people/186190676/
+2019-04-15 13:29:34 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:29:34 - Spider - INFO - 	https://www.douban.com/people/194674933/
+2019-04-15 13:29:35 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:29:35 - Spider - INFO - 	https://movie.douban.com/review/10114136/
+2019-04-15 13:29:35 - Spider - INFO - 	https://movie.douban.com/review/10111176/
+2019-04-15 13:29:36 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:36 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:36 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:36 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:36 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:36 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:36 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:36 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:36 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:36 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:36 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:36 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:36 - Spider - INFO - 	https://movie.douban.com/review/10114136/#comments
+2019-04-15 13:29:36 - Spider - INFO - 	https://movie.douban.com/review/10111176/#comments
+2019-04-15 13:29:36 - Spider - INFO - 	javascript:;;
+2019-04-15 13:29:36 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;;'
+2019-04-15 13:29:36 - Spider - INFO - 	javascript:;;
+2019-04-15 13:29:36 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;;'
+2019-04-15 13:29:36 - Spider - INFO - 	https://www.douban.com/people/194756831/
+2019-04-15 13:29:37 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:29:37 - Spider - INFO - 	https://www.douban.com/people/181985845/
+2019-04-15 13:29:38 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:29:38 - Spider - INFO - 	https://www.douban.com/people/194756831/
+2019-04-15 13:29:39 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:29:39 - Spider - INFO - 	https://www.douban.com/people/181985845/
+2019-04-15 13:29:39 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:29:39 - Spider - INFO - 	https://movie.douban.com/review/10113912/
+2019-04-15 13:29:40 - Spider - INFO - 	https://movie.douban.com/review/10111157/
+2019-04-15 13:29:41 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:41 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:41 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:41 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:41 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:41 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:41 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:41 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:41 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:41 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:41 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:41 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:41 - Spider - INFO - 	https://movie.douban.com/review/10113912/#comments
+2019-04-15 13:29:41 - Spider - INFO - 	https://movie.douban.com/review/10111157/#comments
+2019-04-15 13:29:41 - Spider - INFO - 	javascript:;;
+2019-04-15 13:29:41 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;;'
+2019-04-15 13:29:41 - Spider - INFO - 	javascript:;;
+2019-04-15 13:29:41 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;;'
+2019-04-15 13:29:41 - Spider - INFO - 	https://www.douban.com/people/193001725/
+2019-04-15 13:29:42 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:29:42 - Spider - INFO - 	https://www.douban.com/people/174278209/
+2019-04-15 13:29:43 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:29:43 - Spider - INFO - 	https://www.douban.com/people/193001725/
+2019-04-15 13:29:44 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:29:44 - Spider - INFO - 	https://www.douban.com/people/174278209/
+2019-04-15 13:29:44 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:29:44 - Spider - INFO - 	https://movie.douban.com/review/10113695/
+2019-04-15 13:29:45 - Spider - INFO - 	https://movie.douban.com/review/10110487/
+2019-04-15 13:29:45 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:45 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:45 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:45 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:45 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:45 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:45 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:45 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:45 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:45 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:45 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:45 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:45 - Spider - INFO - 	https://movie.douban.com/review/10113695/#comments
+2019-04-15 13:29:45 - Spider - INFO - 	https://movie.douban.com/review/10110487/#comments
+2019-04-15 13:29:46 - Spider - INFO - 	https://book.douban.com
+2019-04-15 13:29:46 - Spider - INFO - 	javascript:;;
+2019-04-15 13:29:46 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;;'
+2019-04-15 13:29:46 - Spider - INFO - 	javascript:;;
+2019-04-15 13:29:46 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;;'
+2019-04-15 13:29:46 - Spider - INFO - 	https://movie.douban.com
+2019-04-15 13:29:47 - Spider - INFO - 	https://www.douban.com/people/33496497/
+2019-04-15 13:29:47 - Spider - INFO - 	?start=20
+2019-04-15 13:29:47 - Spider - ERROR - 	Crawling occurs error
+MissingSchema("Invalid URL '?start=20': No schema supplied. Perhaps you meant http://?start=20?")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 462, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "D:\Python\lib\site-packages\requests\models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\lib\site-packages\requests\models.py", line 387, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '?start=20': No schema supplied. Perhaps you meant http://?start=20?
+2019-04-15 13:29:47 - Spider - INFO - 	https://www.douban.com/location
+2019-04-15 13:29:48 - Spider - INFO - 	https://www.douban.com/people/33496497/
+2019-04-15 13:29:49 - Spider - INFO - 	?start=40
+2019-04-15 13:29:49 - Spider - ERROR - 	Crawling occurs error
+MissingSchema("Invalid URL '?start=40': No schema supplied. Perhaps you meant http://?start=40?")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 462, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "D:\Python\lib\site-packages\requests\models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\lib\site-packages\requests\models.py", line 387, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '?start=40': No schema supplied. Perhaps you meant http://?start=40?
+2019-04-15 13:29:49 - Spider - INFO - 	https://movie.douban.com/review/10113380/
+2019-04-15 13:29:49 - Spider - INFO - 	?start=60
+2019-04-15 13:29:49 - Spider - ERROR - 	Crawling occurs error
+MissingSchema("Invalid URL '?start=60': No schema supplied. Perhaps you meant http://?start=60?")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 462, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "D:\Python\lib\site-packages\requests\models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\lib\site-packages\requests\models.py", line 387, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '?start=60': No schema supplied. Perhaps you meant http://?start=60?
+2019-04-15 13:29:49 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:49 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:49 - Spider - INFO - 	?start=80
+2019-04-15 13:29:49 - Spider - ERROR - 	Crawling occurs error
+MissingSchema("Invalid URL '?start=80': No schema supplied. Perhaps you meant http://?start=80?")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 462, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "D:\Python\lib\site-packages\requests\models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\lib\site-packages\requests\models.py", line 387, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '?start=80': No schema supplied. Perhaps you meant http://?start=80?
+2019-04-15 13:29:49 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:49 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:49 - Spider - INFO - 	?start=100
+2019-04-15 13:29:49 - Spider - ERROR - 	Crawling occurs error
+MissingSchema("Invalid URL '?start=100': No schema supplied. Perhaps you meant http://?start=100?")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 462, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "D:\Python\lib\site-packages\requests\models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\lib\site-packages\requests\models.py", line 387, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '?start=100': No schema supplied. Perhaps you meant http://?start=100?
+2019-04-15 13:29:49 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:49 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:49 - Spider - INFO - 	?start=120
+2019-04-15 13:29:49 - Spider - ERROR - 	Crawling occurs error
+MissingSchema("Invalid URL '?start=120': No schema supplied. Perhaps you meant http://?start=120?")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 462, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "D:\Python\lib\site-packages\requests\models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\lib\site-packages\requests\models.py", line 387, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '?start=120': No schema supplied. Perhaps you meant http://?start=120?
+2019-04-15 13:29:49 - Spider - INFO - 	https://movie.douban.com/review/10113380/#comments
+2019-04-15 13:29:50 - Spider - INFO - 	?start=140
+2019-04-15 13:29:50 - Spider - ERROR - 	Crawling occurs error
+MissingSchema("Invalid URL '?start=140': No schema supplied. Perhaps you meant http://?start=140?")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 462, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "D:\Python\lib\site-packages\requests\models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\lib\site-packages\requests\models.py", line 387, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '?start=140': No schema supplied. Perhaps you meant http://?start=140?
+2019-04-15 13:29:50 - Spider - INFO - 	javascript:;;
+2019-04-15 13:29:50 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;;'
+2019-04-15 13:29:50 - Spider - INFO - 	?start=160
+2019-04-15 13:29:50 - Spider - ERROR - 	Crawling occurs error
+MissingSchema("Invalid URL '?start=160': No schema supplied. Perhaps you meant http://?start=160?")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 462, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "D:\Python\lib\site-packages\requests\models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\lib\site-packages\requests\models.py", line 387, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '?start=160': No schema supplied. Perhaps you meant http://?start=160?
+2019-04-15 13:29:50 - Spider - INFO - 	https://www.douban.com/people/bestQuestion/
+2019-04-15 13:29:50 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:29:50 - Spider - INFO - 	?start=180
+2019-04-15 13:29:50 - Spider - ERROR - 	Crawling occurs error
+MissingSchema("Invalid URL '?start=180': No schema supplied. Perhaps you meant http://?start=180?")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 462, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "D:\Python\lib\site-packages\requests\models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\lib\site-packages\requests\models.py", line 387, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '?start=180': No schema supplied. Perhaps you meant http://?start=180?
+2019-04-15 13:29:50 - Spider - INFO - 	https://www.douban.com/people/bestQuestion/
+2019-04-15 13:29:51 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:29:51 - Spider - INFO - 	?start=200
+2019-04-15 13:29:51 - Spider - ERROR - 	Crawling occurs error
+MissingSchema("Invalid URL '?start=200': No schema supplied. Perhaps you meant http://?start=200?")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 462, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "D:\Python\lib\site-packages\requests\models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\lib\site-packages\requests\models.py", line 387, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '?start=200': No schema supplied. Perhaps you meant http://?start=200?
+2019-04-15 13:29:51 - Spider - INFO - 	https://movie.douban.com/review/10113322/
+2019-04-15 13:29:51 - Spider - INFO - 	?start=20
+2019-04-15 13:29:51 - Spider - ERROR - 	Crawling occurs error
+MissingSchema("Invalid URL '?start=20': No schema supplied. Perhaps you meant http://?start=20?")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 462, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "D:\Python\lib\site-packages\requests\models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\lib\site-packages\requests\models.py", line 387, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '?start=20': No schema supplied. Perhaps you meant http://?start=20?
+2019-04-15 13:29:51 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:51 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:51 - Spider - INFO - 	https://movie.douban.com/subject/27202819/
+2019-04-15 13:29:52 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:52 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:52 - Spider - INFO - 	https://movie.douban.com/subject/27202819/
+2019-04-15 13:29:53 - Spider - INFO - 	javascript:;
+2019-04-15 13:29:53 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:29:53 - Spider - INFO - 	/feed/subject/27202819/reviews
+2019-04-15 13:29:53 - Spider - ERROR - 	Crawling occurs error
+MissingSchema("Invalid URL '/feed/subject/27202819/reviews': No schema supplied. Perhaps you meant http:///feed/subject/27202819/reviews?")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 462, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "D:\Python\lib\site-packages\requests\models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\lib\site-packages\requests\models.py", line 387, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '/feed/subject/27202819/reviews': No schema supplied. Perhaps you meant http:///feed/subject/27202819/reviews?
+2019-04-15 13:29:53 - Spider - INFO - 	https://movie.douban.com/review/10113322/#comments
+2019-04-15 13:29:53 - Spider - INFO - 	https://www.douban.com/doubanapp/frodo
+2019-04-15 13:29:53 - Spider - INFO - 	javascript:;;
+2019-04-15 13:29:53 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;;'
+2019-04-15 13:29:53 - Spider - INFO - 	https://www.douban.com/hnypt/variformcyst.py
+2019-04-15 13:29:54 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:29:54 - Spider - INFO - 	https://www.douban.com/people/162121785/
+2019-04-15 13:29:54 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:29:54 - Spider - INFO - 	https://www.douban.com/about
+2019-04-15 13:29:55 - Spider - INFO - 	https://music.douban.com
+2019-04-15 13:29:55 - Spider - INFO - 	https://www.douban.com/people/162121785/
+2019-04-15 13:29:56 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:29:56 - Spider - INFO - 	https://www.douban.com/jobs
+2019-04-15 13:29:58 - Spider - INFO - 	https://movie.douban.com/review/10112634/
+2019-04-15 13:29:58 - Spider - INFO - 	https://www.douban.com/about?topic=contactus
+2019-04-15 13:29:58 - Spider - INFO - 	https://accounts.douban.com/passport/login?source=main
+2019-04-15 13:29:59 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:29:59 - Spider - INFO - 	https://www.douban.com/doubanapp/redirect?channel=top-nav&direct_dl=1&download=Android
+2019-04-15 13:30:06 - Spider - ERROR - 	Crawling occurs error
+ConnectionError(ReadTimeoutError("HTTPSConnectionPool(host='img3.doubanio.com', port=443): Read timed out."))
+Traceback (most recent call last):
+  File "D:\Python\lib\site-packages\urllib3\response.py", line 360, in _error_catcher
+    yield
+  File "D:\Python\lib\site-packages\urllib3\response.py", line 442, in read
+    data = self._fp.read(amt)
+  File "D:\Python\lib\http\client.py", line 447, in read
+    n = self.readinto(b)
+  File "D:\Python\lib\http\client.py", line 491, in readinto
+    n = self.fp.readinto(b)
+  File "D:\Python\lib\socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "D:\Python\lib\ssl.py", line 1049, in recv_into
+    return self.read(nbytes, buffer)
+  File "D:\Python\lib\ssl.py", line 908, in read
+    return self._sslobj.read(len, buffer)
+socket.timeout: The read operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python\lib\site-packages\requests\models.py", line 750, in generate
+    for chunk in self.raw.stream(chunk_size, decode_content=True):
+  File "D:\Python\lib\site-packages\urllib3\response.py", line 494, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+  File "D:\Python\lib\site-packages\urllib3\response.py", line 459, in read
+    raise IncompleteRead(self._fp_bytes_read, self.length_remaining)
+  File "D:\Python\lib\contextlib.py", line 130, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "D:\Python\lib\site-packages\urllib3\response.py", line 365, in _error_catcher
+    raise ReadTimeoutError(self._pool, None, 'Read timed out.')
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='img3.doubanio.com', port=443): Read timed out.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 668, in send
+    history = [resp for resp in gen] if allow_redirects else []
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 668, in <listcomp>
+    history = [resp for resp in gen] if allow_redirects else []
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 247, in resolve_redirects
+    **adapter_kwargs
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 686, in send
+    r.content
+  File "D:\Python\lib\site-packages\requests\models.py", line 828, in content
+    self._content = b''.join(self.iter_content(CONTENT_CHUNK_SIZE)) or b''
+  File "D:\Python\lib\site-packages\requests\models.py", line 757, in generate
+    raise ConnectionError(e)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='img3.doubanio.com', port=443): Read timed out.
+2019-04-15 13:30:06 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:06 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:06 - Spider - INFO - 	https://www.douban.com/about?policy=disclaimer
+2019-04-15 13:30:06 - Spider - INFO - 	https://www.douban.com
+2019-04-15 13:30:06 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:06 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:06 - Spider - INFO - 	https://help.douban.com/?app=movie
+2019-04-15 13:30:07 - Spider - INFO - 	https://www.douban.com/doubanapp/app?channel=top-nav
+2019-04-15 13:30:07 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:07 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:07 - Spider - INFO - 	https://www.douban.com/doubanapp/
+2019-04-15 13:30:07 - Spider - INFO - 	https://www.douban.com/doubanapp/redirect?channel=top-nav&direct_dl=1&download=iOS
+2019-04-15 13:30:09 - Spider - INFO - 	https://movie.douban.com/review/10112634/#comments
+2019-04-15 13:30:09 - Spider - INFO - 	https://www.douban.com/partner/
+2019-04-15 13:30:09 - Spider - INFO - 	https://www.douban.com/doubanapp/app?channel=qipao
+2019-04-15 13:30:10 - Spider - INFO - 	javascript:;;
+2019-04-15 13:30:10 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;;'
+2019-04-15 13:30:10 - Spider - INFO - 	javascript: void 0;
+2019-04-15 13:30:10 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript: void 0;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript: void 0;'
+2019-04-15 13:30:10 - Spider - INFO - 	https://www.douban.com/people/194955347/
+2019-04-15 13:30:10 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:30:10 - Spider - INFO - 	#more
+2019-04-15 13:30:10 - Spider - ERROR - 	Crawling occurs error
+MissingSchema("Invalid URL '#more': No schema supplied. Perhaps you meant http://#more?")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 462, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "D:\Python\lib\site-packages\requests\models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\lib\site-packages\requests\models.py", line 387, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '#more': No schema supplied. Perhaps you meant http://#more?
+2019-04-15 13:30:10 - Spider - INFO - 	https://www.douban.com/people/194955347/
+2019-04-15 13:30:11 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:30:11 - Spider - INFO - 	https://movie.douban.com/review/10112614/
+2019-04-15 13:30:12 - Spider - INFO - 	https://read.douban.com/?dcs=top-nav&dcm=douban
+2019-04-15 13:30:12 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:12 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:12 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:12 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:12 - Spider - INFO - 	https://market.douban.com/?utm_campaign=douban_top_nav&utm_source=douban&utm_medium=pc_web
+2019-04-15 13:30:14 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:14 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:14 - Spider - INFO - 	https://time.douban.com/?dt_time_source=douban-web_top_nav
+2019-04-15 13:30:14 - Spider - INFO - 	https://movie.douban.com/review/10112614/#comments
+2019-04-15 13:30:15 - Spider - INFO - 	https://douban.fm/?from_=shire_top_nav
+2019-04-15 13:30:16 - Spider - INFO - 	javascript:;;
+2019-04-15 13:30:16 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;;'
+2019-04-15 13:30:16 - Spider - INFO - 	https://www.douban.com/group
+2019-04-15 13:30:17 - Spider - INFO - 	https://www.douban.com/people/4386060/
+2019-04-15 13:30:17 - Spider - INFO - 	https://www.douban.com/people/4386060/
+2019-04-15 13:30:18 - Spider - INFO - 	https://movie.douban.com/review/10112263/
+2019-04-15 13:30:18 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:18 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:18 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:18 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:18 - Spider - INFO - 	https://www.douban.com/standbyme/2018?source=navigation
+2019-04-15 13:30:19 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:19 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:19 - Spider - INFO - 	?rating=1
+2019-04-15 13:30:19 - Spider - ERROR - 	Crawling occurs error
+MissingSchema("Invalid URL '?rating=1': No schema supplied. Perhaps you meant http://?rating=1?")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 462, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "D:\Python\lib\site-packages\requests\models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\lib\site-packages\requests\models.py", line 387, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '?rating=1': No schema supplied. Perhaps you meant http://?rating=1?
+2019-04-15 13:30:19 - Spider - INFO - 	?rating=
+2019-04-15 13:30:19 - Spider - ERROR - 	Crawling occurs error
+MissingSchema("Invalid URL '?rating=': No schema supplied. Perhaps you meant http://?rating=?")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 462, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "D:\Python\lib\site-packages\requests\models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\lib\site-packages\requests\models.py", line 387, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '?rating=': No schema supplied. Perhaps you meant http://?rating=?
+2019-04-15 13:30:19 - Spider - INFO - 	?rating=4
+2019-04-15 13:30:19 - Spider - ERROR - 	Crawling occurs error
+MissingSchema("Invalid URL '?rating=4': No schema supplied. Perhaps you meant http://?rating=4?")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 462, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "D:\Python\lib\site-packages\requests\models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\lib\site-packages\requests\models.py", line 387, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '?rating=4': No schema supplied. Perhaps you meant http://?rating=4?
+2019-04-15 13:30:19 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:19 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:19 - Spider - INFO - 	?rating=2
+2019-04-15 13:30:19 - Spider - ERROR - 	Crawling occurs error
+MissingSchema("Invalid URL '?rating=2': No schema supplied. Perhaps you meant http://?rating=2?")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 462, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "D:\Python\lib\site-packages\requests\models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\lib\site-packages\requests\models.py", line 387, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '?rating=2': No schema supplied. Perhaps you meant http://?rating=2?
+2019-04-15 13:30:19 - Spider - INFO - 	https://movie.douban.com/annual/2018?source=movie_navigation
+2019-04-15 13:30:19 - Spider - INFO - 	?rating=5
+2019-04-15 13:30:19 - Spider - ERROR - 	Crawling occurs error
+MissingSchema("Invalid URL '?rating=5': No schema supplied. Perhaps you meant http://?rating=5?")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 462, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "D:\Python\lib\site-packages\requests\models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\lib\site-packages\requests\models.py", line 387, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '?rating=5': No schema supplied. Perhaps you meant http://?rating=5?
+2019-04-15 13:30:19 - Spider - INFO - 	?sort=time
+2019-04-15 13:30:19 - Spider - ERROR - 	Crawling occurs error
+MissingSchema("Invalid URL '?sort=time': No schema supplied. Perhaps you meant http://?sort=time?")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 462, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "D:\Python\lib\site-packages\requests\models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\lib\site-packages\requests\models.py", line 387, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '?sort=time': No schema supplied. Perhaps you meant http://?sort=time?
+2019-04-15 13:30:19 - Spider - INFO - 	https://movie.douban.com/tag/
+2019-04-15 13:30:19 - Spider - INFO - 	?rating=3
+2019-04-15 13:30:19 - Spider - ERROR - 	Crawling occurs error
+MissingSchema("Invalid URL '?rating=3': No schema supplied. Perhaps you meant http://?rating=3?")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 462, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "D:\Python\lib\site-packages\requests\models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\lib\site-packages\requests\models.py", line 387, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '?rating=3': No schema supplied. Perhaps you meant http://?rating=3?
+2019-04-15 13:30:19 - Spider - INFO - 	https://www.douban.com/people/51309156/
+2019-04-15 13:30:20 - Spider - INFO - 	https://www.douban.com/people/51309156/
+2019-04-15 13:30:20 - Spider - INFO - 	https://movie.douban.com/review/10092673/
+2019-04-15 13:30:21 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:21 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:21 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:21 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:21 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:21 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:21 - Spider - INFO - 	https://movie.douban.com/review/10092673/#comments
+2019-04-15 13:30:21 - Spider - INFO - 	javascript:;;
+2019-04-15 13:30:21 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;;'
+2019-04-15 13:30:21 - Spider - INFO - 	https://www.douban.com/people/66634442/
+2019-04-15 13:30:22 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:30:22 - Spider - INFO - 	https://www.douban.com/people/66634442/
+2019-04-15 13:30:23 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:30:23 - Spider - INFO - 	https://movie.douban.com/explore
+2019-04-15 13:30:23 - Spider - INFO - 	https://movie.douban.com/review/10072875/
+2019-04-15 13:30:23 - Spider - INFO - 	https://movie.douban.com/chart
+2019-04-15 13:30:24 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:24 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:24 - Spider - INFO - 	https://ypy.douban.com
+2019-04-15 13:30:24 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:24 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:24 - Spider - INFO - 	https://movie.douban.com/cinema/nowplaying/
+2019-04-15 13:30:25 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:25 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:25 - Spider - INFO - 	https://movie.douban.com/review/10072875/#comments
+2019-04-15 13:30:26 - Spider - INFO - 	javascript:;;
+2019-04-15 13:30:26 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;;'
+2019-04-15 13:30:26 - Spider - INFO - 	https://movie.douban.com
+2019-04-15 13:30:26 - Spider - INFO - 	https://www.douban.com/people/153861763/
+2019-04-15 13:30:27 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:30:27 - Spider - INFO - 	https://movie.douban.com/tv/
+2019-04-15 13:30:28 - Spider - INFO - 	https://www.douban.com/people/153861763/
+2019-04-15 13:30:29 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:30:29 - Spider - INFO - 	https://movie.douban.com/review/10088485/
+2019-04-15 13:30:29 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:29 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:29 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:29 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:29 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:29 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:29 - Spider - INFO - 	https://movie.douban.com/review/10088485/#comments
+2019-04-15 13:30:30 - Spider - INFO - 	javascript:;;
+2019-04-15 13:30:30 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;;'
+2019-04-15 13:30:30 - Spider - INFO - 	https://www.douban.com/people/194394362/
+2019-04-15 13:30:30 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:30:30 - Spider - INFO - 	https://www.douban.com/people/194394362/
+2019-04-15 13:30:31 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:30:31 - Spider - INFO - 	//www.douban.com/gallery/topic/《反贪风暴4》与其他同类悬疑片比有哪些亮点？
+2019-04-15 13:30:31 - Spider - ERROR - 	Crawling occurs error
+MissingSchema("Invalid URL '//www.douban.com/gallery/topic/《反贪风暴4》与其他同类悬疑片比有哪些亮点？': No schema supplied. Perhaps you meant http:////www.douban.com/gallery/topic/《反贪风暴4》与其他同类悬疑片比有哪些亮点？?")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 519, in request
+    prep = self.prepare_request(req)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 462, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "D:\Python\lib\site-packages\requests\models.py", line 313, in prepare
+    self.prepare_url(url, params)
+  File "D:\Python\lib\site-packages\requests\models.py", line 387, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '//www.douban.com/gallery/topic/《反贪风暴4》与其他同类悬疑片比有哪些亮点？': No schema supplied. Perhaps you meant http:////www.douban.com/gallery/topic/《反贪风暴4》与其他同类悬疑片比有哪些亮点？?
+2019-04-15 13:30:31 - Spider - INFO - 	https://movie.douban.com/review/best/
+2019-04-15 13:30:31 - Spider - INFO - 	https://movie.douban.com/review/10088654/
+2019-04-15 13:30:32 - Spider - INFO - 	https://movie.douban.com/annual/2018?source=navigation
+2019-04-15 13:30:32 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:32 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:32 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:32 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:32 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:32 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:32 - Spider - INFO - 	https://movie.douban.com/review/10088654/#comments
+2019-04-15 13:30:33 - Spider - INFO - 	javascript:;;
+2019-04-15 13:30:33 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;;'
+2019-04-15 13:30:33 - Spider - INFO - 	https://www.douban.com/people/158659499/
+2019-04-15 13:30:33 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:30:33 - Spider - INFO - 	https://www.douban.com/people/158659499/
+2019-04-15 13:30:34 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:30:34 - Spider - INFO - 	https://movie.douban.com/review/10080184/
+2019-04-15 13:30:34 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:34 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:34 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:34 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:34 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:34 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:34 - Spider - INFO - 	https://movie.douban.com/review/10080184/#comments
+2019-04-15 13:30:35 - Spider - INFO - 	javascript:;;
+2019-04-15 13:30:35 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;;'
+2019-04-15 13:30:35 - Spider - INFO - 	https://www.douban.com/people/174663841/
+2019-04-15 13:30:35 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:30:35 - Spider - INFO - 	https://www.douban.com/people/174663841/
+2019-04-15 13:30:36 - Spider - WARNING - crawled data is None and response_status is None
+2019-04-15 13:30:36 - Spider - INFO - 	https://movie.douban.com/review/10100012/
+2019-04-15 13:30:36 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:36 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:36 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:36 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:36 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:36 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:36 - Spider - INFO - 	https://movie.douban.com/review/10100012/#comments
+2019-04-15 13:30:37 - Spider - INFO - 	javascript:;;
+2019-04-15 13:30:37 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;;'
+2019-04-15 13:30:37 - Spider - INFO - 	https://www.douban.com/people/xppsdp/
+2019-04-15 13:30:37 - Spider - INFO - 	https://www.douban.com/people/xppsdp/
+2019-04-15 13:30:38 - Spider - INFO - 	https://movie.douban.com/review/10098947/
+2019-04-15 13:30:38 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:38 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:38 - Spider - INFO - 	javascript:;
+2019-04-15 13:30:38 - Spider - ERROR - 	Crawling occurs error
+InvalidSchema("No connection adapters were found for 'javascript:;'")
+Traceback (most recent call last):
+  File "E:\wuzhi\simple-spiders\sspider\spider.py", line 232, in crawl
+    response = self.downloader.download(request)
+  File "E:\wuzhi\simple-spiders\sspider\utils.py", line 129, in wrapper
+    return func(*args, **kwargs)
+  File "E:\wuzhi\simple-spiders\sspider\commons.py", line 242, in download
+    return Response(request, cls=session.request(**request.transRequestParam()))
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 640, in send
+    adapter = self.get_adapter(url=request.url)
+  File "D:\Python\lib\site-packages\requests\sessions.py", line 731, in get_adapter
+    raise InvalidSchema("No connection adapters were found for '%s'" % url)
+requests.exceptions.InvalidSchema: No connection adapters were found for 'javascript:;'
+2019-04-15 13:30:38 - Spider - INFO - 	End crawl...
