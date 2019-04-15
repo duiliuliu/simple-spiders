@@ -5,22 +5,18 @@
 ![build -> passing](./images/build-passing-orange.svg)
 
 ```
-      _                 _         _____       _     _
-     (_)               | |       / ____|     (_)   | |
-  ___ _ _ __ ___  _ __ | | ___  | (___  _ __  _  __| | ___ _ __
- / __| | '_ ` _ \| '_ \| |/ _ \  \___ \| '_ \| |/ _` |/ _ \ '__|
- \__ \ | | | | | | |_) | |  __/  ____) | |_) | | (_| |  __/ |
- |___/_|_| |_| |_| .__/|_|\___| |_____/| .__/|_|\__,_|\___|_|
-                 | |                   | |
-                 |_|                   |_|
-
+     _              _       ___       _    _
+ ___<_>._ _ _  ___ | | ___ / __> ___ <_> _| | ___  _ _
+<_-<| || ' ' || . \| |/ ._>\__ \| . \| |/ . |/ ._>| '_>
+/__/|_||_|_|_||  _/|_|\___.<___/|  _/|_|\___|\___.|_|
+              |_|               |_|
 ```
 
 [中文](./Readme-zh.md)
 
 ## Overview
 
-A simple web crawling framework.[Document](https://simple-spiders.readthedocs.io/)
+A simple web crawling framework.[Document](https://duiliuliu.github.io/simple-spiders/)
 
 ## Getting Started
 
@@ -47,7 +43,7 @@ You should construst project.py to suit your needs
 
 ## Referenced Document
 
-- [Project document](https://simple-spiders.readthedocs.io)
+- [Project document](https://duiliuliu.github.io/simple-spiders/)
 - Blog document
   - [自己写python爬虫框架(一)](https://duiliuliu.github.io/2019/04/10/%E8%87%AA%E5%B7%B1%E5%86%99python%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E4%B8%80/)
   - [自己写python爬虫框架(二)-下载器](https://duiliuliu.github.io/2019/04/11/%E8%87%AA%E5%B7%B1%E5%86%99python%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E4%BA%8C/)

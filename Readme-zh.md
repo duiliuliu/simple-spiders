@@ -43,7 +43,7 @@ You should construst project.py to suit your needs
 
 ## 相关文档
 
-- [项目文档](https://simple-spiders.readthedocs.io)
+- [项目文档](https://duiliuliu.github.io/simple-spiders/)
 - 博客文档：
   - [自己写python爬虫框架(一)](https://duiliuliu.github.io/2019/04/10/%E8%87%AA%E5%B7%B1%E5%86%99python%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E4%B8%80/)
   - [自己写python爬虫框架(二)-下载器](https://duiliuliu.github.io/2019/04/11/%E8%87%AA%E5%B7%B1%E5%86%99python%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E4%BA%8C/)
