@@ -203,7 +203,7 @@ class AbstractSpider(object):
     def __call__(self, request):
         self.run(request)
 
-    def run(self, request):
+    def run(self, request=None, requests=[]):
         '''
         运行爬虫方法，从requestManager中取出可用的request，然后扔进下载器中进行下载，通过解析器对下载到的文档进行解析；
         需要传入一个或者一组request作为初始request进行抓取
@@ -213,7 +213,10 @@ class AbstractSpider(object):
         '''
         self.__start_icon()
         self.logger.info('\tStart crawl...')
-        self.requestManager.add_new_request(request)
+        if request:
+            self.requestManager.add_new_request(request)
+        if requests:
+            self.requestManager.add_new_request(requests)
         while self.requestManager.has_new_request():
             request = self.requestManager.get_new_request()
             self.crawl(request)
