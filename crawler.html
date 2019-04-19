@@ -1,0 +1,504 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-ch" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-ch" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Api document &mdash; simple-spiders 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Api单元测试" href="Api test.html" />
+    <link rel="prev" title="APi文档" href="Api document.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> simple-spiders
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Overview.html">综述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Install.html">安装使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Api use case.html">入门指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Api document.html">APi文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Api test.html">Api单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="About.html">关于simple-spiders</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">simple-spiders</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="Api document.html">APi文档</a> &raquo;</li>
+        
+      <li>Api document</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/crawler.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="api-document">
+<h1>Api document<a class="headerlink" href="#api-document" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-crawler.spider">
+<span id="crawler-spider"></span><h2>crawler.spider<a class="headerlink" href="#module-crawler.spider" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="crawler.spider.Spider">
+<em class="property">class </em><code class="descclassname">crawler.spider.</code><code class="descname">Spider</code><span class="sig-paren">(</span><em>start_request</em>, <em>name='spider'</em>, <em>getUrl_func=None</em>, <em>getData_func=None</em>, <em>level=3</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/spider.html#Spider"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.spider.Spider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>爬取调度器
+初始化需传入一个start_request</p>
+<dl class="attribute">
+<dt id="crawler.spider.Spider.count">
+<code class="descname">count</code><em class="property"> = 0</em><a class="headerlink" href="#crawler.spider.Spider.count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="crawler.spider.Spider.instance">
+<code class="descname">instance</code><em class="property"> = {}</em><a class="headerlink" href="#crawler.spider.Spider.instance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="crawler.spider.Spider.start_crawl">
+<code class="descname">start_crawl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/spider.html#Spider.start_crawl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.spider.Spider.start_crawl" title="Permalink to this definition">¶</a></dt>
+<dd><p>爬取方法，对requestManager中的url进行请求downloa，然后解析。</p>
+<blockquote>
+<div>return : None</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.spider.Spider.start_multiProcess_crawl">
+<code class="descname">start_multiProcess_crawl</code><span class="sig-paren">(</span><em>capacity</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/spider.html#Spider.start_multiProcess_crawl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.spider.Spider.start_multiProcess_crawl" title="Permalink to this definition">¶</a></dt>
+<dd><p>多进程爬取方法，对requestManager中的url进行请求downloa，然后解析。</p>
+<blockquote>
+<div><p>&#64;param :: capacity : 进程池容量</p>
+<p>return : None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.spider.Spider.start_multiThread_crawl">
+<code class="descname">start_multiThread_crawl</code><span class="sig-paren">(</span><em>capacity</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/spider.html#Spider.start_multiThread_crawl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.spider.Spider.start_multiThread_crawl" title="Permalink to this definition">¶</a></dt>
+<dd><p>多线程爬取方法，对requestManager中的url进行请求downloa，然后解析。</p>
+<blockquote>
+<div><p>&#64;param :: capacity : 线程池容量</p>
+<p>return : None</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crawler.requestManager">
+<span id="crawler-requestmanager"></span><h2>crawler.requestManager<a class="headerlink" href="#module-crawler.requestManager" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="crawler.requestManager.RequestManager">
+<em class="property">class </em><code class="descclassname">crawler.requestManager.</code><code class="descname">RequestManager</code><span class="sig-paren">(</span><em>limit_level=3</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>请求管理器
+统一管理所有的请求，包括待请求的与已请求的请求。</p>
+<dl class="method">
+<dt id="crawler.requestManager.RequestManager.add_new_request">
+<code class="descname">add_new_request</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.add_new_request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.add_new_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>添加请求</p>
+<blockquote>
+<div><p>&#64;param :: requests : 待添加请求</p>
+<p>return : None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.requestManager.RequestManager.add_new_requests">
+<code class="descname">add_new_requests</code><span class="sig-paren">(</span><em>requests</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.add_new_requests"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.add_new_requests" title="Permalink to this definition">¶</a></dt>
+<dd><p>添加请求集合</p>
+<blockquote>
+<div><p>&#64;param :: requests : 待添加请求集合</p>
+<p>return : None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.requestManager.RequestManager.get_level">
+<code class="descname">get_level</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.get_level"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.get_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>获取当前层级</p>
+<blockquote>
+<div>return : int</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.requestManager.RequestManager.get_new_request">
+<code class="descname">get_new_request</code><span class="sig-paren">(</span><em>level=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.get_new_request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.get_new_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>获取一个未被请求过的请求</p>
+<blockquote>
+<div><p>&#64;param :: level : 从指定层数中提取，默认为None</p>
+<p>return : request</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.requestManager.RequestManager.has_new_request">
+<code class="descname">has_new_request</code><span class="sig-paren">(</span><em>level=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.has_new_request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.has_new_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>判断是否还有待爬取的请求，当传入level后，判断相应的层数中是否还有待爬取的请求。默认判断所有层数</p>
+<blockquote>
+<div><p>&#64;param :: level : 待添加请求集合</p>
+<p>return : Bool</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.requestManager.RequestManager.new_requests_size">
+<code class="descname">new_requests_size</code><span class="sig-paren">(</span><em>level=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.new_requests_size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.new_requests_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>待爬取的请求集合长度</p>
+<blockquote>
+<div><p>&#64;param :: level : 获取指定层数的请求集合长度</p>
+<p>return : int</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.requestManager.RequestManager.old_requests_size">
+<code class="descname">old_requests_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/requestManager.html#RequestManager.old_requests_size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.requestManager.RequestManager.old_requests_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>已请求的请求集合长度</p>
+<blockquote>
+<div><p>&#64;param :: level : 获取指定层数的请求集合长度</p>
+<p>return : int</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crawler.htmlDownloader">
+<span id="crawler-htmldownloader"></span><h2>crawler.htmlDownloader<a class="headerlink" href="#module-crawler.htmlDownloader" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="crawler.htmlDownloader.HtmlDownloader">
+<em class="property">class </em><code class="descclassname">crawler.htmlDownloader.</code><code class="descname">HtmlDownloader</code><a class="reference internal" href="_modules/crawler/htmlDownloader.html#HtmlDownloader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.htmlDownloader.HtmlDownloader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>资源下载器
+进行网络请求资源，返回utf-8格式的文本</p>
+<dl class="method">
+<dt id="crawler.htmlDownloader.HtmlDownloader.download">
+<code class="descname">download</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/htmlDownloader.html#HtmlDownloader.download"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.htmlDownloader.HtmlDownloader.download" title="Permalink to this definition">¶</a></dt>
+<dd><p>资源下载，返回一个response字典，属性有status:响应状态码；text: 响应内容；url:请求url；level：当前请求的网络层数</p>
+<blockquote>
+<div><p>&#64;param :: request : 打算访问的请求</p>
+<p>return : Response</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.htmlDownloader.HtmlDownloader.refresh_headers">
+<code class="descname">refresh_headers</code><span class="sig-paren">(</span><em>headers</em>, <em>level=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/htmlDownloader.html#HtmlDownloader.refresh_headers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.htmlDownloader.HtmlDownloader.refresh_headers" title="Permalink to this definition">¶</a></dt>
+<dd><p>更新请求头，传入的请求头字典中，值为None表示请求头更新剔除相应的键，值不为None则更新相应的值</p>
+<blockquote>
+<div><p>&#64;param :: headers : 打算更新的请求头</p>
+<p>&#64;param :: level : 为相应的网络层级更新请求头，默认为None，即立即更新请求头</p>
+<p>return : None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.htmlDownloader.HtmlDownloader.refresh_proxy">
+<code class="descname">refresh_proxy</code><span class="sig-paren">(</span><em>proxy</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/htmlDownloader.html#HtmlDownloader.refresh_proxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.htmlDownloader.HtmlDownloader.refresh_proxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>更新请求代理，打算更新的请求代理为一个字典，应有键'http'</p>
+<blockquote>
+<div><p>&#64;param :: proxy : 打算更新的代理</p>
+<p>return : None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.htmlDownloader.HtmlDownloader.refresh_useragent">
+<code class="descname">refresh_useragent</code><span class="sig-paren">(</span><em>useragent</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/htmlDownloader.html#HtmlDownloader.refresh_useragent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.htmlDownloader.HtmlDownloader.refresh_useragent" title="Permalink to this definition">¶</a></dt>
+<dd><p>更新浏览器头</p>
+<blockquote>
+<div><p>&#64;param :: useragent : 打算更新的浏览器头</p>
+<p>return : None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.htmlDownloader.HtmlDownloader.set_headers">
+<code class="descname">set_headers</code><span class="sig-paren">(</span><em>headers</em>, <em>level=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/htmlDownloader.html#HtmlDownloader.set_headers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.htmlDownloader.HtmlDownloader.set_headers" title="Permalink to this definition">¶</a></dt>
+<dd><p>设置请求头，直接以传入的请求头作为请求头</p>
+<blockquote>
+<div><p>&#64;param :: headers : 打算设置的请求头</p>
+<p>&#64;param :: level : 相应的网络层级设置请求头，默认为None，即立即设置请求头</p>
+<p>return : None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.htmlDownloader.HtmlDownloader.set_timeout">
+<code class="descname">set_timeout</code><span class="sig-paren">(</span><em>timeout</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/htmlDownloader.html#HtmlDownloader.set_timeout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.htmlDownloader.HtmlDownloader.set_timeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>设置延时</p>
+<blockquote>
+<div><p>&#64;param :: timeout : 打算设置的延时</p>
+<p>return : None</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crawler.htmlParser">
+<span id="crawler-htmlparser"></span><h2>crawler.htmlParser<a class="headerlink" href="#module-crawler.htmlParser" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="crawler.htmlParser.HtmlParser">
+<em class="property">class </em><code class="descclassname">crawler.htmlParser.</code><code class="descname">HtmlParser</code><span class="sig-paren">(</span><em>seed_url</em>, <em>getUrl_func=None</em>, <em>getData_func=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/htmlParser.html#HtmlParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.htmlParser.HtmlParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>网页解析器
+默认使用lxml进行解析，可自定义url提取方式与数据提取方式，将自定义解析函数作为对象传入解析器进行解析</p>
+<dl class="method">
+<dt id="crawler.htmlParser.HtmlParser.parse">
+<code class="descname">parse</code><span class="sig-paren">(</span><em>response</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/htmlParser.html#HtmlParser.parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.htmlParser.HtmlParser.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>解析函数、返回url集合与数据集合</p>
+<blockquote>
+<div><p>&#64;param :: response : 打算解析响应内容，是一个字典，包含属性 'url','status','text','content','level',分别表示请求url，响应状态码，响应文本，响应内容 (二进制),请求层级</p>
+<p>return : list&lt;url&gt;、list&lt;data&gt;</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-crawler.writter">
+<span id="crawler-writter"></span><h2>crawler.writter<a class="headerlink" href="#module-crawler.writter" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="crawler.writter.DataWriter">
+<em class="property">class </em><code class="descclassname">crawler.writter.</code><code class="descname">DataWriter</code><span class="sig-paren">(</span><em>filename</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/writter.html#DataWriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.writter.DataWriter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>数据写入类
+支持多种数据格式写入文本，初始化类实例时，可传入一个字典格式的headers,key作为所有数据的key,value作为数据写入后的头部</p>
+<dl class="method">
+<dt id="crawler.writter.DataWriter.flush_buffer">
+<code class="descname">flush_buffer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/writter.html#DataWriter.flush_buffer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.writter.DataWriter.flush_buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>刷新缓冲</p>
+<blockquote>
+<div>return : None</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.writter.DataWriter.has_buffer">
+<code class="descname">has_buffer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/writter.html#DataWriter.has_buffer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.writter.DataWriter.has_buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>缓冲区是否有数据</p>
+<blockquote>
+<div>return : Bool</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="crawler.writter.DataWriter.instance">
+<code class="descname">instance</code><em class="property"> = {}</em><a class="headerlink" href="#crawler.writter.DataWriter.instance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="crawler.writter.DataWriter.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>items=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/writter.html#DataWriter.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.writter.DataWriter.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>文件写入，写入数据格式为二维结构，即二维列表或者二维字典，或者相互组合</p>
+<blockquote>
+<div><p>&#64;param :: items : 数据序列</p>
+<p>return : None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawler.writter.DataWriter.write_buffer">
+<code class="descname">write_buffer</code><span class="sig-paren">(</span><em>item</em>, <em>flush_num=1000</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/writter.html#DataWriter.write_buffer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.writter.DataWriter.write_buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>文件以缓冲方式写入，写入数据格式为二维结构，即二维列表或者二维字典，或者相互组合</p>
+<blockquote>
+<div><p>&#64;param :: items : 数据序列</p>
+<p>return : None</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="crawler.writter.synchronized">
+<code class="descclassname">crawler.writter.</code><code class="descname">synchronized</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/crawler/writter.html#synchronized"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#crawler.writter.synchronized" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Api test.html" class="btn btn-neutral float-right" title="Api单元测试" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Api document.html" class="btn btn-neutral" title="APi文档" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, pengr.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            LANGUAGE:'zh-ch',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
