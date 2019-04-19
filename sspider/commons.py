@@ -400,11 +400,11 @@ class RequestManager(AbstractRequestManager):
             return : None
 
         '''
-        if not str(self.__level) in self.__new_requests:
-            self.__init_level(self.__level)
-
         if request.level > self.__limit_level:
             return
+            
+        if not str(self.__level) in self.__new_requests:
+            self.__init_level(self.__level)
 
         if not str(request.level) in self.__new_requests:
             self.__init_level(request.level)
