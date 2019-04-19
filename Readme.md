@@ -47,6 +47,8 @@ You should construst project.py to suit your needs
 - Blog document
   - [自己写python爬虫框架(一)](https://duiliuliu.github.io/2019/04/10/%E8%87%AA%E5%B7%B1%E5%86%99python%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E4%B8%80/)
   - [自己写python爬虫框架(二)-下载器](https://duiliuliu.github.io/2019/04/11/%E8%87%AA%E5%B7%B1%E5%86%99python%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E4%BA%8C/)
+  - [自己写python爬虫框架(三)-解析器](https://duiliuliu.github.io/2019/04/13/%E8%87%AA%E5%B7%B1%E5%86%99python%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E4%B8%89/)
+  - [自己写python爬虫框架(四)-请求管理器](https://duiliuliu.github.io/2019/04/16/%E8%87%AA%E5%B7%B1%E5%86%99python%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E5%9B%9B/)
 
 ## Referenced Libraries
 
