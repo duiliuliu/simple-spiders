@@ -328,11 +328,13 @@ class RequestManager(AbstractRequestManager):
 
         '''
         if not self.has_new_request(level):
-            return None
+            return
+
+        if len(self.__new_requests[str(self.__level)]) <= 0:
+            self.__add_level()
+
         if not level:
             level = self.__level
-        if len(self.__new_requests[str(self.__level)]) <= 1:
-            self.__add_level()
         return self.__get_new_request(level)
 
     @property
@@ -402,7 +404,7 @@ class RequestManager(AbstractRequestManager):
         '''
         if request.level > self.__limit_level:
             return
-            
+
         if not str(self.__level) in self.__new_requests:
             self.__init_level(self.__level)
 
@@ -546,12 +548,302 @@ class CommonWritter(AbstractWritter):
 
 class TxtWritter(CommonWritter):
 
+    '''
+    txt格式写数据
+
+    将每个网页中的数据作为一个item对象，直接将该对象写入到文件中。
+
+    示例：
+
+        ```
+        from sspider import Spider, RequestManager, Request, HtmlParser, TxtWritter
+
+        # 建立请求对象
+        req = Request(
+            'get', 'https://www.easy-mock.com/mock/5c749b5e0d6f122f99e20e72/example/data')
+
+
+        # 构建特定的解析器
+        class Myparser(HtmlParser):
+
+            def parse(self, response):
+                return [req], response.json()['data']
+
+
+        # 构建TxtWritter对象
+        txtWritter = TxtWritter()
+
+
+        # 构架爬虫对象
+        spider = Spider(parser=Myparser(),
+                        requestManager=RequestManager(4), writter=xlsWritter)
+
+        # 运行爬虫
+        spider.run(req)
+
+        # 数据写入test文件
+        spider.write("test.xls")
+        ```
+    '''
+
     def write(self, filename, data=None, mode='w+', encode='utf-8'):
         if data is None:
             data = self.items
         with open(filename, mode, encoding=encode) as f:
             for item in data:
-                f.write(' | '.join(str(i) for i in item)+'\n')
+                f.write(str(item))
+                f.write('\n')
+
+
+class NonWritter(AbstractWritter):
+    def write(self, filename, data=None, mode='w+', encode='utf-8'):
+        pass
+
+    def write_buffer(self, item):
+        pass
+
+    def flush_buffer(self):
+        pass
+
+
+import json
+
+
+class JsonWritter(CommonWritter):
+
+    '''
+    json格式写数据
+
+    将数据以json格式写入数据文件中
+
+    示例：
+
+        ```
+        from sspider import Spider, RequestManager, Request, HtmlParser, JsonWritter
+
+        # 建立请求对象
+        req = Request(
+            'get', 'https://www.easy-mock.com/mock/5c749b5e0d6f122f99e20e72/example/data')
+
+
+        # 构建特定的解析器
+        class Myparser(HtmlParser):
+
+            def parse(self, response):
+                return [req], response.json()['data']
+
+
+        # JsonWritter
+        jsonWritter = JsonWritter()
+
+
+        # 构架爬虫对象
+        spider = Spider(parser=Myparser(),
+                        requestManager=RequestManager(4), writter=jsonWritter)
+
+        # 运行爬虫
+        spider.run(req)
+
+        # 数据写入test文件
+        spider.write("test.json")
+        ```
+    '''
+
+    def write(self, filename, data=None, mode='w+', encode='utf-8'):
+        if data is None:
+            data = self.items
+        with open(filename, mode, encoding=encode) as f:
+            f.write(json.dumps(data, indent=4, separators=(',', ': ')))
+
+
+import csv
+
+
+class CsvWritter(CommonWritter):
+
+    '''
+    csv格式写数据
+
+    将数据以csv格式写入数据文件中
+
+    示例：
+
+        ```
+        from sspider import Spider, RequestManager, Request, HtmlParser, CsvWritter
+
+        # 建立请求对象
+        req = Request(
+            'get', 'https://www.easy-mock.com/mock/5c749b5e0d6f122f99e20e72/example/data')
+
+
+        # 构建特定的解析器
+        class Myparser(HtmlParser):
+
+            def parse(self, response):
+                return [req], response.json()['data']
+
+
+        # CsvWritter
+        csvWritter = CsvWritter()
+
+
+        # 构架爬虫对象
+        spider = Spider(parser=Myparser(),
+                        requestManager=RequestManager(4), writter=csvWritter)
+
+        # 运行爬虫
+        spider.run(req)
+
+        # 数据写入test文件
+        spider.write("test.csv")
+        ```
+    '''
+
+    def write(self, filename, data=None, mode='w+', encode='utf-8'):
+        '''
+        csv格式写入，写入数据格式为二维结构，即二维列表
+            @param :: items : 数据序列
+            return : None
+        '''
+        if data is None:
+            data = self.items
+        with open(filename, mode, encoding=encode, newline='') as f:
+            csvfile = csv.writer(f)
+            for item in data:
+                csvfile.writerow(item)
+
+
+from xlwt import Workbook
+
+
+class XlsWritter(CommonWritter):
+
+    '''
+    xls格式写数据
+
+    将数据以xls格式写入数据文件中
+
+    示例：
+
+        ```
+        from sspider import Spider, RequestManager, Request, HtmlParser, XlsWritter
+
+        # 建立请求对象
+        req = Request(
+            'get', 'https://www.easy-mock.com/mock/5c749b5e0d6f122f99e20e72/example/data')
+
+
+        # 构建特定的解析器
+        class Myparser(HtmlParser):
+
+            def parse(self, response):
+                return [req], response.json()['data']
+
+
+        # XlsWritter
+        xlsWritter = XlsWritter()
+
+
+        # 构架爬虫对象
+        spider = Spider(parser=Myparser(),
+                        requestManager=RequestManager(4), writter=xlsWritter)
+
+        # 运行爬虫
+        spider.run(req)
+
+        # 数据写入test文件
+        spider.write("test.xls")
+        ```
+    '''
+
+    def write(self, filename, data=None, mode='w+', encode='utf-8'):
+        '''
+        xls格式写入，写入数据格式为二维结构，即二维列表
+            @param :: items : 数据序列
+            return : None
+        '''
+        if data is None:
+            data = self.items
+        book = Workbook()
+        worksheet = book.add_sheet("Sheet 1")
+        row = 0
+        col = 0
+        for item in data:
+            for i in item:
+                worksheet.write(row, col, i)
+                col += 1
+            row += 1
+            col = 0
+            if row > 65535:
+                book.save(filename)
+                raise OverflowError(
+                    "Hit limit of #of rows in one sheet(65535).")
+        book.save(filename)
+
+
+import xlsxwriter
+
+
+class XlsxWritter(CommonWritter):
+
+    '''
+    xlsx格式写数据
+
+    将数据以xlsx格式写入数据文件中
+
+    示例：
+
+        ```
+        from sspider import Spider, RequestManager, Request, HtmlParser, XlsxWritter
+
+        # 建立请求对象
+        req = Request(
+            'get', 'https://www.easy-mock.com/mock/5c749b5e0d6f122f99e20e72/example/data')
+
+
+        # 构建特定的解析器
+        class Myparser(HtmlParser):
+
+            def parse(self, response):
+                return [req], response.json()['data']
+
+
+        # XlsxWritter
+        xlsxWritter = XlsxWritter()
+
+
+        # 构架爬虫对象
+        spider = Spider(parser=Myparser(),
+                        requestManager=RequestManager(4), writter=xlsxWritter)
+
+        # 运行爬虫
+        spider.run(req)
+
+        # 数据写入test文件
+        spider.write("test.xlsx")
+        ```
+    '''
+
+    def write(self, filename, data=None, mode='w+', encode='utf-8'):
+        '''
+        xlsx格式写入，写入数据格式为二维结构，即二维列表
+            @param :: items : 数据序列
+            return : None
+        '''
+        if data is None:
+            data = self.items
+        workbook = xlsxwriter.Workbook(filename)
+        worksheet = workbook.add_worksheet()
+        row = 0
+        col = 0
+        for item in data:
+            for i in item:
+                worksheet.write(row, col, i)
+                col += 1
+            row += 1
+            col = 0
+
+        workbook.close()
 
 
 import logging
@@ -611,7 +903,7 @@ class Logger(AbstractLogger):
 
 class Spider(AbstractSpider):
 
-    def __init__(self, downloader=HtmlDownloader(), parser=HtmlParser(), requestManager=RequestManager(), writter=CommonWritter(), logger=None):
+    def __init__(self, downloader=HtmlDownloader(), parser=HtmlParser(), requestManager=RequestManager(), writter=NonWritter(), logger=None):
         logger = logger if logger is not None else Logger(
             self.__class__.__name__)
         super().__init__(downloader=downloader, parser=parser,

@@ -45,7 +45,8 @@ simpleSpider，快速开始：
 
 from . import utils
 from . import spider
-from .commons import Spider, Request, Response, HtmlDownloader, HtmlParser, RequestManager, TxtWritter, Logger
+from .commons import Spider, Request, Response, HtmlDownloader, HtmlParser, RequestManager,  Logger
+from .commons import TxtWritter, CsvWritter, JsonWritter, XlsWritter, XlsxWritter, CommonWritter
 
 
 from .__version__ import __title__, __description__, __url__, __version__
