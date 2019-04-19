@@ -555,35 +555,28 @@ class TxtWritter(CommonWritter):
 
     示例：
 
-        ```
-        from sspider import Spider, RequestManager, Request, HtmlParser, TxtWritter
-
-        # 建立请求对象
-        req = Request(
+        >>> from sspider import Spider, RequestManager, Request, HtmlParser, TxtWritter
+        >>> # 建立请求对象
+        >>> req = Request(
             'get', 'https://www.easy-mock.com/mock/5c749b5e0d6f122f99e20e72/example/data')
 
+        >>> # 构建特定的解析器
+        >>> class Myparser(HtmlParser):
+        >>>     def parse(self, response):
+        >>>         return [req], response.json()['data']
 
-        # 构建特定的解析器
-        class Myparser(HtmlParser):
+        >>> # 构建TxtWritter对象
+        >>> txtWritter = TxtWritter()
 
-            def parse(self, response):
-                return [req], response.json()['data']
+        >>> # 构架爬虫对象
+        >>> spider = Spider(parser=Myparser(),
+                        requestManager=RequestManager(4), writter=txtWritter)
 
+        >>> # 运行爬虫
+        >>> spider.run(req)
 
-        # 构建TxtWritter对象
-        txtWritter = TxtWritter()
-
-
-        # 构架爬虫对象
-        spider = Spider(parser=Myparser(),
-                        requestManager=RequestManager(4), writter=xlsWritter)
-
-        # 运行爬虫
-        spider.run(req)
-
-        # 数据写入test文件
-        spider.write("test.xls")
-        ```
+        >>> # 数据写入test文件
+        >>> spider.write("test.txt")
     '''
 
     def write(self, filename, data=None, mode='w+', encode='utf-8'):
@@ -618,35 +611,28 @@ class JsonWritter(CommonWritter):
 
     示例：
 
-        ```
-        from sspider import Spider, RequestManager, Request, HtmlParser, JsonWritter
-
-        # 建立请求对象
-        req = Request(
+        >>> from sspider import Spider, RequestManager, Request, HtmlParser, JsonWritter
+        >>> # 建立请求对象
+        >>> req = Request(
             'get', 'https://www.easy-mock.com/mock/5c749b5e0d6f122f99e20e72/example/data')
 
+        >>> # 构建特定的解析器
+        >>> class Myparser(HtmlParser):
+        >>>     def parse(self, response):
+        >>>         return [req], response.json()['data']
 
-        # 构建特定的解析器
-        class Myparser(HtmlParser):
+        >>> # 构建JsonWritter对象
+        >>> jsonWritter = JsonWritter()
 
-            def parse(self, response):
-                return [req], response.json()['data']
-
-
-        # JsonWritter
-        jsonWritter = JsonWritter()
-
-
-        # 构架爬虫对象
-        spider = Spider(parser=Myparser(),
+        >>> # 构架爬虫对象
+        >>> spider = Spider(parser=Myparser(),
                         requestManager=RequestManager(4), writter=jsonWritter)
 
-        # 运行爬虫
-        spider.run(req)
+        >>> # 运行爬虫
+        >>> spider.run(req)
 
-        # 数据写入test文件
-        spider.write("test.json")
-        ```
+        >>> # 数据写入test文件
+        >>> spider.write("test.json")
     '''
 
     def write(self, filename, data=None, mode='w+', encode='utf-8'):
@@ -668,35 +654,28 @@ class CsvWritter(CommonWritter):
 
     示例：
 
-        ```
-        from sspider import Spider, RequestManager, Request, HtmlParser, CsvWritter
-
-        # 建立请求对象
-        req = Request(
+          >>> from sspider import Spider, RequestManager, Request, HtmlParser, CsvWritter
+        >>> # 建立请求对象
+        >>> req = Request(
             'get', 'https://www.easy-mock.com/mock/5c749b5e0d6f122f99e20e72/example/data')
 
+        >>> # 构建特定的解析器
+        >>> class Myparser(HtmlParser):
+        >>>     def parse(self, response):
+        >>>         return [req], response.json()['data']
 
-        # 构建特定的解析器
-        class Myparser(HtmlParser):
+        >>> # 构建CsvWritter对象
+        >>> csvWritter = CsvWritter()
 
-            def parse(self, response):
-                return [req], response.json()['data']
-
-
-        # CsvWritter
-        csvWritter = CsvWritter()
-
-
-        # 构架爬虫对象
-        spider = Spider(parser=Myparser(),
+        >>> # 构架爬虫对象
+        >>> spider = Spider(parser=Myparser(),
                         requestManager=RequestManager(4), writter=csvWritter)
 
-        # 运行爬虫
-        spider.run(req)
+        >>> # 运行爬虫
+        >>> spider.run(req)
 
-        # 数据写入test文件
-        spider.write("test.csv")
-        ```
+        >>> # 数据写入test文件
+        >>> spider.write("test.csv")
     '''
 
     def write(self, filename, data=None, mode='w+', encode='utf-8'):
@@ -725,35 +704,28 @@ class XlsWritter(CommonWritter):
 
     示例：
 
-        ```
-        from sspider import Spider, RequestManager, Request, HtmlParser, XlsWritter
-
-        # 建立请求对象
-        req = Request(
+          >>> from sspider import Spider, RequestManager, Request, HtmlParser, XlsWritter
+        >>> # 建立请求对象
+        >>> req = Request(
             'get', 'https://www.easy-mock.com/mock/5c749b5e0d6f122f99e20e72/example/data')
 
+        >>> # 构建特定的解析器
+        >>> class Myparser(HtmlParser):
+        >>>     def parse(self, response):
+        >>>         return [req], response.json()['data']
 
-        # 构建特定的解析器
-        class Myparser(HtmlParser):
+        >>> # 构建XlsWritter对象
+        >>> xlsWritter = XlsWritter()
 
-            def parse(self, response):
-                return [req], response.json()['data']
-
-
-        # XlsWritter
-        xlsWritter = XlsWritter()
-
-
-        # 构架爬虫对象
-        spider = Spider(parser=Myparser(),
+        >>> # 构架爬虫对象
+        >>> spider = Spider(parser=Myparser(),
                         requestManager=RequestManager(4), writter=xlsWritter)
 
-        # 运行爬虫
-        spider.run(req)
+        >>> # 运行爬虫
+        >>> spider.run(req)
 
-        # 数据写入test文件
-        spider.write("test.xls")
-        ```
+        >>> # 数据写入test文件
+        >>> spider.write("test.xls")
     '''
 
     def write(self, filename, data=None, mode='w+', encode='utf-8'):
@@ -793,35 +765,28 @@ class XlsxWritter(CommonWritter):
 
     示例：
 
-        ```
-        from sspider import Spider, RequestManager, Request, HtmlParser, XlsxWritter
-
-        # 建立请求对象
-        req = Request(
+          >>> from sspider import Spider, RequestManager, Request, HtmlParser, XlsxWritter
+        >>> # 建立请求对象
+        >>> req = Request(
             'get', 'https://www.easy-mock.com/mock/5c749b5e0d6f122f99e20e72/example/data')
 
+        >>> # 构建特定的解析器
+        >>> class Myparser(HtmlParser):
+        >>>     def parse(self, response):
+        >>>         return [req], response.json()['data']
 
-        # 构建特定的解析器
-        class Myparser(HtmlParser):
+        >>> # 构建XlsxWritter对象
+        >>> xlsxWritter = XlsxWritter()
 
-            def parse(self, response):
-                return [req], response.json()['data']
-
-
-        # XlsxWritter
-        xlsxWritter = XlsxWritter()
-
-
-        # 构架爬虫对象
-        spider = Spider(parser=Myparser(),
+        >>> # 构架爬虫对象
+        >>> spider = Spider(parser=Myparser(),
                         requestManager=RequestManager(4), writter=xlsxWritter)
 
-        # 运行爬虫
-        spider.run(req)
+        >>> # 运行爬虫
+        >>> spider.run(req)
 
-        # 数据写入test文件
-        spider.write("test.xlsx")
-        ```
+        >>> # 数据写入test文件
+        >>> spider.write("test.xlsx")
     '''
 
     def write(self, filename, data=None, mode='w+', encode='utf-8'):
