@@ -470,6 +470,9 @@ class CommonWritter(AbstractWritter):
 
     @property
     def items(self):
+        '''
+        获取所有爬取到的数据
+        '''
         if not os.path.exists(self._buffer_file):
             return self._items
         items = []
@@ -485,6 +488,9 @@ class CommonWritter(AbstractWritter):
 
     @property
     def headers(self):
+        '''
+        获取数据头部
+        '''
         return self._headers.values()
 
     @headers.setter
