@@ -232,12 +232,8 @@ class HtmlDownloader(AbstractDownloader):
 
     """
 
-    def __init__(self, timeout=3):
-        self.timeout = timeout
-
     @typeassert(request=Request)
     def download(self, request):
-        request.timeout = self.timeout
         with sessions.Session() as session:
             return Response(request, cls=session.request(**request.transRequestParam()))
 
@@ -261,6 +257,7 @@ class HtmlParser(AbstractParser):
             request.method = 'get'
             request.url = item.get('href')
             request.level = response.level+1
+            request.timeout = 3
             requests.append(request)
         datas = [text.strip() for text in htm.itertext()]
         return requests, datas
@@ -459,13 +456,44 @@ class CommonWritter(AbstractWritter):
     数据写入类
 
     将数据以特定格式写入到磁盘中
+    self.mode = 'append' or 'extend'
+
+
+    对于字典格式的数据支持：
+
+        >>> from sspider import Request, Spider, RequestManager, HtmlParser, TxtWritter, JsonWritter
+        >>> url ='https://www.easy-mock.com/mock/5c749b5e0d6f122f99e20e72/example/datadict'
+        >>> #建立自定义parser
+        >>> class MyParser(HtmlParser):
+        >>>     def parse(self, response):
+        >>>         data = response.json()['data']
+        >>>         # 打印解析数据
+        >>>         print(data)
+        >>>         return [],data
+        >>> # 构建初始请求集合
+        >>> reqs = [Request('get',url) for i in range(4)]
+        >>> # 写入类对象
+        >>> writter = TxtWritter()
+        >>> # 建立爬虫对象
+        >>> spider = Spider(writter = writter,parser=MyParser())
+        >>> # 建立爬虫
+        >>> spider.run(reqs)
+        >>> #写入数据
+        >>> spider.write('test.txt')
+        >>> #查看字典数据头部
+        >>> print(writter.headers)
     '''
 
-    def __init__(self):
+    class WritterMode(object):
+        APPEND = 'append'
+        EXTEND = 'extend'
+
+    def __init__(self, writeMode=WritterMode.APPEND):
         super().__init__()
         self._items = []
         self._headers = {}
         self._buffer_file = 'buffer_'+self.__class__.__name__+'.txt'
+        self.writeMode = writeMode
         self.max_buffer = 1000
 
     @property
@@ -474,9 +502,10 @@ class CommonWritter(AbstractWritter):
         获取所有爬取到的数据
         '''
         if not os.path.exists(self._buffer_file):
+            self._items.insert(0, self.headers)
             return self._items
         items = []
-        items.append(self._headers.values())
+        items.append(self.headers)
         with open(self._buffer_file, 'rb') as f:
             try:
                 while True:
@@ -491,7 +520,7 @@ class CommonWritter(AbstractWritter):
         '''
         获取数据头部
         '''
-        return self._headers.values()
+        return list(self._headers.values())
 
     @headers.setter
     def headers(self, headers):
@@ -510,14 +539,13 @@ class CommonWritter(AbstractWritter):
 
     @synchronized
     def write_buffer(self, item):
-        if isinstance(item, list):
-            self.__addListItems(item)
-        elif isinstance(item, dict):
-            self.__addDictItems(item)
+        if self.writeMode == self.WritterMode.EXTEND:
+            for i in item:
+                self.__addItem(i)
+        elif self.writeMode == self.WritterMode.APPEND:
+            self.__addItem(item)
         else:
-            raise ValueError('未知类型的headers')
-        if len(self._items) > self.max_buffer:
-            self.flush_buffer()
+            raise AttributeError("非法的writeMode,"+self.mode)
 
     @synchronized
     def flush_buffer(self):
@@ -532,6 +560,16 @@ class CommonWritter(AbstractWritter):
     def remove_buffer(self):
         if os.path.exists(self._buffer_file):
             os.remove(self._buffer_file)
+
+    def __addItem(self, item):
+        if isinstance(item, list):
+            self.__addListItems(item)
+        elif isinstance(item, dict):
+            self.__addDictItems(item)
+        else:
+            raise ValueError('未知类型的headers')
+        if len(self._items) > self.max_buffer:
+            self.flush_buffer()
 
     def __addDictItems(self, dictItems):
         tempHeaders = {key: key for key in dictItems}
@@ -565,22 +603,17 @@ class TxtWritter(CommonWritter):
         >>> # 建立请求对象
         >>> req = Request(
             'get', 'https://www.easy-mock.com/mock/5c749b5e0d6f122f99e20e72/example/data')
-
         >>> # 构建特定的解析器
         >>> class Myparser(HtmlParser):
         >>>     def parse(self, response):
         >>>         return [req], response.json()['data']
-
         >>> # 构建TxtWritter对象
         >>> txtWritter = TxtWritter()
-
         >>> # 构架爬虫对象
         >>> spider = Spider(parser=Myparser(),
                         requestManager=RequestManager(4), writter=txtWritter)
-
         >>> # 运行爬虫
         >>> spider.run(req)
-
         >>> # 数据写入test文件
         >>> spider.write("test.txt")
     '''
@@ -621,22 +654,17 @@ class JsonWritter(CommonWritter):
         >>> # 建立请求对象
         >>> req = Request(
             'get', 'https://www.easy-mock.com/mock/5c749b5e0d6f122f99e20e72/example/data')
-
         >>> # 构建特定的解析器
         >>> class Myparser(HtmlParser):
         >>>     def parse(self, response):
         >>>         return [req], response.json()['data']
-
         >>> # 构建JsonWritter对象
         >>> jsonWritter = JsonWritter()
-
         >>> # 构架爬虫对象
         >>> spider = Spider(parser=Myparser(),
                         requestManager=RequestManager(4), writter=jsonWritter)
-
         >>> # 运行爬虫
         >>> spider.run(req)
-
         >>> # 数据写入test文件
         >>> spider.write("test.json")
     '''
@@ -669,17 +697,13 @@ class CsvWritter(CommonWritter):
         >>> class Myparser(HtmlParser):
         >>>     def parse(self, response):
         >>>         return [req], response.json()['data']
-
         >>> # 构建CsvWritter对象
         >>> csvWritter = CsvWritter()
-
         >>> # 构架爬虫对象
         >>> spider = Spider(parser=Myparser(),
                         requestManager=RequestManager(4), writter=csvWritter)
-
         >>> # 运行爬虫
         >>> spider.run(req)
-
         >>> # 数据写入test文件
         >>> spider.write("test.csv")
     '''
@@ -714,22 +738,17 @@ class XlsWritter(CommonWritter):
         >>> # 建立请求对象
         >>> req = Request(
             'get', 'https://www.easy-mock.com/mock/5c749b5e0d6f122f99e20e72/example/data')
-
         >>> # 构建特定的解析器
         >>> class Myparser(HtmlParser):
         >>>     def parse(self, response):
         >>>         return [req], response.json()['data']
-
         >>> # 构建XlsWritter对象
         >>> xlsWritter = XlsWritter()
-
         >>> # 构架爬虫对象
         >>> spider = Spider(parser=Myparser(),
                         requestManager=RequestManager(4), writter=xlsWritter)
-
         >>> # 运行爬虫
         >>> spider.run(req)
-
         >>> # 数据写入test文件
         >>> spider.write("test.xls")
     '''
@@ -780,17 +799,13 @@ class XlsxWritter(CommonWritter):
         >>> class Myparser(HtmlParser):
         >>>     def parse(self, response):
         >>>         return [req], response.json()['data']
-
         >>> # 构建XlsxWritter对象
         >>> xlsxWritter = XlsxWritter()
-
         >>> # 构架爬虫对象
         >>> spider = Spider(parser=Myparser(),
                         requestManager=RequestManager(4), writter=xlsxWritter)
-
         >>> # 运行爬虫
         >>> spider.run(req)
-
         >>> # 数据写入test文件
         >>> spider.write("test.xlsx")
     '''
