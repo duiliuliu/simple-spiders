@@ -676,7 +676,8 @@ class JsonWritter(CommonWritter):
         if data is None:
             data = self.items
         with open(filename, mode, encoding=encode) as f:
-            f.write(json.dumps(data, indent=4, separators=(',', ': ')))
+            f.write(json.dumps(data, indent=4, separators=(
+                ',', ': '), ensure_ascii=False))
 
 
 import csv
@@ -841,6 +842,8 @@ from .utils import set_color, FOREGROUND_GREEN, FOREGROUND_YELLOW, FOREGROUND_BL
 
 class Logger(AbstractLogger):
 
+    __instance_name = {}
+
     def __init__(self, name, path=None, clevel=logging.DEBUG, Flevel=logging.DEBUG):
         '''
         日志类
@@ -850,6 +853,11 @@ class Logger(AbstractLogger):
             @member :: Flevel : 输出日志文件级别
 
         '''
+        if name in self.__instance_name:
+            self.__instance_name[name] += 1
+            name = "{}-{}".format(name, self.__instance_name[name])
+        else:
+            self.__instance_name[name] = 0
         self.logger = logging.getLogger(name)
         self.logger.setLevel(logging.DEBUG)
         fmt = logging.Formatter(
@@ -902,7 +910,7 @@ class Spider(AbstractSpider):
         '''
         将数据写入磁盘，依赖于初始化Spider时的writter，默认为CommonWritter，即将数据打印到控制台
         '''
-        self.writter.write(filename, None, mode='w+', encode='utf-8')
+        self.writter.write(filename, None,  mode=mode, encode=encode)
 
     def getItems(self):
         '''
