@@ -64,7 +64,7 @@ class Request(object):
     def __init__(self, method, url,
                  params=None, data=None, headers=None, cookies=None, files=None,
                  auth=None, timeout=None, allow_redirects=True, proxies=None,
-                 hooks=None, stream=None, verify=None, cert=None, json=None, level=1):
+                 hooks=None, stream=None, verify=None, cert=None, json=None, level=1, other_info=None):
         self.method = method
         self.url = url
         self.params = params
@@ -82,6 +82,7 @@ class Request(object):
         self.cert = cert
         self.json = json
         self.level = level
+        self.other_info = other_info
 
     def __getitem__(self, item):
         return getattr(self, item)
@@ -89,6 +90,7 @@ class Request(object):
     def transRequestParam(self):
         params = copy.copy(self.__dict__)
         params.pop('level')
+        params.pop('other_info')
         return params
 
 
@@ -502,10 +504,8 @@ class CommonWritter(AbstractWritter):
         获取所有爬取到的数据
         '''
         if not os.path.exists(self._buffer_file):
-            self._items.insert(0, self.headers)
             return self._items
         items = []
-        items.append(self.headers)
         with open(self._buffer_file, 'rb') as f:
             try:
                 while True:
@@ -530,6 +530,9 @@ class CommonWritter(AbstractWritter):
             self._headers = headers
         else:
             raise ValueError('未知类型的headers')
+
+    def insert(self, data, index=0):
+        self._items.insert(index, data)
 
     def write(self, filename, data=None, mode='w+', encode='utf-8'):
         if data is None:
@@ -767,7 +770,7 @@ class XlsWritter(CommonWritter):
         col = 0
         for item in data:
             for i in item:
-                worksheet.write(row, col, i)
+                worksheet.write(row, col, str(i))
                 col += 1
             row += 1
             col = 0
@@ -824,7 +827,7 @@ class XlsxWritter(CommonWritter):
         col = 0
         for item in data:
             for i in item:
-                worksheet.write(row, col, i)
+                worksheet.write(row, col, str(i))
                 col += 1
             row += 1
             col = 0
@@ -895,11 +898,11 @@ class Spider(AbstractSpider):
         super().__init__(downloader=downloader, parser=parser,
                          requestManager=requestManager, writter=writter, logger=logger)
 
-    def write(self, filename):
+    def write(self, filename, mode='w+', encode='utf-8'):
         '''
         将数据写入磁盘，依赖于初始化Spider时的writter，默认为CommonWritter，即将数据打印到控制台
         '''
-        self.writter.write(filename, None)
+        self.writter.write(filename, None, mode='w+', encode='utf-8')
 
     def getItems(self):
         '''

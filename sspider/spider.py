@@ -227,19 +227,15 @@ class AbstractSpider(object):
         对request进行请求进行爬取并解析结果的运行单元，子类可对该方法重写进行多线程、多进程运行或异步抓取与解析
         下载器对传入的request进行下载，解析器解析下载到的文档，并将解析出的request扔进requestManager中进行管理，以进行深度爬取；将解析出的data扔进writter中，将数据存储到磁盘上
 
-            @param :: request : 请求
+            @param :: requests : 请求 or 请求集合
             return None
         '''
         try:
             self.logger.info('\t'+request.url)
             response = self.downloader.download(request)
-            if response.status_code == 200:
-                requests, data = self.parser.parse(response)
-                self.requestManager.add_new_requests(requests)
-                self.writter.write_buffer(data)
-            else:
-                self.logger.warn(
-                    'crawled data is None and response_status is ' + str(response.status_code))
+            requests, data = self.parser.parse(response)
+            self.requestManager.add_new_requests(requests)
+            self.writter.write_buffer(data)
         except Exception as e:
             self.logger.exception('\tCrawling occurs error\n' + e.__repr__())
 
@@ -247,7 +243,7 @@ class AbstractSpider(object):
         '''
         传入文件名及格式，数据写入文件
         '''
-        self.writter.write_buffer_flush()
+        self.writter.flush_buffer()
 
     def __start_icon(self):
         icon = '''
