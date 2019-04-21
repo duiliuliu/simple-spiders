@@ -69,7 +69,8 @@ class Request(object):
     def __init__(self, method, url,
                  params=None, data=None, headers=None, cookies=None, files=None,
                  auth=None, timeout=None, allow_redirects=True, proxies=None,
-                 hooks=None, stream=None, verify=None, cert=None, json=None, level=1, other_info=None):
+                 hooks=None, stream=None, verify=None, cert=None, json=None, 
+                 level=1, other_info=None, sleep_time=None):
         self.method = method
         self.url = url
         self.params = params
@@ -88,6 +89,7 @@ class Request(object):
         self.json = json
         self.level = level
         self.other_info = other_info
+        self.sleep_time = sleep_time
 
     def __getitem__(self, item):
         return getattr(self, item)
@@ -96,6 +98,7 @@ class Request(object):
         params = copy.copy(self.__dict__)
         params.pop('level')
         params.pop('other_info')
+        params.pop('sleep_time')
         return params
 
 
@@ -246,13 +249,10 @@ class HtmlDownloader(AbstractDownloader):
 
     """
 
-    def __init__(self, sleep_time=0):
-        if sleep_time:
-            time.sleep(sleep_time)
-        super().__init__()
-
     @typeassert(request=Request)
     def download(self, request):
+        if request.sleep_time:
+            time.sleep(request.sleep_time)
         with sessions.Session() as session:
             return Response(request, cls=session.request(**request.transRequestParam()))
 
