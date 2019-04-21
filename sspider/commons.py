@@ -18,6 +18,7 @@ import os
 import re
 import demjson
 import json
+import time
 
 
 '''
@@ -244,6 +245,11 @@ class HtmlDownloader(AbstractDownloader):
     对于cookie，请求头等的设置类似上面代理装饰器
 
     """
+
+    def __init__(self, sleep_time=0):
+        if sleep_time:
+            time.sleep(sleep_time)
+        super().__init__()
 
     @typeassert(request=Request)
     def download(self, request):
@@ -547,7 +553,7 @@ class CommonWritter(AbstractWritter):
 
     def write(self, filename, data=None, write_header=True,):
         if data is None:
-            data = self.items
+            data = copy.copy(self.items)
         if write_header:
             data.insert(0, self.headers)
         return data
