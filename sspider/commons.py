@@ -15,6 +15,10 @@ from lxml import html
 from .utils import typeassert, synchronized
 import copy
 import os
+import re
+import demjson
+import json
+
 
 '''
     此模块为对spider模块中抽象架构的通用实现，并确定了传递对象数据结构为Reqeust对象与Response对象，各位在扩展时使用common下的包时需要按照此包下的数据结构进行通信
@@ -136,6 +140,13 @@ class Response(ParentResponse):
 
     def __getitem__(self, item):
         return getattr(self, item)
+
+    def jsonp(self):
+        '''
+        将jsonp格式的response解析为json对象
+        '''
+        return demjson.decode(
+            re.match(".*?({.*}).*", self.text, re.S).group(1))
 
     def html(self, encoding=None, **kwargs):
         '''
@@ -534,11 +545,12 @@ class CommonWritter(AbstractWritter):
     def insert(self, data, index=0):
         self._items.insert(index, data)
 
-    def write(self, filename, data=None, mode='w+', encode='utf-8'):
+    def write(self, filename, data=None, write_header=True,):
         if data is None:
             data = self.items
-
-        print(data)
+        if write_header:
+            data.insert(0, self.headers)
+        return data
 
     @synchronized
     def write_buffer(self, item):
@@ -621,9 +633,8 @@ class TxtWritter(CommonWritter):
         >>> spider.write("test.txt")
     '''
 
-    def write(self, filename, data=None, mode='w+', encode='utf-8'):
-        if data is None:
-            data = self.items
+    def write(self, filename, data=None, mode='w+', encode='utf-8', write_header=True):
+        data = super().write(filename, data, write_header)
         with open(filename, mode, encoding=encode) as f:
             for item in data:
                 f.write(str(item))
@@ -631,7 +642,7 @@ class TxtWritter(CommonWritter):
 
 
 class NonWritter(AbstractWritter):
-    def write(self, filename, data=None, mode='w+', encode='utf-8'):
+    def write(self, *args, **kwargs):
         pass
 
     def write_buffer(self, item):
@@ -639,9 +650,6 @@ class NonWritter(AbstractWritter):
 
     def flush_buffer(self):
         pass
-
-
-import json
 
 
 class JsonWritter(CommonWritter):
@@ -672,9 +680,8 @@ class JsonWritter(CommonWritter):
         >>> spider.write("test.json")
     '''
 
-    def write(self, filename, data=None, mode='w+', encode='utf-8'):
-        if data is None:
-            data = self.items
+    def write(self, filename, data=None, mode='w+', encode='utf-8', write_header=True):
+        data = super().write(filename, data, write_header)
         with open(filename, mode, encoding=encode) as f:
             f.write(json.dumps(data, indent=4, separators=(
                 ',', ': '), ensure_ascii=False))
@@ -712,14 +719,13 @@ class CsvWritter(CommonWritter):
         >>> spider.write("test.csv")
     '''
 
-    def write(self, filename, data=None, mode='w+', encode='utf-8'):
+    def write(self, filename, data=None, mode='w+', encode='utf-8', write_header=True):
         '''
         csv格式写入，写入数据格式为二维结构，即二维列表
             @param :: items : 数据序列
             return : None
         '''
-        if data is None:
-            data = self.items
+        data = super().write(filename, data, write_header)
         with open(filename, mode, encoding=encode, newline='') as f:
             csvfile = csv.writer(f)
             for item in data:
@@ -757,14 +763,13 @@ class XlsWritter(CommonWritter):
         >>> spider.write("test.xls")
     '''
 
-    def write(self, filename, data=None, mode='w+', encode='utf-8'):
+    def write(self, filename, data=None, mode='w+', encode='utf-8', write_header=True):
         '''
         xls格式写入，写入数据格式为二维结构，即二维列表
             @param :: items : 数据序列
             return : None
         '''
-        if data is None:
-            data = self.items
+        data = super().write(filename, data, write_header)
         book = Workbook()
         worksheet = book.add_sheet("Sheet 1")
         row = 0
@@ -814,14 +819,13 @@ class XlsxWritter(CommonWritter):
         >>> spider.write("test.xlsx")
     '''
 
-    def write(self, filename, data=None, mode='w+', encode='utf-8'):
+    def write(self, filename, data=None, mode='w+', encode='utf-8', write_header=True):
         '''
         xlsx格式写入，写入数据格式为二维结构，即二维列表
             @param :: items : 数据序列
             return : None
         '''
-        if data is None:
-            data = self.items
+        data = super().write(filename, data, write_header)
         workbook = xlsxwriter.Workbook(filename)
         worksheet = workbook.add_worksheet()
         row = 0
@@ -906,14 +910,24 @@ class Spider(AbstractSpider):
         super().__init__(downloader=downloader, parser=parser,
                          requestManager=requestManager, writter=writter, logger=logger)
 
-    def write(self, filename, mode='w+', encode='utf-8'):
+    def write(self, filename, mode='w+', encode='utf-8', write_header=True):
         '''
         将数据写入磁盘，依赖于初始化Spider时的writter，默认为CommonWritter，即将数据打印到控制台
         '''
-        self.writter.write(filename, None,  mode=mode, encode=encode)
+        self.writter.write(filename, None,  mode=mode,
+                           encode=encode, write_header=write_header)
 
-    def getItems(self):
+    def getItems(self, type='list'):
         '''
         获取抓取到的数据
         '''
-        return self.writter.items
+        if type == 'list':
+            return self.writter.items
+        if type == 'dict':
+            for data in self.writter.items:
+                item = {}
+                i = 0
+                for key in self.writter.headers:
+                    item[key] = data[i]
+                    i += 1
+                yield item
