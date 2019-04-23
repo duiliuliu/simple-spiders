@@ -593,9 +593,9 @@ class CommonWritter(AbstractWritter):
             self.flush_buffer()
 
     def __addDictItems(self, dictItems):
-        tempHeaders = {key: key for key in dictItems}
-        tempHeaders.update(self._headers)
-        self._headers = tempHeaders
+        for key in dictItems:
+            if key not in self._headers:
+                self._headers[key] = key
         tempList = []
         for k in self._headers:
             if k in dictItems:
@@ -928,7 +928,8 @@ class Spider(AbstractSpider):
         获取抓取到的数据
         '''
         if type == 'list':
-            return self.writter.items
+            for item in self.writter.items:
+                yield item
         if type == 'dict':
             for data in self.writter.items:
                 item = {}

@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="sspider",
-    version="1.2.9",
+    version="1.2.11",
     author="pengr",
     author_email="pengrui55555@163.com",
     description="A simple web crawling framework.",
