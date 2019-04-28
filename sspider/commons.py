@@ -583,12 +583,10 @@ class CommonWritter(AbstractWritter):
             os.remove(self._buffer_file)
 
     def __addItem(self, item):
-        if isinstance(item, list):
-            self.__addListItems(item)
-        elif isinstance(item, dict):
+        if isinstance(item, dict):
             self.__addDictItems(item)
         else:
-            raise ValueError('未知类型的headers')
+            self.__addListItems(item)
         if len(self._items) > self.max_buffer:
             self.flush_buffer()
 
