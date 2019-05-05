@@ -551,7 +551,7 @@ class CommonWritter(AbstractWritter):
     def insert(self, data, index=0):
         self._items.insert(index, data)
 
-    def write(self, filename, data=None, write_header=True,):
+    def write(self, filename, data=None, write_header=False,):
         if data is None:
             data = copy.copy(self.items)
         if write_header:
@@ -584,13 +584,13 @@ class CommonWritter(AbstractWritter):
 
     def __addItem(self, item):
         if isinstance(item, dict):
-            self.__addDictItems(item)
-        else:
-            self.__addListItems(item)
+            item = self.__dictToList(item)
+        
+        self.__addListItems(item)
         if len(self._items) > self.max_buffer:
             self.flush_buffer()
 
-    def __addDictItems(self, dictItems):
+    def __dictToList(self, dictItems):
         for key in dictItems:
             if key not in self._headers:
                 self._headers[key] = key
@@ -600,7 +600,7 @@ class CommonWritter(AbstractWritter):
                 tempList.append(dictItems[k])
             else:
                 tempList.append('')
-        self._items.append(tempList)
+        return tempList
 
     def __addListItems(self, listItems):
         self._items.append(listItems)
@@ -908,13 +908,13 @@ class Logger(AbstractLogger):
 
 class Spider(AbstractSpider):
 
-    def __init__(self, downloader=HtmlDownloader(), parser=HtmlParser(), requestManager=RequestManager(), writter=NonWritter(), logger=None):
+    def __init__(self, downloader=HtmlDownloader(), parser=HtmlParser(), requestManager=RequestManager(), writter=CommonWritter(), logger=None):
         logger = logger if logger is not None else Logger(
             self.__class__.__name__)
         super().__init__(downloader=downloader, parser=parser,
                          requestManager=requestManager, writter=writter, logger=logger)
 
-    def write(self, filename, mode='w+', encode='utf-8', write_header=True):
+    def write(self, filename, mode='w+', encode='utf-8', write_header=False):
         '''
         将数据写入磁盘，依赖于初始化Spider时的writter，默认为CommonWritter，即将数据打印到控制台
         '''
