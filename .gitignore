@@ -4,11 +4,15 @@
 /doc
 !/doc/source/spider.rst
 
+
+*log
+*pyc
+
 # dist
 /dist
 /build
-simple_spiders.egg-info/
-sspider.egg-info/
+
+*egg-info/
 
 
 # use-case

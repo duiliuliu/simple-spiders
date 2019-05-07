@@ -69,7 +69,7 @@ class Request(object):
     def __init__(self, method, url,
                  params=None, data=None, headers=None, cookies=None, files=None,
                  auth=None, timeout=None, allow_redirects=True, proxies=None,
-                 hooks=None, stream=None, verify=None, cert=None, json=None, 
+                 hooks=None, stream=None, verify=None, cert=None, json=None,
                  level=1, other_info=None, sleep_time=None):
         self.method = method
         self.url = url
@@ -572,7 +572,7 @@ class CommonWritter(AbstractWritter):
     def flush_buffer(self):
         if len(self._items) == 0:
             return
-        with open(self._buffer_file, 'wb+') as f:
+        with open(self._buffer_file, 'ab+') as f:
             for item in self._items:
                 pickle.dump(item, f)
         del self._items[:]
@@ -585,7 +585,7 @@ class CommonWritter(AbstractWritter):
     def __addItem(self, item):
         if isinstance(item, dict):
             item = self.__dictToList(item)
-        
+
         self.__addListItems(item)
         if len(self._items) > self.max_buffer:
             self.flush_buffer()
@@ -803,7 +803,7 @@ class XlsxWritter(CommonWritter):
 
     示例：
 
-          >>> from sspider import Spider, RequestManager, Request, HtmlParser, XlsxWritter
+        >>> from sspider import Spider, RequestManager, Request, HtmlParser, XlsxWritter
         >>> # 建立请求对象
         >>> req = Request(
             'get', 'https://www.easy-mock.com/mock/5c749b5e0d6f122f99e20e72/example/data')
@@ -913,6 +913,50 @@ class Spider(AbstractSpider):
             self.__class__.__name__)
         super().__init__(downloader=downloader, parser=parser,
                          requestManager=requestManager, writter=writter, logger=logger)
+
+    def run(self, requests):
+        '''
+        运行爬虫，需要传入初始url或者初始请求或者初始请求集合
+        示例：
+            >>> from sspider import Spider
+            >>> url = 'http://www.baidu.com'
+            >>> spider = Spider()
+            >>> spider.run(url)
+            ... 或者
+            >>> from sspider import Spider
+            >>> req = {
+                        'url':url,
+                        'method':'get'
+                    }
+            >>> spider = Spider()
+            >>> spider.run(req)
+            ... 或者
+            >>> from sspider import Spider
+            >>> initUrls = ['http://www.baidu.com','http://www.baidu.com']
+            >>> spider = Spider()
+            >>> spider.run(initUrls)
+            ... 或者
+            >>> from sspider import Spider
+            >>> reqs = [{
+                        'url':url,
+                        'method':'get'
+                    },{
+                        'url':url,
+                        'method':'get'
+                    }]
+            >>> spider = Spider()
+            >>> spider.run(reqs)
+        '''
+        if not isinstance(requests, list):
+            requests = [requests]
+        new_requests = []
+        for req in requests:
+            if not isinstance(req, Request) and isinstance(req, dict):
+                new_requests.append(Request(**req))
+            if not isinstance(req, Request) and isinstance(req, str):
+                new_requests.append(Request('get', req))
+        print(new_requests)
+        super().run(new_requests)
 
     def write(self, filename, mode='w+', encode='utf-8', write_header=False):
         '''
