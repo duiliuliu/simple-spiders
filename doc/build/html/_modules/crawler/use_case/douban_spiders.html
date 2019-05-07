@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-ch" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-ch" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>crawler.use_case.douban_spiders &mdash; simple-spiders 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> simple-spiders
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">综述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Install.html">安装使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Api use case.html">入门指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Api document.html">APi文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Api test.html">Api单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../About.html">关于simple-spiders</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">simple-spiders</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>crawler.use_case.douban_spiders</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for crawler.use_case.douban_spiders</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding： utf-8 -*-</span>
+<span class="c1"># author：pengr</span>
+
+<div class="viewcode-block" id="简单示例"><a class="viewcode-back" href="../../../crawler.use_case.html#crawler.use_case.douban_spiders.简单示例">[docs]</a><span class="k">def</span> <span class="nf">简单示例</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    simple-spiders实战小案例</span>
+<span class="sd">    本篇案列带你完成下列任务：</span>
+
+<span class="sd">        1. 创建一个simple-spiders项目</span>
+
+<span class="sd">        2. 编写爬取网站的spider</span>
+
+<span class="sd">        3. 存储爬取到的数据</span>
+
+<span class="sd">    首先我们创建简单的simple-spider项目，创建一个spiders.py(文件命名随意)</span>
+
+<span class="sd">        &#39;引入我们需要的库&#39;</span>
+
+<span class="sd">        &gt;&gt;&gt; from crawler.spider import Spider</span>
+
+<span class="sd">        &gt;&gt;&gt; from crawler.writter import DataWriter</span>
+
+<span class="sd">        &#39;创建爬虫&#39;</span>
+
+<span class="sd">        &gt;&gt;&gt; spider = Spider(</span>
+<span class="sd">            &#39;https://movie.douban.com/subject/26810318/comments?start=0&amp;limit=20&amp;sort=new_score&amp;status=P&#39;)</span>
+<span class="sd">        </span>
+<span class="sd">        &gt;&gt;&gt; spider.start_crawl()</span>
+<span class="sd">        </span>
+<span class="sd">        这样我们就通过simple-spiders 简单建立了一个爬虫</span>
+
+<span class="sd">    通常，对于所有爬取的数据我们是有所甄别的，而且也并不是获取所有网站中的URL再次进行爬取</span>
+<span class="sd">    而是对于特定的URL，添加进队列。这个时候，我们可以自定义解析URL的函数与解析数据的函数，然后传入spider()中</span>
+
+<span class="sd">    如：</span>
+<span class="sd">    &#39;&#39;&#39;</span></div>
+
+<div class="viewcode-block" id="自定义解析函数示例"><a class="viewcode-back" href="../../../crawler.use_case.html#crawler.use_case.douban_spiders.自定义解析函数示例">[docs]</a><span class="k">def</span> <span class="nf">自定义解析函数示例</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    导入库</span>
+
+<span class="sd">    &gt;&gt;&gt;</span>
+<span class="sd">     from crawler.spider import Spider</span>
+<span class="sd">     from crawler.writter import DataWriter</span>
+<span class="sd">     from lxml import html</span>
+
+<span class="sd">    创建写入对象</span>
+
+<span class="sd">    &gt;&gt;&gt;</span>
+<span class="sd">     writter = DataWriter(&#39;data.txt&#39;)</span>
+
+<span class="sd">    自定义URL解析</span>
+
+<span class="sd">    &gt;&gt;&gt;</span>
+<span class="sd">     def geturl(response):</span>
+<span class="sd">         #自定义URL解析函数，对下一页的URL进行提取。观察网站结构可以看出：</span>
+<span class="sd">         #    首页与其他页的下一页不是同一个xpath路径，根据不同的网络层级进行解析</span>
+<span class="sd">         body = html.fromstring(response[&#39;text&#39;])</span>
+<span class="sd">         if response[&#39;level&#39;] == 1:</span>
+<span class="sd">             urls = [{&#39;url&#39;: &#39;https://movie.douban.com/subject/26810318/comments&#39; +</span>
+<span class="sd">                     url} for url in body.xpath(&#39;//*[@id=&quot;paginator&quot;]/a/@href&#39;)]</span>
+<span class="sd">         else:</span>
+<span class="sd">             urls = [{&#39;url&#39;: &#39;https://movie.douban.com/subject/26810318/comments&#39; +</span>
+<span class="sd">                     url} for url in body.xpath(&#39;//*[@id=&quot;paginator&quot;]/a[3]/@href&#39;)]</span>
+<span class="sd">         return urls</span>
+
+<span class="sd">    自定义Data解析</span>
+
+<span class="sd">    &gt;&gt;&gt;</span>
+<span class="sd">     def getdata(response):</span>
+<span class="sd">        自定义data解析函数，对我们所需要的数据进行提取。</span>
+<span class="sd">        body = html.fromstring(response[&#39;text&#39;])</span>
+<span class="sd">        comments = body.xpath(&#39;//*[@id=&quot;comments&quot;]/div/div[2]/p/span/text()&#39;)</span>
+<span class="sd">        writter.write_buffer([comments])</span>
+
+
+<span class="sd">    进行构建spider,传入我们自定义的解析函数进行解析</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; </span>
+<span class="sd">     spider = Spider(</span>
+<span class="sd">         &#39;https://movie.douban.com/subject/26810318/comments?start=0&amp;limit=20&amp;sort=new_score&amp;status=P&#39;,</span>
+<span class="sd">         getUrl_func=geturl, getData_func=getdata, level=6)</span>
+<span class="sd">     spider.start_crawl()</span>
+
+<span class="sd">    &#39;&#39;&#39;</span></div>
+
+    
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, pengr.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.0.1',
+            LANGUAGE:'zh-ch',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

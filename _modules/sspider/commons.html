@@ -54,7 +54,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Overview.html">综述</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Install.html">安装使用</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../spider.html">sspider</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../About.html">关于simplespiders</a></li>
 </ul>
 </ul>
@@ -433,11 +432,13 @@
 
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_new_request</span><span class="p">(</span><span class="n">level</span><span class="p">):</span>
-            <span class="k">return</span> <span class="kc">None</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__new_requests</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__level</span><span class="p">)])</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__add_level</span><span class="p">()</span>
+
         <span class="k">if</span> <span class="ow">not</span> <span class="n">level</span><span class="p">:</span>
             <span class="n">level</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__level</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__new_requests</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__level</span><span class="p">)])</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">__add_level</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_new_request</span><span class="p">(</span><span class="n">level</span><span class="p">)</span></div>
 
     <span class="nd">@property</span>
@@ -505,11 +506,11 @@
 <span class="sd">            return : None</span>
 
 <span class="sd">        &#39;&#39;&#39;</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__level</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__new_requests</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">__init_level</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__level</span><span class="p">)</span>
-
         <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">level</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">__limit_level</span><span class="p">:</span>
             <span class="k">return</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__level</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__new_requests</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__init_level</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__level</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">str</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">level</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__new_requests</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">__init_level</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">level</span><span class="p">)</span>
@@ -569,7 +570,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_items</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_headers</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_buffer_file</span> <span class="o">=</span> <span class="s1">&#39;buffer_&#39;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="o">+</span><span class="s1">&#39;.txt&#39;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">max_buffer</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_buffer</span> <span class="o">=</span> <span class="mi">1000</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">items</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -651,12 +652,267 @@
 
 <div class="viewcode-block" id="TxtWritter"><a class="viewcode-back" href="../../spider.html#sspider.commons.TxtWritter">[docs]</a><span class="k">class</span> <span class="nc">TxtWritter</span><span class="p">(</span><span class="n">CommonWritter</span><span class="p">):</span>
 
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    txt格式写数据</span>
+
+<span class="sd">    将每个网页中的数据作为一个item对象，直接将该对象写入到文件中。</span>
+
+<span class="sd">    示例：</span>
+
+<span class="sd">        &gt;&gt;&gt; from sspider import Spider, RequestManager, Request, HtmlParser, TxtWritter</span>
+<span class="sd">        &gt;&gt;&gt; # 建立请求对象</span>
+<span class="sd">        &gt;&gt;&gt; req = Request(</span>
+<span class="sd">            &#39;get&#39;, &#39;https://www.easy-mock.com/mock/5c749b5e0d6f122f99e20e72/example/data&#39;)</span>
+
+<span class="sd">        &gt;&gt;&gt; # 构建特定的解析器</span>
+<span class="sd">        &gt;&gt;&gt; class Myparser(HtmlParser):</span>
+<span class="sd">        &gt;&gt;&gt;     def parse(self, response):</span>
+<span class="sd">        &gt;&gt;&gt;         return [req], response.json()[&#39;data&#39;]</span>
+
+<span class="sd">        &gt;&gt;&gt; # 构建TxtWritter对象</span>
+<span class="sd">        &gt;&gt;&gt; txtWritter = TxtWritter()</span>
+
+<span class="sd">        &gt;&gt;&gt; # 构架爬虫对象</span>
+<span class="sd">        &gt;&gt;&gt; spider = Spider(parser=Myparser(),</span>
+<span class="sd">                        requestManager=RequestManager(4), writter=txtWritter)</span>
+
+<span class="sd">        &gt;&gt;&gt; # 运行爬虫</span>
+<span class="sd">        &gt;&gt;&gt; spider.run(req)</span>
+
+<span class="sd">        &gt;&gt;&gt; # 数据写入test文件</span>
+<span class="sd">        &gt;&gt;&gt; spider.write(&quot;test.txt&quot;)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
 <div class="viewcode-block" id="TxtWritter.write"><a class="viewcode-back" href="../../spider.html#sspider.commons.TxtWritter.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w+&#39;</span><span class="p">,</span> <span class="n">encode</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encode</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; | &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">item</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span></div></div>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="NonWritter"><a class="viewcode-back" href="../../spider.html#sspider.commons.NonWritter">[docs]</a><span class="k">class</span> <span class="nc">NonWritter</span><span class="p">(</span><span class="n">AbstractWritter</span><span class="p">):</span>
+<div class="viewcode-block" id="NonWritter.write"><a class="viewcode-back" href="../../spider.html#sspider.commons.NonWritter.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w+&#39;</span><span class="p">,</span> <span class="n">encode</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="NonWritter.write_buffer"><a class="viewcode-back" href="../../spider.html#sspider.commons.NonWritter.write_buffer">[docs]</a>    <span class="k">def</span> <span class="nf">write_buffer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="NonWritter.flush_buffer"><a class="viewcode-back" href="../../spider.html#sspider.commons.NonWritter.flush_buffer">[docs]</a>    <span class="k">def</span> <span class="nf">flush_buffer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span></div></div>
+
+
+<span class="kn">import</span> <span class="nn">json</span>
+
+
+<div class="viewcode-block" id="JsonWritter"><a class="viewcode-back" href="../../spider.html#sspider.commons.JsonWritter">[docs]</a><span class="k">class</span> <span class="nc">JsonWritter</span><span class="p">(</span><span class="n">CommonWritter</span><span class="p">):</span>
+
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    json格式写数据</span>
+
+<span class="sd">    将数据以json格式写入数据文件中</span>
+
+<span class="sd">    示例：</span>
+
+<span class="sd">        &gt;&gt;&gt; from sspider import Spider, RequestManager, Request, HtmlParser, JsonWritter</span>
+<span class="sd">        &gt;&gt;&gt; # 建立请求对象</span>
+<span class="sd">        &gt;&gt;&gt; req = Request(</span>
+<span class="sd">            &#39;get&#39;, &#39;https://www.easy-mock.com/mock/5c749b5e0d6f122f99e20e72/example/data&#39;)</span>
+
+<span class="sd">        &gt;&gt;&gt; # 构建特定的解析器</span>
+<span class="sd">        &gt;&gt;&gt; class Myparser(HtmlParser):</span>
+<span class="sd">        &gt;&gt;&gt;     def parse(self, response):</span>
+<span class="sd">        &gt;&gt;&gt;         return [req], response.json()[&#39;data&#39;]</span>
+
+<span class="sd">        &gt;&gt;&gt; # 构建JsonWritter对象</span>
+<span class="sd">        &gt;&gt;&gt; jsonWritter = JsonWritter()</span>
+
+<span class="sd">        &gt;&gt;&gt; # 构架爬虫对象</span>
+<span class="sd">        &gt;&gt;&gt; spider = Spider(parser=Myparser(),</span>
+<span class="sd">                        requestManager=RequestManager(4), writter=jsonWritter)</span>
+
+<span class="sd">        &gt;&gt;&gt; # 运行爬虫</span>
+<span class="sd">        &gt;&gt;&gt; spider.run(req)</span>
+
+<span class="sd">        &gt;&gt;&gt; # 数据写入test文件</span>
+<span class="sd">        &gt;&gt;&gt; spider.write(&quot;test.json&quot;)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+<div class="viewcode-block" id="JsonWritter.write"><a class="viewcode-back" href="../../spider.html#sspider.commons.JsonWritter.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w+&#39;</span><span class="p">,</span> <span class="n">encode</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encode</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">separators</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">)))</span></div></div>
+
+
+<span class="kn">import</span> <span class="nn">csv</span>
+
+
+<div class="viewcode-block" id="CsvWritter"><a class="viewcode-back" href="../../spider.html#sspider.commons.CsvWritter">[docs]</a><span class="k">class</span> <span class="nc">CsvWritter</span><span class="p">(</span><span class="n">CommonWritter</span><span class="p">):</span>
+
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    csv格式写数据</span>
+
+<span class="sd">    将数据以csv格式写入数据文件中</span>
+
+<span class="sd">    示例：</span>
+
+<span class="sd">          &gt;&gt;&gt; from sspider import Spider, RequestManager, Request, HtmlParser, CsvWritter</span>
+<span class="sd">        &gt;&gt;&gt; # 建立请求对象</span>
+<span class="sd">        &gt;&gt;&gt; req = Request(</span>
+<span class="sd">            &#39;get&#39;, &#39;https://www.easy-mock.com/mock/5c749b5e0d6f122f99e20e72/example/data&#39;)</span>
+
+<span class="sd">        &gt;&gt;&gt; # 构建特定的解析器</span>
+<span class="sd">        &gt;&gt;&gt; class Myparser(HtmlParser):</span>
+<span class="sd">        &gt;&gt;&gt;     def parse(self, response):</span>
+<span class="sd">        &gt;&gt;&gt;         return [req], response.json()[&#39;data&#39;]</span>
+
+<span class="sd">        &gt;&gt;&gt; # 构建CsvWritter对象</span>
+<span class="sd">        &gt;&gt;&gt; csvWritter = CsvWritter()</span>
+
+<span class="sd">        &gt;&gt;&gt; # 构架爬虫对象</span>
+<span class="sd">        &gt;&gt;&gt; spider = Spider(parser=Myparser(),</span>
+<span class="sd">                        requestManager=RequestManager(4), writter=csvWritter)</span>
+
+<span class="sd">        &gt;&gt;&gt; # 运行爬虫</span>
+<span class="sd">        &gt;&gt;&gt; spider.run(req)</span>
+
+<span class="sd">        &gt;&gt;&gt; # 数据写入test文件</span>
+<span class="sd">        &gt;&gt;&gt; spider.write(&quot;test.csv&quot;)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+<div class="viewcode-block" id="CsvWritter.write"><a class="viewcode-back" href="../../spider.html#sspider.commons.CsvWritter.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w+&#39;</span><span class="p">,</span> <span class="n">encode</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        csv格式写入，写入数据格式为二维结构，即二维列表</span>
+<span class="sd">            @param :: items : 数据序列</span>
+<span class="sd">            return : None</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encode</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">csvfile</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                <span class="n">csvfile</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">item</span><span class="p">)</span></div></div>
+
+
+<span class="kn">from</span> <span class="nn">xlwt</span> <span class="k">import</span> <span class="n">Workbook</span>
+
+
+<div class="viewcode-block" id="XlsWritter"><a class="viewcode-back" href="../../spider.html#sspider.commons.XlsWritter">[docs]</a><span class="k">class</span> <span class="nc">XlsWritter</span><span class="p">(</span><span class="n">CommonWritter</span><span class="p">):</span>
+
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    xls格式写数据</span>
+
+<span class="sd">    将数据以xls格式写入数据文件中</span>
+
+<span class="sd">    示例：</span>
+
+<span class="sd">          &gt;&gt;&gt; from sspider import Spider, RequestManager, Request, HtmlParser, XlsWritter</span>
+<span class="sd">        &gt;&gt;&gt; # 建立请求对象</span>
+<span class="sd">        &gt;&gt;&gt; req = Request(</span>
+<span class="sd">            &#39;get&#39;, &#39;https://www.easy-mock.com/mock/5c749b5e0d6f122f99e20e72/example/data&#39;)</span>
+
+<span class="sd">        &gt;&gt;&gt; # 构建特定的解析器</span>
+<span class="sd">        &gt;&gt;&gt; class Myparser(HtmlParser):</span>
+<span class="sd">        &gt;&gt;&gt;     def parse(self, response):</span>
+<span class="sd">        &gt;&gt;&gt;         return [req], response.json()[&#39;data&#39;]</span>
+
+<span class="sd">        &gt;&gt;&gt; # 构建XlsWritter对象</span>
+<span class="sd">        &gt;&gt;&gt; xlsWritter = XlsWritter()</span>
+
+<span class="sd">        &gt;&gt;&gt; # 构架爬虫对象</span>
+<span class="sd">        &gt;&gt;&gt; spider = Spider(parser=Myparser(),</span>
+<span class="sd">                        requestManager=RequestManager(4), writter=xlsWritter)</span>
+
+<span class="sd">        &gt;&gt;&gt; # 运行爬虫</span>
+<span class="sd">        &gt;&gt;&gt; spider.run(req)</span>
+
+<span class="sd">        &gt;&gt;&gt; # 数据写入test文件</span>
+<span class="sd">        &gt;&gt;&gt; spider.write(&quot;test.xls&quot;)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+<div class="viewcode-block" id="XlsWritter.write"><a class="viewcode-back" href="../../spider.html#sspider.commons.XlsWritter.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w+&#39;</span><span class="p">,</span> <span class="n">encode</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        xls格式写入，写入数据格式为二维结构，即二维列表</span>
+<span class="sd">            @param :: items : 数据序列</span>
+<span class="sd">            return : None</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span>
+        <span class="n">book</span> <span class="o">=</span> <span class="n">Workbook</span><span class="p">()</span>
+        <span class="n">worksheet</span> <span class="o">=</span> <span class="n">book</span><span class="o">.</span><span class="n">add_sheet</span><span class="p">(</span><span class="s2">&quot;Sheet 1&quot;</span><span class="p">)</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">item</span><span class="p">:</span>
+                <span class="n">worksheet</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+                <span class="n">col</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">row</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">if</span> <span class="n">row</span> <span class="o">&gt;</span> <span class="mi">65535</span><span class="p">:</span>
+                <span class="n">book</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">OverflowError</span><span class="p">(</span>
+                    <span class="s2">&quot;Hit limit of #of rows in one sheet(65535).&quot;</span><span class="p">)</span>
+        <span class="n">book</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></div></div>
+
+
+<span class="kn">import</span> <span class="nn">xlsxwriter</span>
+
+
+<div class="viewcode-block" id="XlsxWritter"><a class="viewcode-back" href="../../spider.html#sspider.commons.XlsxWritter">[docs]</a><span class="k">class</span> <span class="nc">XlsxWritter</span><span class="p">(</span><span class="n">CommonWritter</span><span class="p">):</span>
+
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    xlsx格式写数据</span>
+
+<span class="sd">    将数据以xlsx格式写入数据文件中</span>
+
+<span class="sd">    示例：</span>
+
+<span class="sd">          &gt;&gt;&gt; from sspider import Spider, RequestManager, Request, HtmlParser, XlsxWritter</span>
+<span class="sd">        &gt;&gt;&gt; # 建立请求对象</span>
+<span class="sd">        &gt;&gt;&gt; req = Request(</span>
+<span class="sd">            &#39;get&#39;, &#39;https://www.easy-mock.com/mock/5c749b5e0d6f122f99e20e72/example/data&#39;)</span>
+
+<span class="sd">        &gt;&gt;&gt; # 构建特定的解析器</span>
+<span class="sd">        &gt;&gt;&gt; class Myparser(HtmlParser):</span>
+<span class="sd">        &gt;&gt;&gt;     def parse(self, response):</span>
+<span class="sd">        &gt;&gt;&gt;         return [req], response.json()[&#39;data&#39;]</span>
+
+<span class="sd">        &gt;&gt;&gt; # 构建XlsxWritter对象</span>
+<span class="sd">        &gt;&gt;&gt; xlsxWritter = XlsxWritter()</span>
+
+<span class="sd">        &gt;&gt;&gt; # 构架爬虫对象</span>
+<span class="sd">        &gt;&gt;&gt; spider = Spider(parser=Myparser(),</span>
+<span class="sd">                        requestManager=RequestManager(4), writter=xlsxWritter)</span>
+
+<span class="sd">        &gt;&gt;&gt; # 运行爬虫</span>
+<span class="sd">        &gt;&gt;&gt; spider.run(req)</span>
+
+<span class="sd">        &gt;&gt;&gt; # 数据写入test文件</span>
+<span class="sd">        &gt;&gt;&gt; spider.write(&quot;test.xlsx&quot;)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+<div class="viewcode-block" id="XlsxWritter.write"><a class="viewcode-back" href="../../spider.html#sspider.commons.XlsxWritter.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w+&#39;</span><span class="p">,</span> <span class="n">encode</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        xlsx格式写入，写入数据格式为二维结构，即二维列表</span>
+<span class="sd">            @param :: items : 数据序列</span>
+<span class="sd">            return : None</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span>
+        <span class="n">workbook</span> <span class="o">=</span> <span class="n">xlsxwriter</span><span class="o">.</span><span class="n">Workbook</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="n">worksheet</span> <span class="o">=</span> <span class="n">workbook</span><span class="o">.</span><span class="n">add_worksheet</span><span class="p">()</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">item</span><span class="p">:</span>
+                <span class="n">worksheet</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+                <span class="n">col</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">row</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">workbook</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div></div>
 
 
 <span class="kn">import</span> <span class="nn">logging</span>
@@ -716,7 +972,7 @@
 
 <div class="viewcode-block" id="Spider"><a class="viewcode-back" href="../../spider.html#sspider.commons.Spider">[docs]</a><span class="k">class</span> <span class="nc">Spider</span><span class="p">(</span><span class="n">AbstractSpider</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">downloader</span><span class="o">=</span><span class="n">HtmlDownloader</span><span class="p">(),</span> <span class="n">parser</span><span class="o">=</span><span class="n">HtmlParser</span><span class="p">(),</span> <span class="n">requestManager</span><span class="o">=</span><span class="n">RequestManager</span><span class="p">(),</span> <span class="n">writter</span><span class="o">=</span><span class="n">CommonWritter</span><span class="p">(),</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">downloader</span><span class="o">=</span><span class="n">HtmlDownloader</span><span class="p">(),</span> <span class="n">parser</span><span class="o">=</span><span class="n">HtmlParser</span><span class="p">(),</span> <span class="n">requestManager</span><span class="o">=</span><span class="n">RequestManager</span><span class="p">(),</span> <span class="n">writter</span><span class="o">=</span><span class="n">NonWritter</span><span class="p">(),</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">logger</span> <span class="o">=</span> <span class="n">logger</span> <span class="k">if</span> <span class="n">logger</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">Logger</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">downloader</span><span class="o">=</span><span class="n">downloader</span><span class="p">,</span> <span class="n">parser</span><span class="o">=</span><span class="n">parser</span><span class="p">,</span>

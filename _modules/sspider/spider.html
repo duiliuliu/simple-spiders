@@ -54,7 +54,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Overview.html">综述</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Install.html">安装使用</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../spider.html">sspider</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../About.html">关于simplespiders</a></li>
 </ul>
 </ul>
@@ -308,7 +307,7 @@
     <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
 
-<div class="viewcode-block" id="AbstractSpider.run"><a class="viewcode-back" href="../../spider.html#sspider.spider.AbstractSpider.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+<div class="viewcode-block" id="AbstractSpider.run"><a class="viewcode-back" href="../../spider.html#sspider.spider.AbstractSpider.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">requests</span><span class="o">=</span><span class="p">[]):</span>
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        运行爬虫方法，从requestManager中取出可用的request，然后扔进下载器中进行下载，通过解析器对下载到的文档进行解析；</span>
 <span class="sd">        需要传入一个或者一组request作为初始request进行抓取</span>
@@ -318,7 +317,10 @@
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__start_icon</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">Start crawl...&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">requestManager</span><span class="o">.</span><span class="n">add_new_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">request</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">requestManager</span><span class="o">.</span><span class="n">add_new_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">requests</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">requestManager</span><span class="o">.</span><span class="n">add_new_request</span><span class="p">(</span><span class="n">requests</span><span class="p">)</span>
         <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">requestManager</span><span class="o">.</span><span class="n">has_new_request</span><span class="p">():</span>
             <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">requestManager</span><span class="o">.</span><span class="n">get_new_request</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">crawl</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>

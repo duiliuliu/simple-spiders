@@ -1,0 +1,11 @@
+安装使用
+=================
+
+``pip install sspider``
+
+此时，你应当建立一个python文件或者python项目开始爬虫
+
+.. automodule:: sspider
+    :members:
+    :undoc-members:
+    :show-inheritance:
