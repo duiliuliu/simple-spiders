@@ -57,6 +57,7 @@ class AbstractRequestManager(object):
     管理所有的请求
     '''
 
+    @typeassert(requests=list)
     def add_new_requests(self, requests):
         '''
         模板方法，不需要子类重写
