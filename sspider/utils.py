@@ -20,7 +20,7 @@ import platform
 import threading
 
 
-def get__function_name():
+def get_function_name():
     '''
     获取正在运行函数(或方法)名称
     '''

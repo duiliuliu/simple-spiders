@@ -908,9 +908,9 @@ class Logger(AbstractLogger):
 
 class Spider(AbstractSpider):
 
-    def __init__(self, downloader=HtmlDownloader(), parser=HtmlParser(), requestManager=RequestManager(), writter=CommonWritter(), logger=None):
-        logger = logger if logger is not None else Logger(
-            self.__class__.__name__)
+    def __init__(self, name=None, downloader=HtmlDownloader(), parser=HtmlParser(), requestManager=RequestManager(), writter=CommonWritter(), logger=None):
+        self.name = name if name is not None else self.__class__.__name__
+        logger = logger if logger is not None else Logger(self.name)
         super().__init__(downloader=downloader, parser=parser,
                          requestManager=requestManager, writter=writter, logger=logger)
 
@@ -951,11 +951,14 @@ class Spider(AbstractSpider):
             requests = [requests]
         new_requests = []
         for req in requests:
-            if not isinstance(req, Request) and isinstance(req, dict):
+            if isinstance(req, Request):
+                new_requests.append(req)
+            elif not isinstance(req, Request) and isinstance(req, dict):
                 new_requests.append(Request(**req))
-            if not isinstance(req, Request) and isinstance(req, str):
+            elif not isinstance(req, Request) and isinstance(req, str):
                 new_requests.append(Request('get', req))
-        print(new_requests)
+            else:
+                raise ValueError('传入非法请求！')
         super().run(new_requests)
 
     def write(self, filename, mode='w+', encode='utf-8', write_header=False):

@@ -8,7 +8,7 @@ sspider.抽象结构
 该模块时爬虫整体的抽象架构，可直接继承该模块中的类进行扩展功能
 '''
 
-from .utils import typeassert, get__function_name
+from .utils import typeassert, get_function_name
 
 
 class AbstractDownloader(object):
@@ -27,7 +27,7 @@ class AbstractDownloader(object):
             return response
         '''
         raise NotImplementedError("未实现的父类方法: %s.%s" % (
-            self.__class__.__name__, get__function_name()))
+            self.__class__.__name__, get_function_name()))
 
 
 class AbstractParser(object):
@@ -46,7 +46,7 @@ class AbstractParser(object):
             return requests,data
         '''
         raise NotImplementedError("未实现的父类方法: %s.%s" % (
-            self.__class__.__name__, get__function_name()))
+            self.__class__.__name__, get_function_name()))
 
 
 class AbstractRequestManager(object):
@@ -76,7 +76,7 @@ class AbstractRequestManager(object):
             return None
         '''
         raise NotImplementedError("未实现的父类方法: %s.%s" % (
-            self.__class__.__name__, get__function_name()))
+            self.__class__.__name__, get_function_name()))
 
     def has_new_request(self):
         '''
@@ -85,7 +85,7 @@ class AbstractRequestManager(object):
             return Bool
         '''
         raise NotImplementedError("未实现的父类方法: %s.%s" % (
-            self.__class__.__name__, get__function_name()))
+            self.__class__.__name__, get_function_name()))
 
     def get_new_request(self):
         '''
@@ -94,7 +94,7 @@ class AbstractRequestManager(object):
             return request
         '''
         raise NotImplementedError("未实现的父类方法: %s.%s" % (
-            self.__class__.__name__, get__function_name()))
+            self.__class__.__name__, get_function_name()))
 
 
 class AbstractWritter(object):
@@ -112,7 +112,7 @@ class AbstractWritter(object):
             return None
         '''
         raise NotImplementedError("未实现的父类方法: %s.%s" % (
-            self.__class__.__name__, get__function_name()))
+            self.__class__.__name__, get_function_name()))
 
     def write_buffer(self, item):
         '''
@@ -121,7 +121,7 @@ class AbstractWritter(object):
             return None
         '''
         raise NotImplementedError("未实现的父类方法: %s.%s" % (
-            self.__class__.__name__, get__function_name()))
+            self.__class__.__name__, get_function_name()))
 
     def flush_buffer(self):
         '''
@@ -130,7 +130,7 @@ class AbstractWritter(object):
             return None
         '''
         raise NotImplementedError("未实现的父类方法: %s.%s" % (
-            self.__class__.__name__, get__function_name()))
+            self.__class__.__name__, get_function_name()))
 
 
 class AbstractLogger(object):
@@ -146,35 +146,35 @@ class AbstractLogger(object):
         debug级别日志
         '''
         raise NotImplementedError("未实现的父类方法: %s.%s" % (
-            self.__class__.__name__, get__function_name()))
+            self.__class__.__name__, get_function_name()))
 
     def info(self, message):
         '''
         info级别日志
         '''
         raise NotImplementedError("未实现的父类方法: %s.%s" % (
-            self.__class__.__name__, get__function_name()))
+            self.__class__.__name__, get_function_name()))
 
     def warn(self, message):
         '''
         warn级别日志
         '''
         raise NotImplementedError("未实现的父类方法: %s.%s" % (
-            self.__class__.__name__, get__function_name()))
+            self.__class__.__name__, get_function_name()))
 
     def exception(self, message):
         '''
         exception级别日志
         '''
         raise NotImplementedError("未实现的父类方法: %s.%s" % (
-            self.__class__.__name__, get__function_name()))
+            self.__class__.__name__, get_function_name()))
 
     def error(self, message):
         '''
         error级别日志
         '''
         raise NotImplementedError("未实现的父类方法: %s.%s" % (
-            self.__class__.__name__, get__function_name()))
+            self.__class__.__name__, get_function_name()))
 
 
 class AbstractSpider(object):
