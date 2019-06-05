@@ -511,7 +511,7 @@ class CommonWritter(AbstractWritter):
         super().__init__()
         self._items = []
         self._headers = {}
-        self._buffer_file = 'buffer_'+self.__class__.__name__+'.txt'
+        self._buffer_file = 'buffer_'+self.__class__.__name__+str(self.__hash__())+'.txt'
         self.writeMode = writeMode
         self.max_buffer = 1000
 

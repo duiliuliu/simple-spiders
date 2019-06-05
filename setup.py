@@ -5,11 +5,11 @@ from setuptools import setup, find_packages
 
 setup(
     name="sspider",
-    version="1.3.4",
+    version="1.3.6",
     author="pengr",
     author_email="pengrui55555@163.com",
     description="A simple web crawling framework.",
-    long_description=open("README.rst", encoding="utf-8").read(),
+    long_description=open("Readme.rst", encoding="utf-8").read(),
     license="MIT",
     url="https://github.com/duiliuliu/simple-spiders",
     packages=['sspider'],
